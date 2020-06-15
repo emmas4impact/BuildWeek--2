@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Profile from './Profiles'
+import Profile from './Profile/Profiles'
 import ProfileForm from './Profile/Form'
 
 class Content extends Component{
