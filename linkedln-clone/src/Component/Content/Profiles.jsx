@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './Profile/Profile.module.css';
+
 import {BsPersonLinesFill } from "react-icons/bs";
 import {Form,InputGroup, List, Image, Col, Row, Button,Jumbotron, Container} from 'react-bootstrap';
 
