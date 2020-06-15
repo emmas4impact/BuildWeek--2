@@ -23,8 +23,13 @@
   button {
       border: none !important;
       background-color: white;
+      width: 829px;
   }
   .dropdown-content{
-      width: 500px !important;
+      width: 830px !important;
+      background-color: white;
+      border: 1px solid rgba(128, 128, 128, 0.219);
+      text-align: left;
+      padding-left: 20px;
      
   }
