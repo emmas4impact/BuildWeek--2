@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaPlusCircle, FaChevronDown } from 'react-icons/fa';
-import {Container} from 'react-bootstrap'
-import {Row, Col, Dropdown} from 'react-bootstrap'
+
+import {Row, Col} from 'react-bootstrap'
 
 import './Skills_Endorsements.css'
 class Skills_Endorsements extends Component {
@@ -32,11 +32,11 @@ class Skills_Endorsements extends Component {
                         <div class="dropdown-content">
                         
                         
-                        <h6 className="mt-3"><FaPlusCircle /> Full-Stack Development</h6>
+                        <h6 className="mt-3"><FaPlusCircle /> Java Script</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle /> Back-End Development</h6>
+                       <h6><FaPlusCircle /> React JS</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle /> Front-End Development</h6>
+                       <h6><FaPlusCircle /> Node JS</h6>
                        <hr></hr>
                         </div>
                         </div>
