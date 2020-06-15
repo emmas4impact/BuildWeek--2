@@ -22,5 +22,9 @@
   }
   button {
       border: none !important;
-      background-color: whitesmoke;
+      background-color: white;
+  }
+  .dropdown-content{
+      width: 500px !important;
+     
   }
