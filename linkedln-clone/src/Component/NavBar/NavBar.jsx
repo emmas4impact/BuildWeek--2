@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import './NavBar.css';
 import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUser, FaComment, FaCommentDots } from 'react-icons/fa';
-import {  faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class NavBar extends Component {
     render() {

@@ -14,8 +14,10 @@ const Strength =(props) =>{
                         This is a modified jumbotron that occupies the entire horizontal space of
                         its parent.
                     </p>
-                    <Button className="bg-secondary pl-3">Not Now</Button>
-                    <Button className="bg-primary pr-3">Update Headline</Button>
+                    <div className='d-flex justify-between'>
+                    <Button className="btn btn-secondary ">Not Now</Button>
+                    <Button className="btn btn-primary ">Update Headline</Button>
+                    </div>
                 </Container>
          </Jumbotron>
         </>
