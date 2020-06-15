@@ -130,7 +130,7 @@ class Profile extends Component{
                                        
                                        <Col sm={6}>
                                          
-                                           <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar"></img>
+                                           <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatarr" class="avatar"></img>
                                           <p>John Doe</p>
                                             
                                        </Col>
