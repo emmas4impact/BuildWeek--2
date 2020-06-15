@@ -8,14 +8,14 @@ class Skills_Endorsements extends Component {
     render() {
         return (<>
          
-            <Container>
+          
             <Row>
             <Col sm={8}>
               <div id="accordion">
                 <div class="card">
                     
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div >
                     <div class="card-body">
                        <h1>Skills&Endorsements</h1>
                        <h6 className="mt-4"><FaPlusCircle /> Full-Stack Development</h6>
@@ -28,7 +28,7 @@ class Skills_Endorsements extends Component {
                        <p></p>
                     </div>
                     </div>
-                    <div class="card-header" id="headingOne">
+                    <div >
                    
                     <h5 class="mb-0" style={{textAlign: "center"}}>
                     <div class="dropdown">
@@ -56,7 +56,7 @@ class Skills_Endorsements extends Component {
             </Row>
            
 
-</Container>
+
   </>
         );
     }
