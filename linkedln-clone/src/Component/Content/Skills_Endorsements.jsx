@@ -13,9 +13,6 @@ class Skills_Endorsements extends Component {
             <Col sm={8}>
               <div id="accordion">
                 <div class="card">
-                    
-
-                    <div >
                     <div class="card-body">
                        <h1>Skills&Endorsements</h1>
                        <h6 className="mt-4"><FaPlusCircle /> Full-Stack Development</h6>
@@ -27,10 +24,9 @@ class Skills_Endorsements extends Component {
                        <p></p>
                        <p></p>
                     </div>
-                    </div>
-                    <div >
-                   
-                    <h5 class="mb-0" style={{textAlign: "center"}}>
+                    
+                  
+                    <h5 class="mb-3" style={{textAlign: "center"}}>
                     <div class="dropdown">
                     <button type="button" >Show More <FaChevronDown /></button>
                         <div class="dropdown-content">
@@ -49,7 +45,7 @@ class Skills_Endorsements extends Component {
                 
                     </div>
                     </div>
-                    </div>
+                
             </Col>
                     <Col sm={4}>
                     </Col>
