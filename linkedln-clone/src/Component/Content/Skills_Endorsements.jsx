@@ -41,6 +41,7 @@ class Skills_Endorsements extends Component {
                     <Col sm={4}>
                     </Col>
             </Row>
+           
 
 </Container>
   </>
