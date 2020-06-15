@@ -26,13 +26,13 @@ class Skills_Endorsements extends Component {
                     </div>
                     
                   
-                    <h5 class="mb-3" style={{textAlign: "center"}}>
+                    <h5 class="mb-1" style={{textAlign: "center"}}>
                     <div class="dropdown">
                     <button type="button" >Show More <FaChevronDown /></button>
                         <div class="dropdown-content">
                         
                         
-                        <h6 className="mt-4"><FaPlusCircle /> Full-Stack Development</h6>
+                        <h6 className="mt-3"><FaPlusCircle /> Full-Stack Development</h6>
                        <hr></hr>
                        <h6><FaPlusCircle /> Back-End Development</h6>
                        <hr></hr>
