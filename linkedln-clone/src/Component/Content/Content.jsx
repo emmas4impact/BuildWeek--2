@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Profile from './Profiles'
 import ProfileForm from './Profile/Form'
+import Skils from './Skills_Endorsements'
 
 class Content extends Component{
     
@@ -8,6 +9,7 @@ class Content extends Component{
         return(
             <>
             <Profile />
+            <Skils />
             <ProfileForm />
             </>
             
