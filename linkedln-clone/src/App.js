@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Skills_Endorsements from './Component/Content/Skills_Endorsements';
 
+import './App.css';
+
+import Skills_Endorsements from "./Component/Content/Skills_Endorsements";
 
 function App() {
   return (
