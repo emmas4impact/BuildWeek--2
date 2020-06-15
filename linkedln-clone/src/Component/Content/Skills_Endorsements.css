@@ -37,3 +37,9 @@
   *:focus {
     outline: 0 !important;
 }
+.avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
