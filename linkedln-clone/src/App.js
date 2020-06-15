@@ -1,17 +1,22 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Content from './Component/Content/Content';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './Component/NavBar/NavBar';
+// import FontAwesome from 'react-fontawesome'
+// import faStyles from 'font-awesome/css/font-awesome.css'
 
-import Skills_Endorsements from "./Component/Content/Skills_Endorsements";
-import Recommendations from "./Component/Content/Recommendations"
-
-function App() {
-  return (
-    <div className="App">
-      <Skills_Endorsements />
-      <Recommendations />
-    </div>
-  );
+class App extends React.Component {
+  render(){
+    return(
+      
+      <Router>
+        <Content />
+      
+      </Router>
+    )
+  }
 }
 
 export default App;
