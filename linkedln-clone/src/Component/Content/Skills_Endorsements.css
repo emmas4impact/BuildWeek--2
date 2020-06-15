@@ -21,7 +21,7 @@
     text-align: center;
   }
   button {
-      border: none !important;
+      border: none ;
       background-color: white;
       width: 829px;
   }
