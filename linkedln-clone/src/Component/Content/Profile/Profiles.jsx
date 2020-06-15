@@ -6,9 +6,10 @@ import DashBoard from './DashBoard'
 import Strength from './Strength'
 import About from './About'
 import Skills from './Skills'
+import Skils from '../Skills_Endorsements'
 import Activity from './Activity'
 
-import {Form,InputGroup, List, Image, Col, Row, Button,Jumbotron, Container} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 const url ="https://striveschool.herokuapp.com/api/profile/"
 

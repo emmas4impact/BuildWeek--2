@@ -12,6 +12,24 @@
 .text-white {
     display: flex;
     flex-direction: column ;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items:  center;
+}
+.nav-link {
+    color: #fff ;
+}
+
+.profile {
+    position: relative;
+}
+.profile::before {
+    content : '';
+    position: absolute;
+ 
+    bottom: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;    
+
 }

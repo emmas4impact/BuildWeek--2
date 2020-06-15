@@ -7,7 +7,7 @@ const Skills=(props) =>{
         <>
           <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
           <Container>
-                <Button className="bg-primary">Take Skill quiz</Button>                       
+                <Button className="btn btn-primary">Take Skill quiz</Button>                       
                 <p>
                 This is a modified jumbotron that occupies the entire horizontal space of
                 its parent.                                               
