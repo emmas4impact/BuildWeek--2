@@ -11,7 +11,7 @@ class Skills_Endorsements extends Component {
           
             <Row>
             <Col sm={8}>
-              <div id="accordion">
+              <div id="accordion" className="shadow">
                 <div class="card">
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>
