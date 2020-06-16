@@ -5,6 +5,7 @@ const url ="https://striveschool.herokuapp.com/api/profile/"
 
 const username ='user19'
 const password = 'Hxx8R4wZfCANamrj'
+
 const headers =new Headers({
     "Content-Type" : "application/json",
     'Authorization': 'Basic ' + btoa(username + ":" + password),
