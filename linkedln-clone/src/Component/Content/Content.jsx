@@ -17,6 +17,8 @@ class Content extends Component{
             <Profile />
             <Education />
             <Skils />
+            
+            
             </div>
             </Container>
             </>

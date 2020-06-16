@@ -9,7 +9,7 @@ class Skills_Endorsements extends Component {
         return (<>
          
           
-            <Row>
+            <Row style={{marginBottom: "30px"}}>
             <Col sm={8}>
               <div id="accordion" className="shadow">
                 <div class="card">
