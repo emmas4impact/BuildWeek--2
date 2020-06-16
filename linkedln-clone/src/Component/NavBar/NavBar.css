@@ -5,6 +5,26 @@
     background-color: white;
   
 }
+.linkedIn-small {
+    width: 20px;
+    height: 20px;
+    color: #0090C0;
+    background-color: white;
+}
+.linked-big {
+    font-size: 25px;
+    font-weight: 800;
+   
+}
+.footer {
+    font-size: 12px;
+    color: #485d69;
+    line-height: 2.5;
+    font-weight: 600;
+}
+ul li {
+    list-style: none;
+}
 .navBar {
     background-color:  #293E4A !important;
    
