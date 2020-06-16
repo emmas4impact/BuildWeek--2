@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Form, Spinner, Alert } from "react-bootstrap";
+import { Row, Col, Button, Form, Spinner, Alert, Container } from "react-bootstrap";
 
 const url ="https://striveschool.herokuapp.com/api/profile/"
 
@@ -90,6 +90,7 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
+      <Container>
       <div className="mb-3">
         {this.state.errMess.length > 0 && (
           <Alert variant="danger">
@@ -212,6 +213,7 @@ class ProfileForm extends React.Component {
           <Button type="submit">Submit</Button>
         </Form>
       </div>
+      </Container>
     );
   }
 }
