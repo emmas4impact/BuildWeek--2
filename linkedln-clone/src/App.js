@@ -4,14 +4,14 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Component/NavBar/NavBar';
 import Footer from './Component/Footer/Footer';
-import {  faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Content from './Component/Content/Content'
 
 function App() {
   return (
     <>
     
     <NavBar />
+    
     <Footer />
     
     </>
