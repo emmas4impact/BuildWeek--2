@@ -4,13 +4,14 @@ import ProfileForm from './Profile/Form';
 import Skils from './Skills_Endorsements';
 import Jumbotron from './Jumbotron';
 import Education from "./Education";
+
 class Content extends Component{
     
     render(){
         return(
             <>
             <div style={{backgroundColor: "whitesmoke"}}>
-            <Jumbotron/>
+            
             <Profile />
             <Education />
             <Skils />
