@@ -1,10 +1,10 @@
 import React from "react";
-import { Row, Col, Button, Form, Spinner, Alert } from "react-bootstrap";
-
+import { Row, Col, Button, Form, Spinner, Alert, Container } from "react-bootstrap";
 const url ="https://striveschool.herokuapp.com/api/profile/"
+const username ='user19'
+const password = 'Hxx8R4wZfCANamrj'
 
-const username ='user22'
-const password = 'ykeZdCYNLs2dqbMc'
+
 const headers =new Headers({
     "Content-Type" : "application/json",
     'Authorization': 'Basic ' + 'btoa(username + ":" + password)',
@@ -88,6 +88,7 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
+      <Container>
       <div className="mb-3">
         {this.state.errMess.length > 0 && (
           <Alert variant="danger">
@@ -210,6 +211,7 @@ class ProfileForm extends React.Component {
           <Button type="submit">Submit</Button>
         </Form>
       </div>
+      </Container>
     );
   }
 }

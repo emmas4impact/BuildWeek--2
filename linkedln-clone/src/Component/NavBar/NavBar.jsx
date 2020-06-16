@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import './NavBar.css';
-import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing } from 'react-icons/fa';
-
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing, FaBell, FaColumns, FaCircle } from 'react-icons/fa';
 
 class NavBar extends Component {
     render() {
@@ -43,8 +41,11 @@ class NavBar extends Component {
                    <FaFacebookMessenger />
                     Messaging</Nav.Link>
                 <Nav.Link className='text-white'>
-                  
+                     <FaBell />
+                    
                     Notifications</Nav.Link>
+                <div className='navDrop'>  
+                  <FaCircle />
                 <NavDropdown className='text-white' title="Dropdown" id="basic-nav-dropdown" title='Me'>
                   <NavDropdown.Item href="#action/3.1">My</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -52,6 +53,9 @@ class NavBar extends Component {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
+               </div>  
+               <div className='navDrop'>
+                <FaColumns/>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown" title='Work'>
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -59,6 +63,7 @@ class NavBar extends Component {
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
+                </div>
                 <Nav.Link className='text-white' href="#link">
                     <FaVideo />
                     Learning</Nav.Link>

@@ -15,7 +15,7 @@ class Skills_Endorsements extends Component {
                 <div class="card">
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>
-                       <Button style={{background:  "white", color: "blue"}}>Take Skill quiz</Button>   
+                       <Button id="quiz">Take Skill quiz</Button>   
                        <h6 className="mt-4"><FaPlusCircle /> Full-Stack Development</h6>
                        <hr></hr>
                        <h6><FaPlusCircle /> Back-End Development</h6>
