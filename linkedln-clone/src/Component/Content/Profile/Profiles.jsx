@@ -8,7 +8,7 @@ import About from './About'
 import Skills from './Skills'
 import Skils from '../Skills_Endorsements'
 import Activity from './Activity'
-import Profiles from './Form'
+
 import Jumbotron from '../Jumbotron';
 import {Col, Row} from 'react-bootstrap';
 
@@ -58,10 +58,10 @@ class Profile extends Component{
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
-                            <Profiles />
+                           
                         </Col>
-                        <Col md={4}>
-                                <p className="d-flex flex-column">Edit public profile & URL</p>
+                        <Col md={4} >
+                                <p style={{paddingTop: "5rem"}} className="d-flex flex-column">Edit public profile & URL</p>
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language</p></a>
                         </Col>

@@ -10,12 +10,14 @@ class Content extends Component{
     render(){
         return(
             <>
+            <Container>
             <div style={{backgroundColor: "whitesmoke"}}>
             
             <Profile />
             <Education />
             <Skils />
             </div>
+            </Container>
             </>
             
         )

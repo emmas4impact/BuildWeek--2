@@ -7,7 +7,9 @@
 }
 .navBar {
     background-color:  #293E4A !important;
-   
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 .text-white {
     display: flex;
