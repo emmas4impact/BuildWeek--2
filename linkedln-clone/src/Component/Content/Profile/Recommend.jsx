@@ -6,13 +6,13 @@ const Recommend=(props) =>{
     return(
         <>
             <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
-                               <Container>
+             <Container>
                                     
-                                            <Row>
+                  <Row>
                                        
-                                            <Col sm={3}>
+                              <Col sm={3}>
                                             <h6>Recommendations</h6>
-                                            </Col>
+                            </Col>
                                             <Col sm={2}>
                                             
                                             </Col>
@@ -47,22 +47,22 @@ const Recommend=(props) =>{
                                        <hr></hr>
                                        <Row>
                                        
-                                       <Col sm={6}>
+                                       <Col sm={4}>
                                          
                                            <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar"></img>
-                                          <p>John Doe</p>
+                                          <p>Jane Doe</p>
+                                          <p>Web Developer</p>
                                             
                                        </Col>
                                        
-                                       <Col sm={6}>
-
+                                       <Col sm={8}>
+                                       Jane Doe is an hardworking lady, team player and committed to whatever task given to her.
                                        </Col>
                                       
                                        </Row>
                                        </Container>
                                        
-                             
-                            </Jumbotron>
+          </Jumbotron>
         </>
     )
 }

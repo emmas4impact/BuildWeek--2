@@ -8,9 +8,10 @@ class Content extends Component{
     render(){
         return(
             <>
+            <div style={{backgroundColor: "whitesmoke"}}>
             <Profile />
             <Skils />
-            <ProfileForm />
+            </div>
             </>
             
         )

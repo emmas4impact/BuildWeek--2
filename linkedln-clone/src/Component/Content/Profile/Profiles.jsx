@@ -6,14 +6,16 @@ import DashBoard from './DashBoard'
 import Strength from './Strength'
 import About from './About'
 import Skills from './Skills'
+import Skils from '../Skills_Endorsements'
 import Activity from './Activity'
+import Profiles from './Form'
 
-import {Form,InputGroup, List, Image, Col, Row, Button,Jumbotron, Container} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 const url ="https://striveschool.herokuapp.com/api/profile/"
 
-const username ='user9'
-const password = 'sP4YMKhBpqQHAPJN'
+const username ='user22'
+const password = 'ykeZdCYNLs2dqbMc'
 const headers =new Headers({
     "Content-Type" : "application/json",
     'Authorization': 'Basic ' + btoa(username + ":" + password),
@@ -45,7 +47,7 @@ class Profile extends Component{
                 <div>
                    
                     <Row>
-                        <Col md={8} style={{backgroundColor: "white"}}>
+                        <Col md={8} style={{backgroundColor: "transparent"}}>
                             <Strength />
                             <About />
                             <Activity />
@@ -55,6 +57,7 @@ class Profile extends Component{
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
+                            <Profiles />
                         </Col>
                         <Col md={4}>
                                 <p className="d-flex flex-column">Edit public profile & URL</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Jumbotron, Container, ListGroup} from 'react-bootstrap';
+import { MdStarBorder} from "react-icons/md";
 
 const dashBoard=(props) =>{
     
@@ -7,7 +8,7 @@ const dashBoard=(props) =>{
         <>
          <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
              <Container>
-                <h4> Your Dashboard</h4>
+                <h4> Your Dashboard <span style={{padding: "30rem"}}><MdStarBorder /></span></h4>
                     <small>private to you</small>
                     <ListGroup horizontal fluid> 
                         <ListGroup.Item>Who viewed your profile</ListGroup.Item>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import {BsPersonLinesFill } from "react-icons/bs";
 import {Form,InputGroup, List, Image, Col, Row, Button,Jumbotron, Container} from 'react-bootstrap';
-import './Skills_Endorsements.css'
+
 const url ="https://striveschool.herokuapp.com/api/profile/"
 
 const username ='user9'
