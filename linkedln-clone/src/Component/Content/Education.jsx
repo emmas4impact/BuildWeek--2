@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Jumbotron, Container, Row, Col} from 'react-bootstrap'
-import { FaPlus, FaPen } from "react-icons/fa";
+import { FaPlus, FaPen, FaAlignJustify } from "react-icons/fa";
 
 class Education extends Component {
     render() {
@@ -44,6 +44,12 @@ class Education extends Component {
                         
                         <FaPen  />
                        
+                       
+                        </Col>
+                        <Col md={10}>
+                        </Col>
+                        <Col md={2} >
+                        <FaAlignJustify />
                         </Col>
                         </Row>
                     <hr></hr>
@@ -74,6 +80,9 @@ class Education extends Component {
                      </Col>
                      <Col md={2}>
                      <FaPlus />
+                     </Col>
+                     <Col md={2}>
+                    
                      </Col>
                      </Row>
                     <Row >
