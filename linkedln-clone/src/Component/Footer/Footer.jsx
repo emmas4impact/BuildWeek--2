@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaArrowAltCircleDown, FaArrowDown, FaQuestion } from 'react-icons/fa';
+import { faCog } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
   return(
-      <div className='container'>
+      <div className='container mt-5'>
+
           <div className='row'>
             <div className='col-12'>
                 <h6 className='linked-big'>Linked <FaLinkedin className='linkedIn-small' /></h6>
@@ -14,7 +16,7 @@ const Footer = () => {
                   <ul>
                       <li>About</li>
                       <li>Community Guidelines</li>
-                      <li>Privacy & Terms</li>
+                      <li>Privacy & Terms <FaArrowDown/></li>
                       <li>Sales Solutions</li>
                       <li>Safety Center</li>
                   </ul>
@@ -37,10 +39,11 @@ const Footer = () => {
               </div>
               <div className='col-3'>
                   <ul>
-                      <li>Questions ?
+                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '10px'}}/>Questions
                           <small>Visit our Help Center.</small>
                       </li>
-                      <li>
+                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}> <faCog style={{position: 'absolute', left: '-20px', bottom: '10px'}}/>
+                    
                           Manage your account and Privacy
                           <small>Go to your Settings.</small>
                       </li>

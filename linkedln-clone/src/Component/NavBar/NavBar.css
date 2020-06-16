@@ -6,16 +6,18 @@
   
 }
 .linkedIn-small {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     color: #0090C0;
     background-color: white;
 }
 .linked-big {
     font-size: 25px;
     font-weight: 800;
-   
+    display: flex;
+
 }
+
 .footer {
     font-size: 12px;
     color: #485d69;
