@@ -10,8 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function App() {
   return (
     <>
+    
     <NavBar />
     <Footer />
+    
     </>
   );
 }

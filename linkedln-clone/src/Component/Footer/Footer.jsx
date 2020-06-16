@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FaLinkedin, FaArrowAltCircleDown, FaArrowDown, FaQuestion } from 'react-icons/fa';
-import { faCog } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
   return(
@@ -16,7 +16,7 @@ const Footer = () => {
                   <ul>
                       <li>About</li>
                       <li>Community Guidelines</li>
-                      <li>Privacy & Terms <FaArrowDown/></li>
+                      <li>Privacy & Terms <faChevronDown /></li>
                       <li>Sales Solutions</li>
                       <li>Safety Center</li>
                   </ul>
@@ -37,9 +37,9 @@ const Footer = () => {
                       <li>Small Business</li>
                   </ul>
               </div>
-              <div className='col-3'>
+              <div className='col-3' style={{justifyContent: 'center', display: 'flex',  flexDirection: 'column'}}>
                   <ul>
-                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '10px'}}/>Questions
+                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-4'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>Questions
                           <small>Visit our Help Center.</small>
                       </li>
                       <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}> <faCog style={{position: 'absolute', left: '-20px', bottom: '10px'}}/>
@@ -49,10 +49,10 @@ const Footer = () => {
                       </li>
                   </ul>
               </div>
-              <div className='col-3'>
+              <div className='col-3' style={{display: 'flex', flexDirection: 'column', lineHeight: '1.5', justifyContent: 'center'}}> 
                   Select Language
                   <select>
-                      <option></option>
+                      <option>English language</option>
                   </select>
               </div>
           </div>
