@@ -9,7 +9,7 @@ import Skills from './Skills'
 import Skils from '../Skills_Endorsements'
 import Activity from './Activity'
 import Profiles from './Form'
-
+import Jumbotron from '../Jumbotron';
 import {Col, Row} from 'react-bootstrap';
 
 const url ="https://striveschool.herokuapp.com/api/profile/"
@@ -48,6 +48,7 @@ class Profile extends Component{
                    
                     <Row>
                         <Col md={8} style={{backgroundColor: "transparent"}}>
+                            <Jumbotron/>
                             <Strength />
                             <About />
                             <Activity />
