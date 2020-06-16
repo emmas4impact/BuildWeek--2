@@ -4,6 +4,7 @@ import ProfileForm from './Profile/Form';
 import Skils from './Skills_Endorsements';
 import Jumbotron from './Jumbotron';
 import Education from "./Education";
+import {Container} from 'react-bootstrap'
 
 class Content extends Component{
     
