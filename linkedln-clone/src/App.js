@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import Content from './Component/Content/Content';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -18,6 +19,17 @@ class App extends React.Component {
     )
     
   }
+=======
+import './App.css';
+import Jumbotron from './Component/Content/Jumbotron';
+
+function App() {
+  return (
+    <div className="App">
+     <Jumbotron className='mt-3'/>
+    </div>
+  );
+>>>>>>> Jumbotron
 }
 
 export default App;
