@@ -33,7 +33,7 @@ render(){
     <Container>
      <>
       <Card>
-        <Card.Img variant="top" src="./linkedpic.jpg" />
+        <Card.Img variant="top" src="./jumboCover.jpeg" />
         <Card.Body>
           
           <Card.Text>
