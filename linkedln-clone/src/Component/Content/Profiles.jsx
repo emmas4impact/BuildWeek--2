@@ -5,8 +5,8 @@ import {Form,InputGroup, List, Image, Col, Row, Button,Jumbotron, Container} fro
 
 const url ="https://striveschool.herokuapp.com/api/profile/"
 
-const username ='user9'
-const password = 'sP4YMKhBpqQHAPJN'
+const username ='user19'
+const password = 'Hxx8R4wZfCANamrj'
 const headers =new Headers({
     "Content-Type" : "application/json",
     'Authorization': 'Basic ' + btoa(username + ":" + password),
