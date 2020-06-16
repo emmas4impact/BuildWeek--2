@@ -1,6 +1,7 @@
 import React from 'react';
 import {Jumbotron, Container, Row, Col} from 'react-bootstrap';
 
+
 const Recommend=(props) =>{
     
     return(
@@ -47,9 +48,15 @@ const Recommend=(props) =>{
                                        <hr></hr>
                                        <Row>
                                        
-                                       <Col sm={4}>
+                                       <Col sm={2}>
                                          
                                            <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar"></img>
+                                         
+                                            
+                                       </Col>
+                                       <Col sm={2}>
+                                         
+                                           
                                           <p>Jane Doe</p>
                                           <p>Web Developer</p>
                                             
