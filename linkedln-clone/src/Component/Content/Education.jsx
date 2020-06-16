@@ -5,7 +5,7 @@ import { FaPlus, FaPen, FaAlignJustify } from "react-icons/fa";
 class Education extends Component {
     render() {
         return (
-        <Row>
+        <Row >
             <Col md={8}>
                 <Jumbotron className="shadow" style={{backgroundColor: "White"}}>
                 <Row>
