@@ -18,7 +18,7 @@ class Education extends Component {
                      </Row>
                     <Row >
                         <Row>
-                            <Col md={2}>
+                            <Col md={4}>
                             <img src="https://strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: '50px'}}/>
                             </Col>
                         
@@ -30,22 +30,27 @@ class Education extends Component {
                             </Col>
                         </Col>
                         <Row>
-                        <Col md={10}>
-                        
                        
                        
-                        </Col>
-                        <Col md={2}>
-                        
-                        <FaPen />
-                       
-                        </Col>
                        
                         </Row>
+                        
                        
                         
                        
                     </Row>
+                    <Row>
+                    <Col md={10} >
+                        
+                       
+                       
+                        </Col>
+                    <Col md={2} >
+                        
+                        <FaPen  />
+                       
+                        </Col>
+                        </Row>
                     <hr></hr>
                     
                 </Jumbotron>
