@@ -8,6 +8,7 @@ import About from './About'
 import Skills from './Skills'
 import Skils from '../Skills_Endorsements'
 import Activity from './Activity'
+import Profiles from './Form'
 
 import {Col, Row} from 'react-bootstrap';
 
@@ -46,7 +47,7 @@ class Profile extends Component{
                 <div>
                    
                     <Row>
-                        <Col md={8} style={{backgroundColor: "white"}}>
+                        <Col md={8} style={{backgroundColor: "transparent"}}>
                             <Strength />
                             <About />
                             <Activity />
@@ -56,6 +57,7 @@ class Profile extends Component{
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
+                            <Profiles />
                         </Col>
                         <Col md={4}>
                                 <p className="d-flex flex-column">Edit public profile & URL</p>

@@ -20,7 +20,8 @@ class ProfileForm extends React.Component {
         area: "",
         bio: "",
         email: "",
-        title: ""
+        title: "",
+        image: ""
       },
       isLoading: false,
       errMess: ""
@@ -50,7 +51,8 @@ class ProfileForm extends React.Component {
             area: "",
             bio: "",
             email: "",
-            title: ""
+            title: "",
+            image: ""
           }
         });
       } else {
@@ -74,8 +76,8 @@ class ProfileForm extends React.Component {
     let currentId = input.currentTarget.id;
 
     switch (currentId) {
-      case "smoking":
-        reservation[currentId] = input.currentTarget.checked;
+      case "image":
+        reservation[currentId] = input.currentTarget.value;
         break;
       default:
         reservation[currentId] = input.currentTarget.value;
@@ -185,6 +187,21 @@ class ProfileForm extends React.Component {
                   name="title"
                   id="title"
                   value={this.state.reservation.title}
+                  onChange={this.updateReservationField}
+                />
+              </Form.Group>
+            </Col>
+            
+          </Row>
+          <Row>
+            <Col md={12}>
+            <Form.Group>
+                <Form.Label htmlFor="Image">Image</Form.Label>
+                <Form.Control
+                  type="url"
+                  name="image"
+                  id="image"
+                  value={this.state.reservation.image}
                   onChange={this.updateReservationField}
                 />
               </Form.Group>
