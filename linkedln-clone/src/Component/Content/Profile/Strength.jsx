@@ -1,6 +1,7 @@
 import React from 'react';
 import {Jumbotron, Container, Button} from 'react-bootstrap';
 import { MdContacts } from "react-icons/md";
+import ReadMoreReact from 'read-more-react';
 
 const Strength =(props) =>{
     
@@ -11,11 +12,12 @@ const Strength =(props) =>{
                 <h5>Strengthen your profile</h5>
                     <p>
                     <MdContacts  />
-                        This is a modified jumbotron that occupies the entire horizontal space of
-                        its parent.
+                        <strong>Let's update your headline to match your current education
+                        its parent.</strong>
+                        <p> That way, people can easily find and connect with you</p>
                     </p>
-                    <div className='d-flex justify-between'>
-                    <Button className="btn btn-secondary ">Not Now</Button>
+                    <div>
+                    <Button className="btn btn-light" >Not Now</Button>&nbsp;&nbsp;
                     <Button className="btn btn-primary ">Update Headline</Button>
                     </div>
                 </Container>
