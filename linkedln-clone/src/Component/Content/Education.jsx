@@ -7,7 +7,14 @@ class Education extends Component {
         return (
         <Row>
             <Col md={8}>
-                <Jumbotron>
+                <Jumbotron className="shadow" style={{backgroundColor: "White"}}>
+                <Row>
+                        <Col md={10}>
+                     <h4 >Experience</h4>
+                     </Col>
+                    
+                     </Row>
+                     <hr></hr>
                     <Row>
                         <Col md={10}>
                      <h4 >Education</h4>
