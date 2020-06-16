@@ -10,7 +10,7 @@ class Education extends Component {
                 <Jumbotron>
                     <Row>
                         <Col md={10}>
-                     <h4 className="mb-3" >Education</h4>
+                     <h4 >Education</h4>
                      </Col>
                      <Col md={2}>
                      <FaPlus />
@@ -23,31 +23,16 @@ class Education extends Component {
                             </Col>
                         
                         </Row>
-                      
                         <Col md={4}>
                             <Col>
                             <h6>Strive School</h6>
                             <p>2020-2020</p>
                             </Col>
-                            
                         </Col>
-                        <Col md={4}>
-                            <Col>
-                            <FaPen  />
-                            </Col>
-                            
-                        </Col>
+                        <Row>
                        
+                        </Row>
                         
-                      
-                        
-                    
-                       
-                       <Col md={2} >
-                        <FaAlignJustify />
-                        </Col>
-                       
-                       
                     </Row>
                     <Row>
                     <Col md={10} >
@@ -55,10 +40,17 @@ class Education extends Component {
                        
                        
                         </Col>
-                   
+                    <Col md={2} >
+                        
+                        <FaPen  />
+                       
+                       
+                        </Col>
                         <Col md={10}>
                         </Col>
-                       
+                        <Col md={2} >
+                        <FaAlignJustify />
+                        </Col>
                         </Row>
                     <hr></hr>
                     <Row >
@@ -84,7 +76,7 @@ class Education extends Component {
 
                     <Row>
                         <Col md={10}>
-                     <h4 className="mt-3 mb-3">Licenses&Certifications</h4>
+                     <h4 >Licenses&Certifications</h4>
                      </Col>
                      <Col md={2}>
                      <FaPlus />
@@ -117,7 +109,7 @@ class Education extends Component {
                         
                        
                        
-                    </Col>
+                        </Col>
                     <Col md={2} >
                         
                         <FaPen  />
