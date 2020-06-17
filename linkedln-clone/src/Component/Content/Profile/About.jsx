@@ -9,31 +9,13 @@ const About=(props) =>{
     
     return(
         <>
-         <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
+         <Jumbotron fluid className="box jumbo-prof">
              <Container>
-                <h4>About<span style={{padding: "29rem", Color: "blue", paddingTop: "15px"}}><GiPencil/></span></h4>
-                <p>Software developer</p>
-                <Accordion defaultActiveKey="0">
-                        <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                            See more...
-                            </Accordion.Toggle>
-                            <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-                                <ul> 
-                                    <li> Web Service developer</li>
-                                    <li>Web Services API</li>
-                                    <li>Algorithms and Data Structure</li>
-                                    <li>Software Developer</li>
-                                    <li>Automation Tester</li>
-                                    <li> backend developer.</li>
-                                
-                                </ul>
-                             </Card.Body>
-                            </Accordion.Collapse>
-                        </Card>
-                        
-                    </Accordion>
+                <h4 style={{display: 'flex', justifyContent: 'space-between'}}>About<GiPencil/></h4>
+                <div style={{border: '1px dashed #000', padding: '10px'}}>
+                    <p className='colorBlue'> + Add summary</p>
+                    We’ve written one for you: “Experienced Senior Credit Risk Analyst with a demonstrated history of working in the international affairs industry. Skilled in English, SASS, Front-end Development, AJAX, and </div>
+                
                         
                 </Container>
          </Jumbotron>

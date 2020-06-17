@@ -20,7 +20,7 @@ class Skills_Endorsements extends Component {
           
             <Row style={{marginBottom: "30px"}}>
             <Col sm={8}>
-              <div id="accordion" className="shadow">
+              <div id="accordion" className="box">
                 <div class="card">
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>

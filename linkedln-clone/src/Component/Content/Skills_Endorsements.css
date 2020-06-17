@@ -2,7 +2,25 @@
     position: relative;
     display: inline-block;
   }
-  
+  .img-jumbo {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+  }
+  .bio {
+    font-size: 15px;
+    letter-spacing: 3px;
+
+  }
+.email {
+  font-size: 10px;
+   display: none;
+}
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -11,7 +29,10 @@
  
     z-index: 1;
   }
-  
+  .name {
+    font-size: 25px;
+    font-weight: 600;
+  }
   .dropdown:hover .dropdown-content {
     display: block;
   }
@@ -52,6 +73,18 @@
     height: 100px;
     border-radius: 50%;
   }
+  .jumbotron {
+    background-color: #fff !important;
+  }
+ 
+  .box {
+    border: 1px solid #DFDFDF;
+  }
+ 
+  .jumbotron {
+    padding-bottom: 20px !important;
+  }
+  
   li{
   margin: 0 0 20px 0;
 }

@@ -5,7 +5,7 @@ const Skills=(props) =>{
     
     return(
         <>
-          <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
+          <Jumbotron fluid style={{backgroundColor: "white"}} className="box">
             <Container>
                   <Button className="btn btn-primary">Take Skill quiz</Button>                       
                   <p>
