@@ -15,7 +15,7 @@ class Jumbotrons extends React.Component{
 
 
 componentDidMount=async()=>{
-const url="https://striveschool.herokuapp.com/api/profile/me";
+const url="https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username;
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({

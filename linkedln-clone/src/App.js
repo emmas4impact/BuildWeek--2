@@ -13,7 +13,7 @@ class App extends React.Component {
       
       <Router>
         <NavBar />
-        <Route path="/me" exact component={Content} />
+        <Route path="/:username" component={Content} />
         
         <Footer />
       

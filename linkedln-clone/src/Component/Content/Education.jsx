@@ -19,7 +19,7 @@ class Education extends Component {
 
 
    componentDidMount=async()=>{
-const url="https://striveschool.herokuapp.com/api/profile/user9/experiences";
+const url="https://striveschool.herokuapp.com/api/profile/"+ this.props.match.params.username+"/experiences";
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({

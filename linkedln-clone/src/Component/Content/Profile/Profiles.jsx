@@ -53,8 +53,8 @@ this.setState({person:data, loading:false})
                 <div>
                    
                     <Row>
-                        <Col md={8} style={{backgroundColor: "transparent"}}>
-                            <Jumbotron/>
+                        <Col md={8} style={{backgroundColor: "transparent"}} >
+                            <Jumbotron {...this.props}/>
                             <Strength />
                             
                             <About />
@@ -71,9 +71,9 @@ this.setState({person:data, loading:false})
                                 <p style={{paddingTop: "5rem"}} className="d-flex flex-column">Edit public profile & URL</p>
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language</p></a>
-                            {this.state.person.map(users=>{
+                            {this.state.person.map((users, i)=>{
                                 return(
-                                    <div>
+                                    <div key={i}>
                                         <p> {users.name} {users.surname}</p>
                                     </div>
                                 )
