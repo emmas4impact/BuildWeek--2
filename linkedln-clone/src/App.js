@@ -89,6 +89,7 @@ class App extends React.Component {
 
               } 
             />
+             <Route path="/" exact component={Content} />
             <Route path="/:username" component={Content} />
             
             <Footer />
