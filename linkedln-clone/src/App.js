@@ -2,7 +2,7 @@ import React from 'react';
 import Content from './Component/Content/Content';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Dropdown, Image} from 'react-bootstrap'
-
+import { Link } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Component/NavBar/NavBar';
@@ -11,32 +11,33 @@ import Footer from './Component/Footer/Footer'
 
 class App extends React.Component {
   state = {
-    data: '',
-    search: null,
-    status: true,
-  
+
+    users: '',
+    search: '',
+    status: false
   }
-  fetchData = async () => {
-  await fetch("https://striveschool.herokuapp.com/api/profile/", {
+
+  fetchUser = async () => {
+    await fetch("https://striveschool.herokuapp.com/api/profile/", {
       headers: new Headers({
-        'Authorization': 'Basic ' + btoa('user19:Hxx8R4wZfCANamrj'),
+        'Authorization': 'Basic ' + "dXNlcjE5Okh4eDhSNHdaZkNBTmFtcmo=",
         "Content-Type": "application/json",
       }),
     })
-      .then(response => response.json())
+      .then(resp => resp.json())
       .then(respObj => this.setState({
-        data: respObj,
+        users: respObj
       }))
-
-  }
-  componentDidMount() {
-    this.fetchData()
   }
 
-  searchedField = (searched) => {
-    if (searched) {
+  componentDidMount = () => {
+    this.fetchUser()
+  }
+
+  searchedValue = (search) => {
+    if (search) {
       this.setState({
-        search: searched,
+        search,
         status: true
       });
     } else {
@@ -47,6 +48,15 @@ class App extends React.Component {
     }
   }
 
+  changeStatus = () => {
+    this.setState({
+      status: !this.state.status,
+      search: ''
+    });
+  }
+
+
+
 
   render(){
     return(
@@ -54,16 +64,30 @@ class App extends React.Component {
         <> 
        
           <Router>
-            <NavBar search={this.searchedField} status={this.state.status} users={this.state.data && this.state.search && 
-              this.state.data.filter(user => user.name.toLowerCase().startsWith(this.state.search.toLowerCase())).length > 0 ?
-              this.state.data
-                .filter(user => user.name.toLowerCase().startsWith(this.state.search.toLowerCase()) )
-                .map((user, i) =>
-            <Dropdown.Item key={i} href={"/" + user.username}><Image src={user.image} style={{width: "20px"}}/> {user.name } {user.surname} - {user.bio}</Dropdown.Item>
-                )
-              :
-              <Dropdown.Item href="/">No user found</Dropdown.Item>
-            }
+          <NavBar
+              search={this.searchedValue}
+              searchedValue={this.state.searchedValue}
+              status={this.state.status}
+              changeStatus={this.changeStatus}
+              users=
+              {this.state.users && this.state.search &&
+
+                this.state.users
+                  .filter(user => user.name
+                    .toLowerCase()
+                    .startsWith(this.state.search.toLowerCase())).length > 0 ?
+
+                this.state.users
+                  .filter(user => user.name.toLowerCase().startsWith(this.state.search.toLowerCase()))
+                  .map((user, i) =>
+                  <Dropdown.Item key={i} href={"/" + user.username}><img src={user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.name} {user.surname} &#9900; {user.title}</Dropdown.Item>
+                  )
+
+                :
+                <Dropdown.Item>No user with that name</Dropdown.Item>
+
+
+              } 
             />
             <Route path="/:username" component={Content} />
             
