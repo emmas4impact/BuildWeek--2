@@ -3,7 +3,6 @@
     height: 40px;
     color: #0090C0;
     background-color: white;
-  
 }
 .linkedIn-small {
     width: 30px;
@@ -17,7 +16,18 @@
     display: flex;
 
 }
+.vl {
+    border-left: 1px solid #5C6F7C;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 
+}
+.search-bar {
+    background-color: #E2E9EE;
+    height: 35px;
+    
+}
 .footer {
     font-size: 12px;
     color: #485d69;
@@ -42,6 +52,7 @@ ul li {
     position: fixed;
     z-index: 2;
     width: 100%;
+    padding: 0;
 }
 
 

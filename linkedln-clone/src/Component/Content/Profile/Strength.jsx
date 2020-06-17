@@ -16,7 +16,7 @@ const Strength =(props) =>{
                         its parent.</strong>
                         <p> That way, people can easily find and connect with you</p>
                     </p>
-                    <div>
+                    <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                     <Button className="btn btn-light" >Not Now</Button>&nbsp;&nbsp;
                     <Button className="btn btn-primary ">Update Headline</Button>
                     </div>

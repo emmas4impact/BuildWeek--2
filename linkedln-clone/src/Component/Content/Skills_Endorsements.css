@@ -20,7 +20,7 @@
     padding: 15px;
     text-align: center;
   }
-  button:last-of-type {
+  /* button:last-of-type {
       display: block;
       padding-right: 40px;
       font-weight: 500;
@@ -31,8 +31,7 @@
       border: none;
       background-color: white;
       
-   
-  }
+  } */
   .dropdown-content{
       width: 730px !important;
       background-color: white;
@@ -55,7 +54,7 @@
   #quiz:hover{
     background-color: rgba(67, 120, 155, 0.192);
   }
-  *:focus {
+  button:focus {
     outline: 0 !important;
 }
 .avatar {
