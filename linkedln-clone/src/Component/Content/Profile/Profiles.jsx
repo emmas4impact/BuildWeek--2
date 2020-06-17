@@ -6,9 +6,9 @@ import DashBoard from './DashBoard'
 import Strength from './Strength'
 import About from './About'
 import Skills from './Skills'
-import Skils from '../Skills_Endorsements'
+import {Link, withRouter} from 'react-router-dom'
 import Activity from './Activity'
-import BasicInfo from './basicInfo'
+
 
 import Jumbotron from '../Jumbotron';
 import {Col, Row,Image,ListGroup,Card} from 'react-bootstrap';
@@ -28,35 +28,33 @@ class Profile extends React.Component{
     state = {
       loading:true,
        profile:null,
-       person:null,
+       person:[]
         
    };
 
 
 componentDidMount=async()=>{
+    
 const url="https://striveschool.herokuapp.com/api/profile/";
 const response= await fetch(url ,{
   method:'Get',
-  headers:new Headers({
-   'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
-  })
+  headers:headers,
 })
 const data= await response.json();
-console.log(data);
-this.setState({person:data[7], loading:false})
+console.log("data from profile",data);
+this.setState({person:data, loading:false})
 }
    
     render(){
-        
+        console.log("data from state",this.state.person);
         
         return(
             <>
                 <div>
                    
                     <Row>
-                        <Col md={8} style={{backgroundColor: "transparent"}}>
-                            <Jumbotron/>
+                        <Col md={8} style={{backgroundColor: "transparent"}} >
+                            <Jumbotron {...this.props}/>
                             <Strength />
                             
                             <About />
@@ -73,23 +71,14 @@ this.setState({person:data[7], loading:false})
                                 <p style={{paddingTop: "5rem"}} className="d-flex flex-column">Edit public profile & URL</p>
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language</p></a>
-             <Card style={{ width: '18rem' }}>
-             <ListGroup variant="flush">
-            <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
-            <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
-            </ListGroup.Item> 
-              </ListGroup>
-              <ListGroup variant="flush">
-            <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
-            <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
-            </ListGroup.Item> 
-              </ListGroup>
-              <ListGroup variant="flush">
-            <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
-            <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
-            </ListGroup.Item> 
-              </ListGroup>
-               </Card>
+                            {this.state.person.map((users, i)=>{
+                                return(
+                                    <div key={i}>
+                                    <Link to={"/"+ this.props.match.params.username} >    <p> {users.name} {users.surname}</p></Link>
+                                    </div>
+                                )
+                            })}
+            
                         </Col>
                     </Row>
                    
@@ -100,4 +89,4 @@ this.setState({person:data[7], loading:false})
     
 }
 
-export default Profile;
+export default withRouter(Profile);

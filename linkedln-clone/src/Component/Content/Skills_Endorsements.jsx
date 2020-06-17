@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FaPlusCircle, FaChevronDown } from 'react-icons/fa';
 import Accordion from 'react-bootstrap/Accordion';
 import {Row, Col, Button, Card} from 'react-bootstrap'
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 import './Skills_Endorsements.css'
 class Skills_Endorsements extends Component {
     render() {
+        const mystyle = {
+           color: '#1a75ff',
+            marginRight: "10px",
+            fontSize: "20px"
+          };
         return (<>
          
           
@@ -16,54 +25,86 @@ class Skills_Endorsements extends Component {
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>
                        <Button id="quiz">Take Skill quiz</Button>   
-                       <h6 className="mt-4"><FaPlusCircle /> Full-Stack Development</h6>
+                       <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link>Full-Stack Development</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle /> Back-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Back-End Development</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle /> Front-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Front-End Development</h6>
                        <hr></hr>
                        <p></p>
                        <p></p>
-                       <Accordion defaultActiveKey="0">
+                      
+                       
+                    
+                    </div>
+                    
+                    <Accordion defaultActiveKey="0" >
                         <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0">
-                            See more...
+                            <Accordion.Toggle as={Card.Header} eventKey="0" className="text-center" style={{backgroundColor: "#e6f7ff", textDecoration: 'none'}}><Link to="/me" style={{ textDecoration: 'none'}}>
+                            See more <FaChevronDown /></Link>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
                             <Card.Body>
-                                <ul> 
-                                    <li> Web Service developer</li>
-                                    <li>Web Services API</li>
-                                    <li>Algorithms and Data Structure</li>
-                                    <li>Software Developer</li>
-                                    <li>Automation Tester</li>
-                                    <li> backend developer.</li>
+                            <h4>Tools & Technologies</h4>
+                                        <hr></hr>
+                                <Row className="text-left">
                                 
+                                    <Col md={6}>
+                                        
+                                <ul > 
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> CSS</li>
+                                    
                                 </ul>
+                                </Col>
+                                <Col md={6} >
+                                <ul > 
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> CSS</li>
+                                    
+                                </ul>
+                                </Col>
+                                </Row>
+                                <h4>Languages</h4>
+                                        <hr></hr>
+                                <Row>
+                                     <Col md={12}>
+                                        <ul > 
+                                          <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> English</li>
+                                           
+                                        </ul>
+                                      </Col>
+                                 </Row>
+                                 <h4>Other Skills</h4>
+                                        <hr></hr>
+                                <Row>
+                                <Col md={6}>
+                                        <ul > 
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Gulp</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Animation.css</li>
+                                           
+                                        </ul>
+                                        </Col>
+                                        <Col md={6} >
+                                        <ul > 
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Modernizer.js</li>
+                                            
+                                        </ul>
+                                        </Col>
+                                 </Row>
+                                
                              </Card.Body>
                             </Accordion.Collapse>
                         </Card>
                         
                     </Accordion>
-                    </div>
-                    
-                  
-                    <h5 class="mb-1" style={{textAlign: "center"}}>
-                    <div class="dropdown">
-                    <button type="button" >Show More <FaChevronDown /></button>
-                        <div class="dropdown-content">
-                        
-                        
-                        <h6 className="mt-3"><FaPlusCircle /> Java Script</h6>
-                       <hr></hr>
-                       <h6><FaPlusCircle /> React JS</h6>
-                       <hr></hr>
-                       <h6><FaPlusCircle /> Node JS</h6>
-                       <hr></hr>
-                        </div>
-                        </div>
-                 
-                    </h5>
+                   
                 
                     </div>
                     </div>
