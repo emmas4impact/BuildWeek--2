@@ -8,6 +8,7 @@ import About from './About'
 import Skills from './Skills'
 import Skils from '../Skills_Endorsements'
 import Activity from './Activity'
+import BasicInfo from './basicInfo'
 
 import Jumbotron from '../Jumbotron';
 import {Col, Row,Image,ListGroup,Card} from 'react-bootstrap';
@@ -57,6 +58,7 @@ this.setState({person:data[7], loading:false})
                         <Col md={8} style={{backgroundColor: "transparent"}}>
                             <Jumbotron/>
                             <Strength />
+                            <BasicInfo />
                             <About />
                             <Activity />
                            

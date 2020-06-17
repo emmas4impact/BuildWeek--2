@@ -3,8 +3,8 @@ import {Jumbotron, Container, Row, Col, Image} from 'react-bootstrap'
 import { FaPlus, FaPen, FaAlignJustify } from "react-icons/fa";
 
 
-const username="user29";
-const password="w4X9FKLNUDSXwzYu";
+const username="user9";
+const password="sP4YMKhBpqQHAPJN";
 
 
 class Education extends Component {
@@ -19,7 +19,7 @@ class Education extends Component {
 
 
    componentDidMount=async()=>{
-const url="https://striveschool.herokuapp.com/api/profile/";
+const url="https://striveschool.herokuapp.com/api/profile/user9/experiences";
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({
@@ -29,7 +29,7 @@ const response= await fetch(url,{
 })
 const data= await response.json();
 console.log(data);
-this.setState({person:data[24], loading:false})
+this.setState({person:data, loading:false})
 }
     render() {
         return (
@@ -45,10 +45,10 @@ this.setState({person:data[24], loading:false})
                      <Col md={10}>
                      
                      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.title}</div>
-      <div>{this.state.person.email}</div></div>)}
-      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div> {this.state.person.title}</div>
-      <div>{this.state.person.email}</div></div>)}
-                     
+                        <div>{this.state.person.email}</div></div>)}
+                        {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div> {this.state.person.title}</div>
+                        <div>{this.state.person.email}</div></div>)}
+                                        
                      </Col>
                     
                      </Row>
