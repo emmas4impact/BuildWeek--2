@@ -28,27 +28,25 @@ class Profile extends React.Component{
     state = {
       loading:true,
        profile:null,
-       person:null,
+       person:[]
         
    };
 
 
 componentDidMount=async()=>{
+    
 const url="https://striveschool.herokuapp.com/api/profile/";
 const response= await fetch(url ,{
   method:'Get',
-  headers:new Headers({
-   'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
-  })
+  headers:headers,
 })
 const data= await response.json();
-console.log(data);
-this.setState({person:data[7], loading:false})
+console.log("data from profile",data);
+this.setState({person:data, loading:false})
 }
    
     render(){
-        
+        console.log("data from state",this.state.person);
         
         return(
             <>
@@ -73,7 +71,14 @@ this.setState({person:data[7], loading:false})
                                 <p style={{paddingTop: "5rem"}} className="d-flex flex-column">Edit public profile & URL</p>
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language</p></a>
-             <Card style={{ width: '18rem' }}>
+                            {this.state.person.map(users=>{
+                                return(
+                                    <div>
+                                        <p> {users.name} {users.surname}</p>
+                                    </div>
+                                )
+                            })}
+             {/* <Card style={{ width: '18rem' }}>
              <ListGroup variant="flush">
             <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
             <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
@@ -89,7 +94,7 @@ this.setState({person:data[7], loading:false})
             <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
             </ListGroup.Item> 
               </ListGroup>
-               </Card>
+               </Card> */}
                         </Col>
                     </Row>
                    
