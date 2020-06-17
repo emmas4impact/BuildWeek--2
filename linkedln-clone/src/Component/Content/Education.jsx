@@ -29,7 +29,7 @@ class Education extends Component {
         })
         const data= await response.json();
         console.log(data);
-        this.setState({person:data, loading:false})
+        this.setState({person:data[0], loading:false})
 }
     render() {
         console.log("EDUCATION", this.props.match.params.username)
