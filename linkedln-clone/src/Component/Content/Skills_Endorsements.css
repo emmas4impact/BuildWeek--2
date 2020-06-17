@@ -31,7 +31,6 @@
       border: none;
       background-color: white;
       
-   
   } */
   .dropdown-content{
       width: 730px !important;
@@ -55,7 +54,7 @@
   #quiz:hover{
     background-color: rgba(67, 120, 155, 0.192);
   }
-  *:focus {
+  button:focus {
     outline: 0 !important;
 }
 .avatar {

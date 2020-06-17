@@ -17,7 +17,7 @@ class NavBar extends Component {
             </Navbar.Brand>
              
               <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <FormControl type="text" placeholder="Search" className="mr-sm-2 search-bar" />
           
               </Form>
 
@@ -55,6 +55,7 @@ class NavBar extends Component {
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
                </div>  
+               <div className='vl'></div>
                <div className='navDrop'>
                 <FaColumns/>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown" title='Work'>
