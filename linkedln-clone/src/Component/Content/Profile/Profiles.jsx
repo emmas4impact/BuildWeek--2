@@ -58,7 +58,7 @@ this.setState({person:data[7], loading:false})
                         <Col md={8} style={{backgroundColor: "transparent"}}>
                             <Jumbotron/>
                             <Strength />
-                            <BasicInfo />
+                            
                             <About />
                             <Activity />
                            
