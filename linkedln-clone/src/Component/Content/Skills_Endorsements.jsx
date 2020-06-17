@@ -40,8 +40,8 @@ class Skills_Endorsements extends Component {
                     
                     <Accordion defaultActiveKey="0" >
                         <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0" className="text-center">
-                            See more <FaChevronDown />
+                            <Accordion.Toggle as={Card.Header} eventKey="0" className="text-center" style={{backgroundColor: "#e6f7ff", textDecoration: 'none'}}><Link to="/me" style={{ textDecoration: 'none'}}>
+                            See more <FaChevronDown /></Link>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
                             <Card.Body>
