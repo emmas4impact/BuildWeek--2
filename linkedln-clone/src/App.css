@@ -1,7 +1,14 @@
+body {
+    background-color: #F5F5F5 !important;
+}
 
 .jumbo-prof { 
     padding: 30px 10px !important;
 }
+.jumbo-prof-1 {
+    padding: 30px 30px !important;
+}
+
 .colorBlue {
     color: #006097;
     font-weight: 600;

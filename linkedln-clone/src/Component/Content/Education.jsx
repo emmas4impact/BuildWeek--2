@@ -33,13 +33,13 @@ this.setState({person:data, loading:false})
 }
     render() {
         return (
-        <Row >
-            <Col md={8}>
-                <Jumbotron style={{backgroundColor: "White"}}>
+        <Row>
+            <Col md={8} >
+                <Jumbotron style={{backgroundColor: "White"}} className='box jumbo-prof-1'>
                 <Row>
-                        <Col md={2}>
-                     <h4 className="mb-3">Experience</h4>
-                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "60px"}}/></div></div>)}
+                        <Col md={2} >
+                     <h4>Experience</h4>
+                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "0px"}}/></div></div>)}
                      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "60px", marginTop: "10px"}}/></div></div>)}
                      </Col>
                      <Col md={10}>
@@ -56,7 +56,7 @@ this.setState({person:data, loading:false})
                      <hr></hr>
                     <Row>
                         <Col md={2}>
-                     <h4 >Education</h4>
+                     <h4 style={{fontSize: '13px', fontWeight: '600'}}>Education</h4>
                      <img src="https://strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "50px"}}></img>
                      
                      </Col>
@@ -76,7 +76,7 @@ this.setState({person:data, loading:false})
 
                     <Row>
                         <Col md={2}>
-                     <h4 >Licenses&Certifications</h4>
+                     <h4 style={{fontSize: '13px',  fontWeight: '600'}}>Licenses&Certifications</h4>
                      <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "50px"}}></img>
                      </Col>
                      <Col md={10}>

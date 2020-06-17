@@ -29,10 +29,10 @@ this.setState({person:data[6], loading:false})
 }
 render(){
  return(
-    <Jumbotron fluid>
-    <Container style={{padding: '0'}}>
+    <Jumbotron fluid className='box'>
+    <Container style={{padding: '0'}} className='ommit '>
      <>
-      <Card style={{position: 'relative'}}>
+      <Card style={{position: 'relative'}} style={{border: 'none'}}>
         <Card.Img variant="top" src="./jumboCover.jpeg" />
         <Card.Body>
           
