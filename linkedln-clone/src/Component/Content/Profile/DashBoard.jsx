@@ -12,13 +12,13 @@ const dashBoard=(props) =>{
                     <i>Private to you</i>
                     <ListGroup horizontal fluid> 
                         <ListGroup.Item>
-                            <p className='numb'>{props.match.params.username.length}</p>
+                            <p className='numb'>0</p>
                             Who viewed your profile</ListGroup.Item>
                         <ListGroup.Item>
                         <p className='numb'>0</p>
                         Articles </ListGroup.Item>
                         <ListGroup.Item>
-                        <p className='numb'>{props.match.params.username.length}</p>
+                        <p className='numb'>0</p>
                         Search apprearances</ListGroup.Item>
                         
                     </ListGroup>
