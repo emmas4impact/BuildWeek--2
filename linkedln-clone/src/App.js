@@ -13,12 +13,14 @@ class App extends React.Component {
       
       <Router>
         <NavBar />
-        <Content />
+        <Route path="/me" exact component={Content} />
+        
         <Footer />
+      
       </Router>
     )
     
-  }
-}
 
+    }
+  }
 export default App;

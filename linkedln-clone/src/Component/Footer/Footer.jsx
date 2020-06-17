@@ -53,6 +53,15 @@ const Footer = () => {
                   Select Language
                   <select>
                       <option>English language</option>
+                      <option>Italiano(Italiano)</option>
+                      <option>Deutsch(German)</option>
+                      <option>Svenska(Swedish)</option>
+                      <option>Suomi (Finnish)</option>
+                      <option>Netherland (Dutch)</option>
+                      <option>Pyccknn(Russian)</option>
+                      <option>Portuguese</option>
+                      <option>Polki(Polish)</option>
+                      <option>Norsk (Norwegian) </option>
                   </select>
               </div>
           </div>

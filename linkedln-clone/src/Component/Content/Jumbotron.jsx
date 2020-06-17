@@ -25,7 +25,7 @@ const response= await fetch(url,{
 })
 const data= await response.json();
 console.log(data);
-this.setState({person:data[24], loading:false})
+this.setState({person:data[6], loading:false})
 }
 render(){
  return(
@@ -33,7 +33,7 @@ render(){
     <Container>
      <>
       <Card>
-        <Card.Img variant="top" src="./linkedpic.jpg" />
+        <Card.Img variant="top" src="./jumboCover.jpeg" />
         <Card.Body>
           
           <Card.Text>
