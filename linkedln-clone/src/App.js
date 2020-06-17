@@ -61,7 +61,7 @@ class App extends React.Component {
             <Dropdown.Item key={i} href={"/" + user.username}><Image src="{user.image}"/> {user.name } {user.surname} - {user.bio}</Dropdown.Item>
                 )
               :
-              <Dropdown.Item href="#/action-1">No user found</Dropdown.Item>
+              <Dropdown.Item href="/">No user found</Dropdown.Item>
             }
             />
             <Route path="/:username" component={Content} />

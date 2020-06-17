@@ -6,9 +6,9 @@ import DashBoard from './DashBoard'
 import Strength from './Strength'
 import About from './About'
 import Skills from './Skills'
-import Skils from '../Skills_Endorsements'
+import {Link, withRouter} from 'react-router-dom'
 import Activity from './Activity'
-import BasicInfo from './basicInfo'
+
 
 import Jumbotron from '../Jumbotron';
 import {Col, Row,Image,ListGroup,Card} from 'react-bootstrap';
@@ -74,27 +74,11 @@ this.setState({person:data, loading:false})
                             {this.state.person.map((users, i)=>{
                                 return(
                                     <div key={i}>
-                                        <p> {users.name} {users.surname}</p>
+                                    <Link to={"/"+ this.props.match.params.username} >    <p> {users.name} {users.surname}</p></Link>
                                     </div>
                                 )
                             })}
-             {/* <Card style={{ width: '18rem' }}>
-             <ListGroup variant="flush">
-            <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
-            <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
-            </ListGroup.Item> 
-              </ListGroup>
-              <ListGroup variant="flush">
-            <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
-            <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
-            </ListGroup.Item> 
-              </ListGroup>
-              <ListGroup variant="flush">
-            <ListGroup.Item>   {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} roundedCircle style={{width: "60px"}}/></div><div> {this.state.person.id}</div>
-            <div>{this.state.person.bio}</div><div>{this.state.person.name}</div><div>{this.state.person.email}</div></div>)}
-            </ListGroup.Item> 
-              </ListGroup>
-               </Card> */}
+            
                         </Col>
                     </Row>
                    
@@ -105,4 +89,4 @@ this.setState({person:data, loading:false})
     
 }
 
-export default Profile;
+export default withRouter(Profile);
