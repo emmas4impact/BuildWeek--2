@@ -10,6 +10,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Skills_Endorsements.css'
 class Skills_Endorsements extends Component {
     render() {
+        const mystyle = {
+           color: '#1a75ff',
+            marginRight: "10px",
+            fontSize: "20px"
+          };
         return (<>
          
           
@@ -20,11 +25,11 @@ class Skills_Endorsements extends Component {
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>
                        <Button id="quiz">Take Skill quiz</Button>   
-                       <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link>Full-Stack Development</h6>
+                       <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link>Full-Stack Development</h6>
                        <hr></hr>
-                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Back-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Back-End Development</h6>
                        <hr></hr>
-                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Front-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Front-End Development</h6>
                        <hr></hr>
                        <p></p>
                        <p></p>
@@ -47,21 +52,21 @@ class Skills_Endorsements extends Component {
                                     <Col md={6}>
                                         
                                 <ul > 
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Java Script</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> React JS</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Node JS</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> HTML</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> CSS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> CSS</li>
                                     
                                 </ul>
                                 </Col>
                                 <Col md={6} >
                                 <ul > 
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Java Script</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> React JS</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Node JS</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> HTML</li>
-                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> CSS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> CSS</li>
                                     
                                 </ul>
                                 </Col>
@@ -71,7 +76,7 @@ class Skills_Endorsements extends Component {
                                 <Row>
                                      <Col md={12}>
                                         <ul > 
-                                          <li><FaPlusCircle size="20px" /> English</li>
+                                          <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> English</li>
                                            
                                         </ul>
                                       </Col>
@@ -81,14 +86,14 @@ class Skills_Endorsements extends Component {
                                 <Row>
                                 <Col md={6}>
                                         <ul > 
-                                            <li><FaPlusCircle size="20px" /> Gulp</li>
-                                            <li><FaPlusCircle size="20px" /> Animation.css</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Gulp</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Animation.css</li>
                                            
                                         </ul>
                                         </Col>
                                         <Col md={6} >
                                         <ul > 
-                                            <li><FaPlusCircle size="20px" /> Modernizer.js</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Modernizer.js</li>
                                             
                                         </ul>
                                         </Col>
