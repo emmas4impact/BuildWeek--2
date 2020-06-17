@@ -9,13 +9,15 @@ import {Container} from 'react-bootstrap'
 class Content extends Component{
     
     render(){
+        
+        console.log('CONTENT PROPS', this.props)
         return(
             <>
             <Container>
             <div style={{backgroundColor: "transparent"}}>
             
-            <Profile />
-            <Education />
+            <Profile {...this.props}/>
+            <Education {...this.props} />
             <Skils />
             
             
