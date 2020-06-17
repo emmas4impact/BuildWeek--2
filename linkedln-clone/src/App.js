@@ -59,7 +59,7 @@ class App extends React.Component {
               this.state.data
                 .filter(user => user.name.toLowerCase().startsWith(this.state.search.toLowerCase()) )
                 .map((user, i) =>
-            <Dropdown.Item key={i} href={"/" + user.username}><Image src="{user.image}"/> {user.name } {user.surname} - {user.bio}</Dropdown.Item>
+            <Dropdown.Item key={i} href={"/" + user.username}><Image src={user.image}/> {user.name } {user.surname} - {user.bio}</Dropdown.Item>
                 )
               :
               <Dropdown.Item href="/">No user found</Dropdown.Item>
