@@ -8,7 +8,7 @@ const dashBoard=(props) =>{
         <>
          <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
              <Container>
-                <h4> Your Dashboard <span style={{padding: "30rem"}}><MdStarBorder /></span></h4>
+                <h4 style={{display: 'flex', justifyContent: 'space-between'}}> Your Dashboard <span><MdStarBorder /></span></h4>
                     <small>private to you</small>
                     <ListGroup horizontal fluid> 
                         <ListGroup.Item>Who viewed your profile</ListGroup.Item>
