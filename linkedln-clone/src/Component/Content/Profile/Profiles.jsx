@@ -14,8 +14,8 @@ import {Col, Row,Image,ListGroup,Card} from 'react-bootstrap';
 
 const url ="https://striveschool.herokuapp.com/api/profile/"
 
-const username ='user22'
-const password = 'ykeZdCYNLs2dqbMc'
+const username ='user29'
+const password = 'w4X9FKLNUDSXwzYu'
 const headers =new Headers({
     "Content-Type" : "application/json",
     'Authorization': 'Basic ' + btoa(username + ":" + password),
@@ -34,7 +34,7 @@ class Profile extends React.Component{
 
 componentDidMount=async()=>{
 const url="https://striveschool.herokuapp.com/api/profile/";
-const response= await fetch(url,{
+const response= await fetch(url ,{
   method:'Get',
   headers:new Headers({
    'Content-type':'applicationCache/json', 
@@ -43,7 +43,7 @@ const response= await fetch(url,{
 })
 const data= await response.json();
 console.log(data);
-this.setState({person:data[6], loading:false})
+this.setState({person:data[7], loading:false})
 }
    
     render(){
