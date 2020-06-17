@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FaPlusCircle, FaChevronDown } from 'react-icons/fa';
 import Accordion from 'react-bootstrap/Accordion';
 import {Row, Col, Button, Card} from 'react-bootstrap'
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 import './Skills_Endorsements.css'
 class Skills_Endorsements extends Component {
@@ -16,11 +20,11 @@ class Skills_Endorsements extends Component {
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>
                        <Button id="quiz">Take Skill quiz</Button>   
-                       <h6 className="mt-4"><FaPlusCircle size="20px" /> Full-Stack Development</h6>
+                       <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link>Full-Stack Development</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle size="20px" /> Back-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Back-End Development</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle size="20px" /> Front-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Front-End Development</h6>
                        <hr></hr>
                        <p></p>
                        <p></p>
@@ -43,21 +47,21 @@ class Skills_Endorsements extends Component {
                                     <Col md={6}>
                                         
                                 <ul > 
-                                    <li><FaPlusCircle size="20px" /> Java Script</li>
-                                    <li><FaPlusCircle size="20px" /> React JS</li>
-                                    <li><FaPlusCircle size="20px" /> Node JS</li>
-                                    <li><FaPlusCircle size="20px" /> HTML</li>
-                                    <li><FaPlusCircle size="20px" /> CSS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> CSS</li>
                                     
                                 </ul>
                                 </Col>
                                 <Col md={6} >
                                 <ul > 
-                                    <li><FaPlusCircle size="20px" /> Java Script</li>
-                                    <li><FaPlusCircle size="20px" /> React JS</li>
-                                    <li><FaPlusCircle size="20px" /> Node JS</li>
-                                    <li><FaPlusCircle size="20px" /> HTML</li>
-                                    <li><FaPlusCircle size="20px" /> CSS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  color={'#1a75ff'} style={{marginRight: "10px"}}/></Link> CSS</li>
                                     
                                 </ul>
                                 </Col>
