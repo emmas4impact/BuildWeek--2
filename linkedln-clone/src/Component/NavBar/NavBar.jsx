@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import { Link, Route } from 'react-router-dom';
 import './NavBar.css';
 import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing, FaBell, FaColumns, FaCircle } from 'react-icons/fa';
 
@@ -10,7 +11,7 @@ class NavBar extends Component {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-                <FaLinkedin  className='linkedIn'/>
+             <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "40px", borderRadius: "5px"}}></img>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>

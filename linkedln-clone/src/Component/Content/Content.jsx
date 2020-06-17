@@ -12,7 +12,7 @@ class Content extends Component{
         return(
             <>
             <Container>
-            <div style={{backgroundColor: "whitesmoke"}}>
+            <div style={{backgroundColor: "transparent"}}>
             
             <Profile />
             <Education />

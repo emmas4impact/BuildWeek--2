@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaPlusCircle, FaChevronDown } from 'react-icons/fa';
-
-import {Row, Col, Button} from 'react-bootstrap'
+import Accordion from 'react-bootstrap/Accordion';
+import {Row, Col, Button, Card} from 'react-bootstrap'
 
 import './Skills_Endorsements.css'
 class Skills_Endorsements extends Component {
@@ -24,6 +24,27 @@ class Skills_Endorsements extends Component {
                        <hr></hr>
                        <p></p>
                        <p></p>
+                       <Accordion defaultActiveKey="0">
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            See more...
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+                                <ul> 
+                                    <li> Web Service developer</li>
+                                    <li>Web Services API</li>
+                                    <li>Algorithms and Data Structure</li>
+                                    <li>Software Developer</li>
+                                    <li>Automation Tester</li>
+                                    <li> backend developer.</li>
+                                
+                                </ul>
+                             </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        
+                    </Accordion>
                     </div>
                     
                   
