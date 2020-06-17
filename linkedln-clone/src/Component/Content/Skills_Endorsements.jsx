@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FaPlusCircle, FaChevronDown } from 'react-icons/fa';
 import Accordion from 'react-bootstrap/Accordion';
 import {Row, Col, Button, Card} from 'react-bootstrap'
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 import './Skills_Endorsements.css'
 class Skills_Endorsements extends Component {
     render() {
+        const mystyle = {
+           color: '#1a75ff',
+            marginRight: "10px",
+            fontSize: "20px"
+          };
         return (<>
          
           
@@ -16,11 +25,11 @@ class Skills_Endorsements extends Component {
                     <div class="card-body">
                        <h4>Skills&Endorsements</h4>
                        <Button id="quiz">Take Skill quiz</Button>   
-                       <h6 className="mt-4"><FaPlusCircle size="20px" /> Full-Stack Development</h6>
+                       <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link>Full-Stack Development</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle size="20px" /> Back-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Back-End Development</h6>
                        <hr></hr>
-                       <h6><FaPlusCircle size="20px" /> Front-End Development</h6>
+                       <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Front-End Development</h6>
                        <hr></hr>
                        <p></p>
                        <p></p>
@@ -31,8 +40,8 @@ class Skills_Endorsements extends Component {
                     
                     <Accordion defaultActiveKey="0" >
                         <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey="0" className="text-center">
-                            See more <FaChevronDown />
+                            <Accordion.Toggle as={Card.Header} eventKey="0" className="text-center" style={{backgroundColor: "#e6f7ff", textDecoration: 'none'}}><Link to="/me" style={{ textDecoration: 'none'}}>
+                            See more <FaChevronDown /></Link>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
                             <Card.Body>
@@ -43,21 +52,21 @@ class Skills_Endorsements extends Component {
                                     <Col md={6}>
                                         
                                 <ul > 
-                                    <li><FaPlusCircle size="20px" /> Java Script</li>
-                                    <li><FaPlusCircle size="20px" /> React JS</li>
-                                    <li><FaPlusCircle size="20px" /> Node JS</li>
-                                    <li><FaPlusCircle size="20px" /> HTML</li>
-                                    <li><FaPlusCircle size="20px" /> CSS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> CSS</li>
                                     
                                 </ul>
                                 </Col>
                                 <Col md={6} >
                                 <ul > 
-                                    <li><FaPlusCircle size="20px" /> Java Script</li>
-                                    <li><FaPlusCircle size="20px" /> React JS</li>
-                                    <li><FaPlusCircle size="20px" /> Node JS</li>
-                                    <li><FaPlusCircle size="20px" /> HTML</li>
-                                    <li><FaPlusCircle size="20px" /> CSS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Java Script</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> React JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Node JS</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> HTML</li>
+                                    <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> CSS</li>
                                     
                                 </ul>
                                 </Col>
@@ -67,7 +76,7 @@ class Skills_Endorsements extends Component {
                                 <Row>
                                      <Col md={12}>
                                         <ul > 
-                                          <li><FaPlusCircle size="20px" /> English</li>
+                                          <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> English</li>
                                            
                                         </ul>
                                       </Col>
@@ -77,14 +86,14 @@ class Skills_Endorsements extends Component {
                                 <Row>
                                 <Col md={6}>
                                         <ul > 
-                                            <li><FaPlusCircle size="20px" /> Gulp</li>
-                                            <li><FaPlusCircle size="20px" /> Animation.css</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Gulp</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Animation.css</li>
                                            
                                         </ul>
                                         </Col>
                                         <Col md={6} >
                                         <ul > 
-                                            <li><FaPlusCircle size="20px" /> Modernizer.js</li>
+                                            <li><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Modernizer.js</li>
                                             
                                         </ul>
                                         </Col>
