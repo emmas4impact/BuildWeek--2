@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown, Form, FormControl, Button, Dropdown} from 'react-bootstrap';
 import { Link, Route } from 'react-router-dom';
 import './NavBar.css';
 import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing, FaBell, FaColumns, FaCircle } from 'react-icons/fa';
@@ -15,9 +15,14 @@ class NavBar extends Component {
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
-             
+            <Dropdown show={this.props.status} className="mt-5">
+                        <Dropdown.Menu>
+                          
+                            {this.props.users}
+                        </Dropdown.Menu>
+               </Dropdown>
               <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <FormControl onChange={(e) => this.props.search(e.currentTarget.value)}  type="text" placeholder="Search" className="mr-sm-2" />
           
               </Form>
 
