@@ -11,7 +11,7 @@ class Education extends Component {
     state = {
         loading:true,
          profile:null,
-         person:null,
+         person:[],
           
      };
 
@@ -19,19 +19,20 @@ class Education extends Component {
 
 
    componentDidMount=async()=>{
-const url="https://striveschool.herokuapp.com/api/profile/"+ this.props.match.params.username+"/experiences";
-const response= await fetch(url,{
-  method:'Get',
-  headers:new Headers({
-   'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
-  })
-})
-const data= await response.json();
-console.log(data);
-this.setState({person:data[0], loading:false})
+        const url="https://striveschool.herokuapp.com/api/profile/"+this.props.match.params.username+"/experiences";
+        const response= await fetch(url,{
+        method:'Get',
+        headers:new Headers({
+        'Content-type':'applicationCache/json', 
+        'Authorization':'Basic ' + btoa(username + ':' + password)
+        })
+        })
+        const data= await response.json();
+        console.log(data);
+        this.setState({person:data, loading:false})
 }
     render() {
+        console.log("EDUCATION", this.props.match.params.username)
         return (
         <Row>
             <Col md={8} >

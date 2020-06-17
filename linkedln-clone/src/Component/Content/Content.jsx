@@ -16,10 +16,10 @@ class Content extends Component{
             <Container>
             <div style={{backgroundColor: "transparent"}}>
             
-            <Profile {...this.props}/>
-            <Education {...this.props} />
-            <Skils />
-            
+                <Profile {...this.props}/>
+                <Education {...this.props} />
+                <Skils />
+                
             
             </div>
             </Container>
