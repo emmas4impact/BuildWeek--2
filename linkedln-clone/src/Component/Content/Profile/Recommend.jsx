@@ -6,44 +6,34 @@ const Recommend=(props) =>{
     
     return(
         <>
-            <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
+            <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof">
              <Container>
                                     
-                  <Row>
+                  <Row className='rec'>
                                        
                               <Col sm={3}>
                                             <h6>Recommendations</h6>
                             </Col>
-                                            <Col sm={2}>
                                             
-                                            </Col>
-                                            <Col sm={4}>
-                                            <h6 >Ask for a Recommendations</h6>
+                                            <Col sm={6}>
+                                            <h6>Ask for a Recommendations</h6>
                                             
                                             </Col>
                                             <Col sm={3}>
-                                            <h6 className="ml-3">Recommend Person</h6>
+                                            <button className='recommend-btn'>Recommend</button>
                                             </Col>
                                             </Row>
 
-                                        <Row>
+                                        <Row className='mt-2'>
                                        
-                                       <Col sm={3}>
-                                       <a href="/" className="mr-5">Received</a>
-                                       <a href="/">Given</a>
+                                       <Col sm={12} >
+                                       <a href="/" className='small-reccomend mr-3 grey'>Received (0)</a>
+                                    
                                        
+                                       <a href="/" className='small-reccomend underl' style={{color: '#006097'}}>Given (0)</a>
                                        </Col>
-                                       <Col sm={2}>
+                                   
                                        
-                                       </Col>
-                                       <Col sm={4}>
-                                       
-                                       
-                                       </Col>
-                                       <Col sm={3}>
-                                      
-                                       </Col>
-                                      
                                        </Row>
                                        <hr></hr>
                                        <Row>
@@ -57,8 +47,8 @@ const Recommend=(props) =>{
                                        <Col sm={2}>
                                          
                                            
-                                          <p>Jane Doe</p>
-                                          <p>Web Developer</p>
+                                          <p style={{fontWeight: '600'}}>Jane Doe</p>
+                                          <p style={{fontSize: '14px'}}>Web Developer</p>
                                             
                                        </Col>
                                        

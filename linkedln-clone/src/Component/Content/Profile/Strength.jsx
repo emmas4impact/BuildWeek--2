@@ -7,7 +7,7 @@ const Strength =(props) =>{
     
     return(
         
-         <Jumbotron fluid style={{backgroundColor: "white", paddingLeft: "3"}} className="shadow">
+         <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof">
              <Container>
                 <h5>Strengthen your profile</h5>
                     <p>

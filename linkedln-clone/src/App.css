@@ -1,1 +1,46 @@
 
+.jumbo-prof { 
+    padding: 30px 10px !important;
+}
+.colorBlue {
+    color: #006097;
+    font-weight: 600;
+}
+.back-blue {
+    background-color:#F3F6F8 !important;
+}
+.numb {
+    font-size: 30px;
+    color: #006097;
+}
+.recommend-btn {
+    border: 1px solid #006097;
+    border-radius: 2px;
+    padding: 2px 30px;
+    color: #006097;
+    font-weight: 600;
+}
+.rec {
+    display: flex;
+    align-items: center;
+
+}
+.small-reccomend {
+    font-size: 13px;
+    font-weight: 700;
+ 
+ 
+}
+.grey {
+    color: #414141;
+}
+.underl {
+    border-bottom: 2px solid #006097;
+    padding-bottom: 19px;
+}
+.small-reccomend:hover {
+    border-bottom: 2px solid #006097;
+    padding-bottom: 19px;
+    text-decoration: none;
+    color: #006097;
+}

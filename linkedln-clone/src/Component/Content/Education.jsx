@@ -35,7 +35,7 @@ this.setState({person:data, loading:false})
         return (
         <Row >
             <Col md={8}>
-                <Jumbotron className="shadow" style={{backgroundColor: "White"}}>
+                <Jumbotron style={{backgroundColor: "White"}}>
                 <Row>
                         <Col md={2}>
                      <h4 className="mb-3">Experience</h4>

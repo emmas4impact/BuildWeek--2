@@ -5,7 +5,7 @@ const Accomplish=(props) =>{
     
     return(
         <>
-         <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
+         <Jumbotron fluid style={{backgroundColor: "white"}} className="box">
              <Container>
                 <h4>Accomplishment</h4>
                     <p>

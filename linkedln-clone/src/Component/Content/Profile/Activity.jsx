@@ -5,7 +5,7 @@ const Activity=(props) =>{
     
     return(
         <>
-         <Jumbotron fluid style={{backgroundColor: "white"}} className="shadow">
+         <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof">
              <Container>
                 <h4>Activity</h4>
                     <p>
