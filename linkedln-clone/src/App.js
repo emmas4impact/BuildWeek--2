@@ -13,15 +13,10 @@ class App extends React.Component {
       
       <Router>
         <NavBar />
-<<<<<<< HEAD
-        <Content />
-        <Footer />
-=======
         <Route path="/me" exact component={Content} />
         
         <Footer />
       
->>>>>>> 7d2e1fc95455b4791ed07a3f78fc50ba60b6f590
       </Router>
     )
     
