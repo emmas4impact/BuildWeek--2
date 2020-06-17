@@ -44,10 +44,6 @@ render(){
         </Card.Body>
       </Card>
     </>
- 
-   
- <p>this is the personal detail of each individual from linkedin
-      </p>
     </Container>
   </Jumbotron>
  )   

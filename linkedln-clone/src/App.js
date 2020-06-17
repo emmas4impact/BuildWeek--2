@@ -14,7 +14,7 @@ class App extends React.Component {
       <Router>
         <NavBar />
         <Route path="/me" exact component={Content} />
-        <Content />
+    
         <Footer />
       
       </Router>
