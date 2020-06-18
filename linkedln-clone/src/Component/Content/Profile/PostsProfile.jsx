@@ -3,7 +3,7 @@ import { Router, withRouter} from 'react-router-dom';
 import  { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 
-import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaPenFancy, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
+import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
 class PostsProfile extends Component {
     render() {
         return (
@@ -94,7 +94,7 @@ class PostsProfile extends Component {
                                <Card>
                                    <Card.Body>
                                       <div className='row'>
-                                          <div className='col-8' style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                          <div className='col-8' style={{display: 'flex', justifyContent: 'flex-start'}}>
                                               <img className='mr-3' style={{width: '40px', height: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQG_9XYxosKCoA/company-logo_100_100/0?e=1600300800&v=beta&t=T65Ow--w87wk6t7oEmqRaEJw9mnWSttAdLUXk8kRl0c'/>
                                               
                                               <p style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}> Swiss Re
@@ -102,7 +102,7 @@ class PostsProfile extends Component {
                                               <small>Promoted</small>
                                               </p>
                                           </div>
-                                          <div className='col-4'>+ Follow  ...</div>
+                                          <div className='col-4 text-right' style={{fontWeight: '700'}}> ...</div>
                                       </div>
                                
 
@@ -118,10 +118,10 @@ class PostsProfile extends Component {
                                       7 comments
                                   </Card.Body>
                                   <hr></hr>
-                                  <Card.Body>
-                                      <button className='btn-upload'>Like</button>
-                                      <button className='btn-upload'><FaComment/>Comment</button>
-                                      <button className='btn-upload'><FaShare/>Share</button>
+                                  <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
+                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
                                   </Card.Body>
                                
                                </Card>
@@ -133,7 +133,7 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body>
-                                        <p>Add to you feed <FaInfo/></p>
+                                        <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <FaInfo style={{borderRadius: '50%', border: '2px solid #000'}}/></p>
                                         <div className='row'>
                                             <div className='col-8'>
                                             <img style={{width: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQEp-f9Ptu2yVQ/company-logo_100_100/0?e=1600300800&v=beta&t=2HSHzaHWsG78UrBpttEI1UJQmRoxg-a1GttC1shzr1U'/>
