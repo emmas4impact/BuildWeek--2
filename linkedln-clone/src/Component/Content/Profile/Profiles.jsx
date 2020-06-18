@@ -60,7 +60,7 @@ this.setState({person:data, loading:false})
                             <About />
                             <Activity />
                            
-                            <DashBoard />
+                            <DashBoard {...this.props}/>
                             <Skills />
                             <Recommendation />
                             <Accomplishment />
