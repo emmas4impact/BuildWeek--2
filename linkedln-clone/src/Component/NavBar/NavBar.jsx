@@ -14,6 +14,7 @@ class NavBar extends Component {
 componentDidMount = () => {
     const url = "https://striveschool.herokuapp.com/api/profile/";
     const user = this.props.location.pathname.split('/').pop()
+  
 
     console.log('FROM ROUTER PROPS', user)
 
