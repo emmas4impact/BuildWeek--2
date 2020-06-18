@@ -136,23 +136,19 @@ class PostsProfile extends Component {
                                     <Card.Body>
                                         <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <FaInfo style={{borderRadius: '50%', border: '2px solid #000'}}/></p>
                                         <div className='row'>
-                                            <div className='col-8'>
-                                            <img style={{width: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQEp-f9Ptu2yVQ/company-logo_100_100/0?e=1600300800&v=beta&t=2HSHzaHWsG78UrBpttEI1UJQmRoxg-a1GttC1shzr1U'/>
-                                            <h6>The New York Times</h6>
-                                            <small>Company <FaDotCircle /> Newspapers</small>
+                                            <div className='col-8' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
+                                                <img style={{width: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQEp-f9Ptu2yVQ/company-logo_100_100/0?e=1600300800&v=beta&t=2HSHzaHWsG78UrBpttEI1UJQmRoxg-a1GttC1shzr1U'/>
+                                                <h6 className='ml-1' style={{fontSize: '12px'}}>The New York Times</h6>
+                                        
                                             </div>
                                             <div className='col-4'>
-                                              <button>Follow</button>  
+                                              <button style={{border: '1px solid rgb(0, 115, 177)', borderRadius: '2px', color: 'rgb(0, 115, 177)'}}>Follow</button>  
                                             </div>
                                         </div>
                                         <div className='row'>
-                                            <div className='col-8'></div>
-                                            <div className='col-4'></div>
-                                        </div>
-                                      
-                                     
-                                        
-                                        <p>View all recommndations</p>
+                                            <div className='col-12 pt-3'> <small style={{color: 'rgb(0, 115, 177)', fontWeight: '700'}}>View all recommndations</small></div>
+                                        </div>                          
+                                       
                                     </Card.Body>
                                 </Card>
                             </div>
