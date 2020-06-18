@@ -9,7 +9,7 @@ class Jumbotrons extends React.Component{
     state = {
       loading: true,
        profile: null,
-       person: null,
+       person: [],
         
    };
 
@@ -33,7 +33,7 @@ render(){
     <Container style={{padding: '0'}} className='ommit '>
     
       <Card style={{position: 'relative'}} style={{border: 'none'}}>
-        <Card.Img variant="top" src="./jumboCover.jpeg" />
+        <Card.Img variant="top" src="/jumboCover.jpeg" />
         <Card.Body>
         <Card.Text>
           {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image className='img-jumbo' src={this.state.person.image}/></div><div> {this.state.person.id}</div>
