@@ -94,9 +94,10 @@ this.setState({person:data, loading:false})
                                         
                                          </Col>
                                          </Row>
-                                        
+                                         <hr></hr>
                                          
                                          </Col>
+                                         
                                         
                                          </Row>
                                          </Link>
