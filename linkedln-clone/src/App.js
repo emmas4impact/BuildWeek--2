@@ -66,7 +66,7 @@ class App extends React.Component {
               <Dropdown.Item href="/">No user found</Dropdown.Item>
             }
             />
-            <Route path="/:username" component={Content} />
+            <Route path="/profile/:username" component={Content} />
             <Route path='/postsprofile' component={PostsProfile} />
             <Footer />
           
