@@ -88,5 +88,4 @@ this.setState({person:data, loading:false})
     }
     
 }
-
 export default withRouter(Profile);
