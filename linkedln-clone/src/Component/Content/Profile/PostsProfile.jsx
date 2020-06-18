@@ -1,11 +1,36 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
-import  { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import  { Card, ListGroup, ListGroupItem, Form } from 'react-bootstrap';
 
 import { FaPersonBooth, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaPenFancy, FaInfo, FaDotCircle } from 'react-icons/fa';
 class PostsProfile extends Component {
+    state= {
+        post: []
+    }
+    
+    componentDidMount=async()=>{
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/" 
+        const response= await fetch(url,{
+          method:'Get',
+          headers:new Headers({
+           'Content-type':'applicationCache/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        const data= await response.json();
+        console.log(data);
+        
+        this.setState({
+            post:data, 
+            
+        })
+        }
+    
+    
     render() {
-        console.log(this.props)
+        console.log("from post profile",this.state.post)
         return (
             <div className='container'>
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
@@ -79,6 +104,7 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body style={{display: 'flex', justifyContent: 'space-between'}}>
+                                        <Form.Control as="textarea"  />
                                         <p><FaPenFancy className='mr-2'/> Start a post</p>
                                         <div>
                                             <button className='btn-upload'><FaCamera /></button>
