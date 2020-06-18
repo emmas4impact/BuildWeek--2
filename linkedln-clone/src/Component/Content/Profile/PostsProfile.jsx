@@ -30,6 +30,7 @@ class PostsProfile extends Component {
         })
         }
     postStatus =()=>{
+        
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
         const url="https://striveschool.herokuapp.com/api/posts/"
@@ -48,7 +49,9 @@ class PostsProfile extends Component {
             newPost:data, 
             
         })
-        }
+        
+        
+    }
     
     
     
