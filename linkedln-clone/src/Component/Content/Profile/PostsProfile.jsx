@@ -1,11 +1,60 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
-import  { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import  { Card, ListGroup, ListGroupItem, Form , Row, Col} from 'react-bootstrap';
 
 
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
 class PostsProfile extends Component {
+    state= {
+        post: [],
+        newPost: []
+    }
+    
+    componentDidMount=async()=>{
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/" 
+        const response= await fetch(url,{
+          method:'Get',
+          headers:new Headers({
+           'Content-type':'applicationCache/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        const data= await response.json();
+        console.log(data);
+        
+        this.setState({
+            post:data, 
+            
+        })
+        }
+    postStatus =()=>{
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/"
+        const response= fetch(url,{
+          method:'POST',
+          headers:new Headers({
+           'Content-type':'applicationCache/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        
+        const data= response.json();
+        console.log(data);
+        
+        this.setState({
+            newPost:data, 
+            
+        })
+        }
+    
+    
+    
     render() {
+        console.log("from post profile",this.state.post)
+        console.log("from props profile",this.props)
         return (
             <div className='container'>
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
@@ -126,8 +175,28 @@ class PostsProfile extends Component {
                                   </Card.Body>
                                
                                </Card>
+                              
                             </div>
                         </div>
+                        <Row>
+                            <Col>
+                            {this.state.post.map((user, i)=>{
+                                return(
+                                    <Card body key={i}>
+                                    <p><img src={user.user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.user.name}</p>
+                                    <p>{user.text}</p>
+                                    <button className='btn-upload'>Like</button>
+                                      <button className='btn-upload'><FaComment/>Comment</button>
+                                      <button className='btn-upload'><FaShare/>Share</button>
+                                    </Card>
+                                )
+                                
+                                
+                            })}
+                           
+                            </Col>
+                               
+                        </Row>
                     </div>
                     <div className='col-3'>
                     <div className='row'>

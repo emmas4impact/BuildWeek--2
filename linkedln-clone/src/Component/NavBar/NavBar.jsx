@@ -1,18 +1,47 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown, Form, FormControl, Button, Dropdown} from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown, Form, FormControl, Button, Dropdown, Col, Image, Row} from 'react-bootstrap';
 import { Link, Route } from 'react-router-dom';
 import './NavBar.css';
 import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing, FaBell, FaColumns, FaCircle } from 'react-icons/fa';
 
 
 class NavBar extends Component {
+  state = {
+    users: []
+}
+
+componentDidMount = () => {
+    const url = "https://striveschool.herokuapp.com/api/profile/";
+
+    const username = 'user19';
+    const password = 'Hxx8R4wZfCANamrj';
+
+    const headers = new Headers();
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+    fetch(url, {
+        method: "GET",
+        headers: headers,
+    })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((users) => {
+            this.setState({ users })
+        })
+}
     render() {
+      console.log("Nav props", +this.props.users)
         return (
           <>
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/me"> <img  src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href="/postsprofile"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
@@ -52,9 +81,40 @@ class NavBar extends Component {
                      <FaBell />
                     
                     Notifications</Nav.Link>
+
+            
+
                 <div className='navDrop'>  
-                  <FaCircle />
-                <NavDropdown className='text-white' title="Dropdown" id="basic-nav-dropdown" title='Me'>
+                  
+
+                {this.state.users.slice(22, 23).map((user, i) => {
+                    return (
+                       
+                            <Col >
+                                {user.image === undefined || user.image === ''
+                                    ? <Image
+                                        src='https://cdn5.vectorstock.com/i/thumb-large/95/64/default-placeholder-businesswoman-half-length-por-vector-20889564.jpg'
+                                        style={{ width: "30px", border: "1px solid lightgray", borderRadius: "2rem" }}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                    />
+                                    : <Image
+                                        src={user.image}
+                                        style={{  width: "30px", border: "1px solid lightgray", borderRadius: "2rem" }}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                    />
+
+                                }
+                            </Col>
+                           
+                      
+                    )
+                })}
+              
+                  
+                <NavDropdown className='text-white' title="Dropdown" id="basic-nav-dropdown" title='Me' >
+                  
                   <NavDropdown.Item href="#action/3.1">My</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>

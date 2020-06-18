@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Component/NavBar/NavBar';
 import Footer from './Component/Footer/Footer'
 import PostsProfile from './Component/Content/Profile/PostsProfile';
+import Profile from '../src/Component/Content/Profile/Profiles'
 
 
 class App extends React.Component {
@@ -60,6 +61,7 @@ class App extends React.Component {
 
 
   render(){
+    console.log("from app js",this.props)
     return(
      
         <> 
@@ -81,7 +83,7 @@ class App extends React.Component {
                 this.state.users
                   .filter(user => user.name.toLowerCase().startsWith(this.state.search.toLowerCase()))
                   .map((user, i) =>
-                  <Dropdown.Item key={i} href={"/" + user.username}><img src={user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.name} {user.surname} &#9900; {user.title}</Dropdown.Item>
+                  <Dropdown.Item key={i} href={"/profile/" + user.username}><img src={user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.name} {user.surname} &#9900; {user.title}</Dropdown.Item>
                   )
 
                 :
@@ -89,9 +91,10 @@ class App extends React.Component {
 
 
               } 
-            />
+            {...this.props}/>
             <Route path="/profile/:username" component={Content} />
-            <Route path='/postsprofile' component={PostsProfile} />
+           
+            <Route path='/postsprofile' component={PostsProfile} {...this.props}/>
             <Footer />
           
       </Router>
