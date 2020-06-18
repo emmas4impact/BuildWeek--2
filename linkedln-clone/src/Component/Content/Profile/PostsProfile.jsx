@@ -5,6 +5,7 @@ import  { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { FaPersonBooth, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaPenFancy, FaInfo, FaDotCircle } from 'react-icons/fa';
 class PostsProfile extends Component {
     render() {
+        console.log(this.props)
         return (
             <div className='container'>
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
@@ -17,7 +18,7 @@ class PostsProfile extends Component {
                                     <Card.Body>
                                         
                                         <Card.Text>
-                                        <Card.Title>Welcome, NAME!</Card.Title>
+                                         <Card.Title>Welcome, </Card.Title>
                                         <smal>Update your profile</smal>
                                         </Card.Text>
                                     </Card.Body>

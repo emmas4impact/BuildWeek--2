@@ -91,7 +91,7 @@ class App extends React.Component {
               } 
             />
             <Route path="/profile/:username" component={Content} />
-            <Route path='/postsprofile' component={PostsProfile} />
+            <Route path='/postsprofile' component={PostsProfile} {...this.props}/>
             <Footer />
           
       </Router>
