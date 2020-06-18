@@ -87,7 +87,7 @@ componentDidMount = () => {
                 <div className='navDrop'>  
                   
 
-                {this.state.users.slice(11, 12).map((user, i) => {
+                {this.state.users.slice(22, 23).map((user, i) => {
                     return (
                        
                             <Col >
