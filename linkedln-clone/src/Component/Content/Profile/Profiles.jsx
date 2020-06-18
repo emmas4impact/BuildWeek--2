@@ -78,10 +78,10 @@ this.setState({person:data, loading:false})
                                           
                                     <Link to={"/"+ this.props.match.params.username} style={{ textDecoration: 'none' }} >
                                         <Row>
-                                            <Col md={4} className="mt-3 text-left">
+                                            <Col md={3} className="mt-3 text-left">
                                          <img src={users.image} style={{width: "60px", borderRadius: "40px"}}></img>
                                          </Col>
-                                         <Col md={8} className="mt-3 text-left text-dark"  >
+                                         <Col md={9} className="mt-3 text-left text-dark"  >
                                          <h6 href={"/" + users.username}> {users.name} {users.surname} &#9900; </h6>
                                         
                                             <Row>
