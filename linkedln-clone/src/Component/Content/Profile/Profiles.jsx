@@ -76,7 +76,7 @@ class Profile extends React.Component{
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language <AiOutlineQuestionCircle /></p></a>
                             <p className="mt-5">People also viewed</p>
-                            {this.state.users.map((user, i) => {
+                            {this.state.users.slice(1, 25).map((user, i) => {
                     return (
                         <Row className="pb-3" key={i}>
                             <Col md={3}>
