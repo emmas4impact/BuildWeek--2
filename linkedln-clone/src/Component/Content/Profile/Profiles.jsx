@@ -68,7 +68,7 @@ class Profile extends React.Component{
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
-                         
+                       
                            
                         </Col>
                         <Col md={4} >
@@ -100,7 +100,7 @@ class Profile extends React.Component{
                                
                                     <Col md={10}>
                                 <div className="d-flex flex-column ">
-                                    <strong>{user.name} {user.surname}</strong>
+                                    <strong>{user.name} {user.surname} &#9900;</strong>
                                     <span>{user.title}</span>
                                 </div>
                                 </Col>
