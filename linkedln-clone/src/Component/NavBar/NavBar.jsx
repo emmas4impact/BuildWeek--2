@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button, Dropdown, Col, Image, Row} from 'react-bootstrap';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import './NavBar.css';
 import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing, FaBell, FaColumns, FaCircle } from 'react-icons/fa';
 
 
 class NavBar extends Component {
   state = {
-    users: []
+    users: [],
+    user: null
 }
 
 componentDidMount = () => {
     const url = "https://striveschool.herokuapp.com/api/profile/";
+    const user = this.props.location.pathname.split('/').pop()
+
+    console.log('FROM ROUTER PROPS', user)
 
     const username = 'user19';
     const password = 'Hxx8R4wZfCANamrj';
@@ -33,6 +37,20 @@ componentDidMount = () => {
         .then((users) => {
             this.setState({ users })
         })
+
+    fetch(url + user, {
+          method: "GET",
+          headers: headers,
+      })
+          .then((response) => {
+              if (response.ok) {
+                  return response.json();
+              }
+          })
+          .then((user) => {
+            console.log('user found!', user)
+              this.setState({ user:  user})
+          })
 }
     render() {
       console.log("Nav props", +this.props.users)
@@ -41,7 +59,7 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/postsprofile"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href="/profile/"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
@@ -99,7 +117,7 @@ componentDidMount = () => {
                                         alt="image"
                                     />
                                     : <Image
-                                        src={user.image}
+                                        src={this.state.user.image}
                                         style={{  width: "30px", border: "1px solid lightgray", borderRadius: "2rem" }}
                                         className="card-img img-fluid"
                                         alt="image"
@@ -147,4 +165,4 @@ componentDidMount = () => {
 }
 
 
-export default NavBar;
+export default withRouter(NavBar);
