@@ -8,43 +8,45 @@ import About from './About'
 import Skills from './Skills'
 import {Link, withRouter} from 'react-router-dom'
 import Activity from './Activity'
-import { MdMessage } from "react-icons/md";
-
+import { TiMessages } from "react-icons/ti";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Jumbotron from '../Jumbotron';
 import {Col, Row,Image,ListGroup,Card} from 'react-bootstrap';
+import Education from '../Education';
 
-const url ="https://striveschool.herokuapp.com/api/profile/"
-
-const username ='user29'
-const password = 'w4X9FKLNUDSXwzYu'
-const headers =new Headers({
-    "Content-Type" : "application/json",
-    'Authorization': 'Basic ' + btoa(username + ":" + password),
-});
 
 
 
 class Profile extends React.Component{
     state = {
-      loading:true,
-       profile:null,
-       person:[]
-        
-   };
+        users: []
+    }
 
+    componentDidMount = () => {
+        const url = "https://striveschool.herokuapp.com/api/profile/";
 
-componentDidMount=async()=>{
-    
-const url="https://striveschool.herokuapp.com/api/profile/";
-const response= await fetch(url ,{
-  method:'Get',
-  headers:headers,
-})
-const data= await response.json();
-console.log("data from profile",data);
-this.setState({person:data, loading:false})
-}
-   
+        const username = 'user19';
+        const password = 'Hxx8R4wZfCANamrj';
+
+        const headers = new Headers();
+
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+        fetch(url, {
+            method: "GET",
+            headers: headers,
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then((users) => {
+                this.setState({ users })
+            })
+    }
+
     render(){
        
         console.log("data from state",this.state.person);
@@ -67,46 +69,52 @@ this.setState({person:data, loading:false})
                             <Accomplishment />
                             <Interests  />
                            
+                           
                         </Col>
                         <Col md={4} >
-                                <p style={{paddingTop: "5rem"}} className="d-flex flex-column">Edit public profile & URL</p>
+                        <a href="#">  <p style={{paddingTop: "5rem", color: "gray"}} >Edit public profile & URL <AiOutlineQuestionCircle /></p></a>
                             <hr></hr>
-                            <a href="#"><p style={{color: "gray"}}>Add profile in another language</p></a>
-                            {this.state.person.map((users, i)=>{
-                                return(
-                                    <div key={i} >
-                                          
-                                    <Link to={"/"+ this.props.match.params.username} style={{ textDecoration: 'none' }} >
-                                        <Row>
-                                            <Col md={3} className="mt-3 text-left">
-                                         <img src={users.image} style={{width: "60px", borderRadius: "40px"}}></img>
-                                         </Col>
-                                         <Col md={9} className="mt-3 text-left text-dark"  >
-                                         <h6 href={"/" + users.username}> {users.name} {users.surname} &#9900; </h6>
-                                        
-                                            <Row>
-                                            <Col md={10} className="mt-3 text-left">
-                                         <p>{users.title}  </p>
-                                        
-                                         </Col>
-                                         <Col md={2} className="mt-3 text-left">
-                                         <p> <MdMessage className="text-right text-dark"/>   </p>
-                                        
-                                         </Col>
-                                         </Row>
-                                         <hr></hr>
-                                         
-                                         </Col>
-                                         
-                                        
-                                         </Row>
-                                         </Link>
-                                        
-                                    </div>
-                                  
-                                  
-                                )
-                            })}
+                            <a href="#"><p style={{color: "gray"}}>Add profile in another language <AiOutlineQuestionCircle /></p></a>
+                            <p className="mt-5">People also viewed</p>
+                            {this.state.users.map((user, i) => {
+                    return (
+                        <Row className="pb-3" key={i}>
+                            <Col md={3}>
+                                {user.image === undefined || user.image === ''
+                                    ? <Image
+                                        src='https://cdn5.vectorstock.com/i/thumb-large/99/94/default-avatar-placeholder-profile-icon-male-vector-23889994.jpg'
+                                        style={{ height: "4rem", width: "4rem", border: "1px solid lightgray", borderRadius: "2rem" }}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                    />
+                                    : <Image
+                                        src={user.image}
+                                        style={{ height: "4rem", width: "4rem", border: "1px solid lightgray", borderRadius: "2rem" }}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                    />
+
+                                }
+                            </Col>
+                            <Col className="col col-8 d-flex justify-content-between pt-3 border-bottom" md={9}>
+                               
+                                    <Col md={10}>
+                                <div className="d-flex flex-column ">
+                                    <strong>{user.name} {user.surname}</strong>
+                                    <span>{user.title}</span>
+                                </div>
+                                </Col>
+                                <Col md={2}>
+                                <div className="d-flex flex-column text-right ">
+                                <TiMessages size={22}/>
+                                </div>
+                                </Col>
+                             
+                                
+                            </Col>
+                        </Row>
+                    )
+                })}
             
                         </Col>
                     </Row>
