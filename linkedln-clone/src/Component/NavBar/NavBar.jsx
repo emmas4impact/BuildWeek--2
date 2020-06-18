@@ -35,13 +35,13 @@ componentDidMount = () => {
         })
 }
     render() {
-      
+      console.log("Nav props", +this.props.users)
         return (
           <>
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/me"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href="/profile/"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>

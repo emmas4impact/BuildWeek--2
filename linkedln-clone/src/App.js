@@ -90,7 +90,7 @@ class App extends React.Component {
 
 
               } 
-            />
+            {...this.props}/>
             <Route path="/profile/:username" component={Content} />
            
             <Route path='/postsprofile' component={PostsProfile} {...this.props}/>
