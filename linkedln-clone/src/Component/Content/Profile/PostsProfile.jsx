@@ -110,14 +110,15 @@ class PostsProfile extends Component {
                                   </Card.Body>
                                    <img style={{height: '300px'}} src='https://media-exp1.licdn.com/dms/image/sync/C4E18AQHUHo2BCdE25g/companyUpdate-article-image-shrink_627_1200/0?e=1595462400&v=beta&t=QiFtShVXzqzzYdtvWXAGcxvyPByYbBHs9xT1C152c0A' />
                                   <Card.Footer>
-                                      <p>Climate change adaptation: What we can learn from the Dutch masters | Swiss Re</p>
-                                      <button>Learn more</button>
-                                      <p><small>swissre.com</small></p>
+                                      <p style={{fontWeight: '700', display: 'flex', justifyContent: 'space-between', fontSize: '15px'}}>Climate change adaptation: What we can learn from the Dutch masters | Swiss Re
+                                      <button style={{color: '#0073B1', background: 'none', border: '1px solid #0073B1', fontSize: '15px', fontWeight: '700', borderRadius: '3px'}}>Learn more</button>
+                                      </p>
+                                     <small>swissre.com</small>
                                   </Card.Footer>
-                                  <Card.Body>
-                                      7 comments
+                                  <Card.Body style={{borderBottom: '2px solid #F7F7F7', padding: '5px', paddingLeft:'20px'}}>
+                                      <small>7 comments</small>
                                   </Card.Body>
-                                  <hr></hr>
+                                  
                                   <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                       <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
                                       <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
