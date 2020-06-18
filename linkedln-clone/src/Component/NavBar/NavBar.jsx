@@ -4,6 +4,7 @@ import { Link, Route } from 'react-router-dom';
 import './NavBar.css';
 import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFacebookMessenger, FaBed, FaRing, FaBell, FaColumns, FaCircle } from 'react-icons/fa';
 
+
 class NavBar extends Component {
     render() {
         return (
@@ -35,9 +36,9 @@ class NavBar extends Component {
                 
               <Nav className="ml-auto text-white navbar-nav">
               
-                <Nav.Link className='text-white' href="#home">
+                <Link className='text-white' to='/postsprofile'>
                     <FaHome />
-                    Home</Nav.Link>
+                    Home</Link>
                 <Nav.Link className='text-white'>
                     <FaUserFriends />
                     My Network</Nav.Link>
