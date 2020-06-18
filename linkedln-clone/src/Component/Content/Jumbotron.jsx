@@ -34,7 +34,7 @@ render(){
     
       <Card style={{position: 'relative'}} style={{border: 'none'}}>
       
-        <Card.Img variant="top" src="./jumboCover.jpeg" />
+        <Card.Img variant="top" src="/jumboCover.jpeg" />
         <FaCamera style={{position:'absolute',top:'0.5rem',right:'1rem',width:'100px',background:'white'}} />
         <Card.Body>
         <Button className="btn btn-light"  style={{position:'absolute',bottom:'5.8rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(160,160,160)'}} >More..</Button>&nbsp;&nbsp;
