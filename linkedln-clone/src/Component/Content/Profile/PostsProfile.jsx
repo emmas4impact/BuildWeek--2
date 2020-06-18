@@ -79,7 +79,8 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body style={{display: 'flex', justifyContent: 'space-between'}}>
-                                        <p><FaPenFancy className='mr-2'/> Start a post</p>
+                                        <textarea style={{flex: '0.8'}} placeholder=" &#xf044; Start a post"></textarea>
+                                      
                                         <div>
                                             <button className='btn-upload'><FaCamera /></button>
                                             <button className='btn-upload ml-5 left-border'><FaPhotoVideo /></button>
