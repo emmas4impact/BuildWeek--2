@@ -12,7 +12,7 @@ class NavBar extends Component {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/me"> <img  src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href="/me"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
