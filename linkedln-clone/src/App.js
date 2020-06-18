@@ -7,6 +7,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Component/NavBar/NavBar';
 import Footer from './Component/Footer/Footer'
+import PostsProfile from './Component/Content/Profile/PostsProfile';
 
 
 class App extends React.Component {
@@ -89,9 +90,8 @@ class App extends React.Component {
 
               } 
             />
-             
-            <Route path="/:username" component={Content} />
-            
+            <Route path="/profile/:username" component={Content} />
+            <Route path='/postsprofile' component={PostsProfile} />
             <Footer />
           
       </Router>

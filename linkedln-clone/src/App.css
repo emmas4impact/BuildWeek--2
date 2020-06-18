@@ -51,3 +51,7 @@ body {
     text-decoration: none;
     color: #006097;
 }
+.btn-upload {
+    background-color: none;
+    border: none;
+}
