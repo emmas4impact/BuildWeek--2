@@ -78,7 +78,7 @@ class Profile extends React.Component{
                             <p className="mt-5">People also viewed</p>
                             {this.state.users.slice(1, 25).map((user, i) => {
                     return (
-                        <a href={'/profile/' + user.username}>
+                        <a href={'/profile/' + user.username} style={{color: "black", textDecoration: "none"}}>
                         <Row className="pb-3" key={i}>
                             <Col md={3}>
                                 {user.image === undefined || user.image === ''
