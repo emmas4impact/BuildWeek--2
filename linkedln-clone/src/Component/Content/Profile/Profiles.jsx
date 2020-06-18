@@ -72,6 +72,8 @@ this.setState({person:data, loading:false})
                                 <p style={{paddingTop: "5rem"}} className="d-flex flex-column">Edit public profile & URL</p>
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language</p></a>
+                            
+                            <a href="#"><p style={{color: "gray"}}>People also Viewed</p></a>
                             {this.state.person.map((users, i)=>{
                                 return(
                                     <div key={i} >
