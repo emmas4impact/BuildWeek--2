@@ -64,7 +64,7 @@ class Education extends Component {
                      <Col md={10}>
                      
                      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
-      <div>{this.state.person.bio}</div><div>{this.state.person.email}</div></div>)}
+      <div>{this.state.person.company}</div><div>{this.state.person.role}</div></div>)}
       
                      
                      </Col>
@@ -83,7 +83,7 @@ class Education extends Component {
                      <Col md={10}>
                      
                      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
-      <div>{this.state.person.bio}</div><div>{this.state.person.email}</div></div>)}
+      <div>{this.state.person.bio}</div><div>{this.state.person.company}</div></div>)}
       
                      
                      </Col>
