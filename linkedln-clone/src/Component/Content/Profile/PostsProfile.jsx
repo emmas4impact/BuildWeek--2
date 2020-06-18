@@ -5,7 +5,8 @@ import  { Card, ListGroup, ListGroupItem, Form , Row, Col} from 'react-bootstrap
 import { FaPersonBooth, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaPenFancy, FaInfo, FaDotCircle } from 'react-icons/fa';
 class PostsProfile extends Component {
     state= {
-        post: []
+        post: [],
+        newPost: []
     }
     
     componentDidMount=async()=>{
@@ -27,10 +28,32 @@ class PostsProfile extends Component {
             
         })
         }
+    postStatus =()=>{
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/"
+        const response= fetch(url,{
+          method:'POST',
+          headers:new Headers({
+           'Content-type':'applicationCache/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        
+        const data= response.json();
+        console.log(data);
+        
+        this.setState({
+            newPost:data, 
+            
+        })
+        }
+    
     
     
     render() {
         console.log("from post profile",this.state.post)
+        console.log("from props profile",this.props)
         return (
             <div className='container'>
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>

@@ -61,6 +61,7 @@ class App extends React.Component {
 
 
   render(){
+    console.log("from app js",this.props)
     return(
      
         <> 
