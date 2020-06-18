@@ -59,8 +59,8 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/profile/"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
-            <Navbar.Brand href="#home">
+             <Link className='text-white' to='/postsprofile'> <a href="#Home"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a></Link>
+            <Navbar.Brand href="#Home">
                 
             </Navbar.Brand>
             <Dropdown show={this.props.status} className="mt-5">
@@ -71,7 +71,7 @@ componentDidMount = () => {
                </Dropdown>
               <Form inline>
                
-                <FormControl onChange={(e) => this.props.search(e.currentTarget.value)}  type="text" placeholder="Search" className="mr-sm-2" />
+                <FormControl onChange={(e) => this.props.search(e.currentTarget.value)}  type="text" placeholder="Search" className="mr-sm-2 ok" style={{backgroundColor: "#ebf3f5"}}/>
           
               </Form>
 
@@ -129,15 +129,53 @@ componentDidMount = () => {
                       
                     )
                 })}
-              
-                  
+            
                 <NavDropdown className='text-white' title="Dropdown" id="basic-nav-dropdown" title='Me' >
+                {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
+                    return (
+                       
+                          
+                              <>
+                                {user.image === undefined || user.image  === ''
+                                    ? <Image
+                                        src='https://cdn5.vectorstock.com/i/thumb-large/95/64/default-placeholder-businesswoman-half-length-por-vector-20889564.jpg'
+                                        style={{ width: "60px", border: "1px solid lightgray", borderRadius: "2rem"}}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                    />
+                                    : <Image
+                                        src={this.state.user.image} 
+                                        style={{  width: "60px", border: "1px solid lightgray", borderRadius: "2rem", marginLeft: "10px" }}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                        
+                                    /> 
+                              
+                                }
+                              
+                         </>
+                        
+                           
+                      
+                    )
+                })}
+                  <Col style={{backgroundColor: "#ebf3f5", height: "40px"}}>
+                  <h6 href="#action/3.1" className="mt-3 ml-1" style={{paddingTop: "10px"}}>ACCOUNT</h6>
+                  </Col>
+                 
+                  <NavDropdown.Item href="#action/3.2"  className="mt-3">Settings & Privacy</NavDropdown.Item>
                   
-                  <NavDropdown.Item href="#action/3.1">My</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3" className="mt-3">Help</NavDropdown.Item>
+                  
+                  <NavDropdown.Item href="#action/3.4" className="mt-3">Language</NavDropdown.Item>
+                  <Col style={{backgroundColor: "#ebf3f5", height: "40px"}}>
+                  <h6 href="#action/3.1" className="mt-3 ml-1" style={{paddingTop: "10px"}}>MANAGE</h6>
+                  </Col>
+                  <NavDropdown.Item href="#action/3.2"  className="mt-3">Posts & Activity</NavDropdown.Item>
+                  
+                  <NavDropdown.Item href="#action/3.3" className="mt-3">Job posting account</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3" className="mt-3">Sign Out</NavDropdown.Item>
                 </NavDropdown>
                </div>  
                <div className='vl'></div>
