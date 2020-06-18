@@ -11,7 +11,7 @@ class Education extends Component {
     state = {
         loading:true,
          profile:null,
-         person:null,
+         person:[],
           
      };
 
@@ -19,19 +19,20 @@ class Education extends Component {
 
 
    componentDidMount=async()=>{
-const url="https://striveschool.herokuapp.com/api/profile/"+ this.props.match.params.username+"/experiences";
-const response= await fetch(url,{
-  method:'Get',
-  headers:new Headers({
-   'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
-  })
-})
-const data= await response.json();
-console.log(data);
-this.setState({person:data[0], loading:false})
+        const url="https://striveschool.herokuapp.com/api/profile/"+this.props.match.params.username+"/experiences";
+        const response= await fetch(url,{
+        method:'Get',
+        headers:new Headers({
+        'Content-type':'applicationCache/json', 
+        'Authorization':'Basic ' + btoa(username + ':' + password)
+        })
+        })
+        const data= await response.json();
+        console.log(data);
+        this.setState({person:data[0], loading:false})
 }
     render() {
+        console.log("EDUCATION", this.props.match.params.username)
         return (
         <Row>
             <Col md={8} >
@@ -63,7 +64,7 @@ this.setState({person:data[0], loading:false})
                      <Col md={10}>
                      
                      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
-      <div>{this.state.person.bio}</div><div>{this.state.person.email}</div></div>)}
+      <div>{this.state.person.company}</div><div>{this.state.person.role}</div></div>)}
       
                      
                      </Col>
@@ -82,7 +83,7 @@ this.setState({person:data[0], loading:false})
                      <Col md={10}>
                      
                      {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
-      <div>{this.state.person.bio}</div><div>{this.state.person.email}</div></div>)}
+      <div>{this.state.person.bio}</div><div>{this.state.person.company}</div></div>)}
       
                      
                      </Col>
