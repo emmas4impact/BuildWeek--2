@@ -108,7 +108,7 @@ componentDidMount = () => {
                 {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
                     return (
                        
-                            <Col >
+                            <Col key={i}>
                                 {user.image === undefined || user.image === ''
                                     ? <Image
                                         src='https://cdn5.vectorstock.com/i/thumb-large/95/64/default-placeholder-businesswoman-half-length-por-vector-20889564.jpg'

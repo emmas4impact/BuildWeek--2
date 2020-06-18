@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
 import  { Card, ListGroup, ListGroupItem, Form , Row, Col} from 'react-bootstrap';
-
-
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
 class PostsProfile extends Component {
     state= {
         post: [],
-        newPost: []
+        newPost: [],
+        comments: [],
+        newComment: {
+            rate: '5',
+            comment: "",
+            elementId: ""
+        }
     }
     
     componentDidMount=async()=>{
@@ -33,7 +37,7 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/"
+        const url="https://striveschool.herokuapp.com/api/posts/comments"
         const response= fetch(url,{
           method:'POST',
           headers:new Headers({
@@ -47,7 +51,7 @@ class PostsProfile extends Component {
         
         this.setState({
             newPost:data, 
-            
+            post: data
         })
         
         
