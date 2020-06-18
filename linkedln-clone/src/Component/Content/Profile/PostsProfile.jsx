@@ -137,7 +137,7 @@ class PostsProfile extends Component {
                                         </div>
                                     </Card.Body>
                                     <Card.Footer>
-                                        Write an article <small>on LinkedIn</small>
+                                        <small style={{color: 'rgb(0, 115, 177)', fontSize: '15px', fontWeight: '700'}}>Write an article</small> <small>on LinkedIn</small>
                                     </Card.Footer>
 
                                 </Card>
@@ -162,14 +162,15 @@ class PostsProfile extends Component {
                                   </Card.Body>
                                    <img style={{height: '300px'}} src='https://media-exp1.licdn.com/dms/image/sync/C4E18AQHUHo2BCdE25g/companyUpdate-article-image-shrink_627_1200/0?e=1595462400&v=beta&t=QiFtShVXzqzzYdtvWXAGcxvyPByYbBHs9xT1C152c0A' />
                                   <Card.Footer>
-                                      <p>Climate change adaptation: What we can learn from the Dutch masters | Swiss Re</p>
-                                      <button>Learn more</button>
-                                      <p><small>swissre.com</small></p>
+                                      <p style={{fontWeight: '700', display: 'flex', justifyContent: 'space-between', fontSize: '15px'}}>Climate change adaptation: What we can learn from the Dutch masters | Swiss Re
+                                      <button style={{color: '#0073B1', background: 'none', border: '1px solid #0073B1', fontSize: '15px', fontWeight: '700', borderRadius: '3px'}}>Learn more</button>
+                                      </p>
+                                     <small>swissre.com</small>
                                   </Card.Footer>
-                                  <Card.Body>
-                                      7 comments
+                                  <Card.Body style={{borderBottom: '2px solid #F7F7F7', padding: '5px', paddingLeft:'20px'}}>
+                                      <small>7 comments</small>
                                   </Card.Body>
-                                  <hr></hr>
+                                  
                                   <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                       <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
                                       <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
@@ -184,12 +185,14 @@ class PostsProfile extends Component {
                             <Col>
                             {this.state.post.map((user, i)=>{
                                 return(
-                                    <Card body key={i}>
+                                    <Card body key={i} className='mt-2'> 
                                     <p><img src={user.user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.user.name}</p>
-                                    <p>{user.text}</p>
-                                    <button className='btn-upload'>Like</button>
-                                      <button className='btn-upload'><FaComment/>Comment</button>
-                                      <button className='btn-upload'><FaShare/>Share</button>
+                                    <i>{user.text}</i>
+                                    <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
+                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
+                                   </div>
                                     </Card>
                                 )
                                 
@@ -207,23 +210,19 @@ class PostsProfile extends Component {
                                     <Card.Body>
                                         <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <FaInfo style={{borderRadius: '50%', border: '2px solid #000'}}/></p>
                                         <div className='row'>
-                                            <div className='col-8'>
-                                            <img style={{width: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQEp-f9Ptu2yVQ/company-logo_100_100/0?e=1600300800&v=beta&t=2HSHzaHWsG78UrBpttEI1UJQmRoxg-a1GttC1shzr1U'/>
-                                            <h6>The New York Times</h6>
-                                            <small>Company <FaDotCircle /> Newspapers</small>
+                                            <div className='col-8' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
+                                                <img style={{width: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQEp-f9Ptu2yVQ/company-logo_100_100/0?e=1600300800&v=beta&t=2HSHzaHWsG78UrBpttEI1UJQmRoxg-a1GttC1shzr1U'/>
+                                                <h6 className='ml-1' style={{fontSize: '12px'}}>The New York Times</h6>
+                                        
                                             </div>
                                             <div className='col-4'>
-                                              <button>Follow</button>  
+                                              <button style={{border: '1px solid rgb(0, 115, 177)', borderRadius: '2px', color: 'rgb(0, 115, 177)'}}>Follow</button>  
                                             </div>
                                         </div>
                                         <div className='row'>
-                                            <div className='col-8'></div>
-                                            <div className='col-4'></div>
-                                        </div>
-                                      
-                                     
-                                        
-                                        <p>View all recommndations</p>
+                                            <div className='col-12 pt-3'> <small style={{color: 'rgb(0, 115, 177)', fontWeight: '700'}}>View all recommndations</small></div>
+                                        </div>                          
+                                       
                                     </Card.Body>
                                 </Card>
                             </div>
