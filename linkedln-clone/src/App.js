@@ -82,7 +82,7 @@ class App extends React.Component {
                 this.state.users
                   .filter(user => user.name.toLowerCase().startsWith(this.state.search.toLowerCase()))
                   .map((user, i) =>
-                  <Dropdown.Item key={i} href={"/" + user.username}><img src={user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.name} {user.surname} &#9900; {user.title}</Dropdown.Item>
+                  <Dropdown.Item key={i} href={"/profile/" + user.username}><img src={user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.name} {user.surname} &#9900; {user.title}</Dropdown.Item>
                   )
 
                 :
