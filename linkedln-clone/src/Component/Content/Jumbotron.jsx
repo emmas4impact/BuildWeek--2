@@ -34,12 +34,20 @@ render(){
     
       <Card style={{position: 'relative'}} style={{border: 'none'}}>
       
-        <Card.Img variant="top" src="./jumboCover.jpeg" />
-        <FaCamera style={{position:'absolute',top:'0.5rem',right:'1rem',width:'100px',background:'white'}}/>
+        <Card.Img variant="top" src="/jumboCover.jpeg" />
+
+<div class="image-upload" style={{position:'absolute',top:'0.5rem',right:'1.2rem',width:'100px',cursor:'pointer'}}>
+    <label for="file-input">
+    <FaCamera style={{width:'20px'}}/>
+    </label>
+
+    <input id="file-input" type="file" style={{display:'none'}}/>
+</div>
+       
         <Card.Body>
-        <Button className="btn btn-light"  style={{position:'absolute',bottom:'5.8rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(160,160,160)'}} >More..</Button>&nbsp;&nbsp;
-                    <Dropdown style={{position:'absolute',bottom:'5.8rem',right:'8.8rem'}}>
-                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'rgb(180,180,180)'}}> Add section profile </Dropdown.Toggle>
+        <Button className="btn btn-light"  style={{position:'absolute',bottom:'2rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(160,160,160)'}} >More..</Button>&nbsp;&nbsp;
+                    <Dropdown style={{position:'absolute',bottom:'2rem',right:'8.8rem'}}>
+                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'rgb(200,180,180)'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                     <Dropdown.Item>Intro
