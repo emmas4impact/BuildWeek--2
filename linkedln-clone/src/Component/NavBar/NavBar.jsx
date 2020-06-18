@@ -59,8 +59,8 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/profile/"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
-            <Navbar.Brand href="#home">
+             <Link className='text-white' to='/postsprofile'> <a href="#Home"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a></Link>
+            <Navbar.Brand href="#Home">
                 
             </Navbar.Brand>
             <Dropdown show={this.props.status} className="mt-5">
