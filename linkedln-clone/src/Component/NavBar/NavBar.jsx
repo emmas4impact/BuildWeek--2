@@ -13,7 +13,8 @@ class NavBar extends Component {
 
 componentDidMount = () => {
     const url = "https://striveschool.herokuapp.com/api/profile/";
-    const user = this.props.location.pathname.split
+    const user = this.props.location.pathname.split('/').pop()
+  
 
     console.log('FROM ROUTER PROPS', user)
 
@@ -117,7 +118,7 @@ componentDidMount = () => {
                                         alt="image"
                                     />
                                     : <Image
-                                        src={user.image}
+                                        src={this.state.user.image}
                                         style={{  width: "30px", border: "1px solid lightgray", borderRadius: "2rem" }}
                                         className="card-img img-fluid"
                                         alt="image"
