@@ -14,7 +14,6 @@ class NavBar extends Component {
 componentDidMount = () => {
     const url = "https://striveschool.herokuapp.com/api/profile/";
     const user = this.props.location.pathname.split('/').pop()
-  
 
     console.log('FROM ROUTER PROPS', user)
 
@@ -106,7 +105,7 @@ componentDidMount = () => {
                 <div className='navDrop'>  
                   
 
-                {this.state.users.slice(22, 23).map((user, i) => {
+                {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
                     return (
                        
                             <Col >
