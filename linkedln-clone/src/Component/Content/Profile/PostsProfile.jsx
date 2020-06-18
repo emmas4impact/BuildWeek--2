@@ -182,12 +182,14 @@ class PostsProfile extends Component {
                             <Col>
                             {this.state.post.map((user, i)=>{
                                 return(
-                                    <Card body key={i}>
+                                    <Card body key={i} className='mt-2'> 
                                     <p><img src={user.user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.user.name}</p>
-                                    <p>{user.text}</p>
-                                    <button className='btn-upload'>Like</button>
-                                      <button className='btn-upload'><FaComment/>Comment</button>
-                                      <button className='btn-upload'><FaShare/>Share</button>
+                                    <i>{user.text}</i>
+                                    <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
+                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
+                                   </div>
                                     </Card>
                                 )
                                 
