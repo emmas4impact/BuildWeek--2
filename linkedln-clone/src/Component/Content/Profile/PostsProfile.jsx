@@ -85,7 +85,7 @@ class PostsProfile extends Component {
                                         </div>
                                     </Card.Body>
                                     <Card.Footer>
-                                        Write an article <small>on LinkedIn</small>
+                                        <small style={{color: 'rgb(0, 115, 177)', fontSize: '15px', fontWeight: '700'}}>Write an article</small> <small>on LinkedIn</small>
                                     </Card.Footer>
 
                                 </Card>
