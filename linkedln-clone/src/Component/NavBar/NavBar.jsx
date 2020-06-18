@@ -11,7 +11,7 @@ class NavBar extends Component {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-             <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "40px", borderRadius: "5px"}}></img>
+            <a href="/me"> <img  src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
@@ -35,7 +35,7 @@ class NavBar extends Component {
                 
               <Nav className="ml-auto text-white navbar-nav">
               
-                <Nav.Link className='text-white' href="#home">
+                <Nav.Link className='text-white' href="/">
                     <FaHome />
                     Home</Nav.Link>
                 <Nav.Link className='text-white'>
