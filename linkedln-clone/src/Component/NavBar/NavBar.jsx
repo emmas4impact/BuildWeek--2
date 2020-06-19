@@ -59,7 +59,7 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href="/profile/"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
@@ -83,7 +83,7 @@ componentDidMount = () => {
                 
               <Nav className="ml-auto text-white navbar-nav">
               
-                <Link className='text-white' to='/postsprofile'>
+                <Link className='text-white' to={'/postsprofile/'+this.props.location.pathname.split('/').pop()}>
                     <FaHome />
                     Home</Link>
                 <Nav.Link className='text-white'>
