@@ -69,3 +69,10 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.font-nav {
+    font-size: 12px;
+    font-weight: 700;
+}
+.sign-nav {
+    font-size: 25px;
+}

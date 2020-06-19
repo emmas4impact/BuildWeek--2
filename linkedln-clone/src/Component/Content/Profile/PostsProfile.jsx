@@ -231,15 +231,15 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body style={{display: 'flex', justifyContent: 'space-between'}}>
-                                        <textarea style={{flex: '0.8'}} 
-                                        placeholder=" &#xf044; Start a post"
+                                        <textarea style={{flex: '0.8', border: 'none'}} 
+                                        placeholder="Start a post"
                                         
                                         onChange={this.sendPost}
                                         type="text"
                                       ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                    <div class="image-upload" style={{position:'absolute',width:'100px',cursor:'pointer'}}>
+                                    <div class="image-upload " style={{position:'absolute',width:'100px',cursor:'pointer'}}>
                                         <label for="file-input">
                                         <FaCamera style={{width:'20px'}}/>
                                         </label>
@@ -301,7 +301,7 @@ class PostsProfile extends Component {
                                 return(
                                     <Card body key={i} className='mt-2'> 
                                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                    <p style={{fontWeight: '700', fontSize: '14px'}}><img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px"}}/> {user.user.name}</p>
+                                    <p style={{fontWeight: '700', fontSize: '14px'}}><img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p>
 
                                     
                                     <Dropdown>
@@ -324,7 +324,7 @@ class PostsProfile extends Component {
                                         <Modal.Header closeButton>
                                             <Modal.Title>Edit message</Modal.Title>
                                         </Modal.Header>
-                                        <Modal.Body>Cuttent comment</Modal.Body>
+                                        <Modal.Body><textarea placeholder='Enter text ...' style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
                                       
                                         <Modal.Footer>
                                             <Button onClick={this.close}>Save</Button>

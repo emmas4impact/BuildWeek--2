@@ -83,20 +83,20 @@ componentDidMount = () => {
                 
               <Nav className="ml-auto text-white navbar-nav">
               
-                <Link className='text-white' to={'/postsprofile/'+this.props.location.pathname.split('/').pop()}>
-                    <FaHome />
+                <Link className='text-white font-nav' to={'/postsprofile/'+this.props.location.pathname.split('/').pop()}>
+                    <FaHome className='sign-nav'/>
                     Home</Link>
-                <Nav.Link className='text-white'>
-                    <FaUserFriends />
+                <Nav.Link className='text-white font-nav'>
+                    <FaUserFriends className='sign-nav'/>
                     My Network</Nav.Link>
-                <Nav.Link className='text-white'>
-                    <FaSuitcase />
+                <Nav.Link className='text-white font-nav'>
+                    <FaSuitcase className='sign-nav' />
                     Jobs</Nav.Link>
-                <Nav.Link className='text-white'>
-                   <FaFacebookMessenger />
+                <Nav.Link className='text-white font-nav'>
+                   <FaFacebookMessenger className='sign-nav' />
                     Messaging</Nav.Link>
-                <Nav.Link className='text-white'>
-                     <FaBell />
+                <Nav.Link className='text-white font-nav'>
+                     <FaBell  className='sign-nav'/>
                     
                     Notifications</Nav.Link>
 
@@ -130,7 +130,7 @@ componentDidMount = () => {
                     )
                 })}
             
-                <NavDropdown className='text-white' title="Dropdown" id="basic-nav-dropdown" title='Me' >
+                <NavDropdown  className='text-white font-nav' title="Dropdown" id="basic-nav-dropdown" title='Me' >
                 {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
                     return (
                        
@@ -180,8 +180,8 @@ componentDidMount = () => {
                </div>  
                <div className='vl'></div>
                <div className='navDrop'>
-                <FaColumns/>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown" title='Work'>
+                <FaColumns className='sign-nav' />
+                <NavDropdown  className='font-nav' id="basic-nav-dropdown" title='Work'>
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
@@ -189,8 +189,8 @@ componentDidMount = () => {
                   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
                 </div>
-                <Nav.Link className='text-white' href="#link">
-                    <FaVideo />
+                <Nav.Link className='text-white font-nav' href="#link">
+                    <FaVideo className="sign-nav"/>
                     Learning</Nav.Link>
               </Nav>
              

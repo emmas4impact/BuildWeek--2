@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaLinkedin, FaArrowAltCircleDown, FaArrowDown, FaQuestion } from 'react-icons/fa';
 import { faCog, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { MdSettings } from 'react-icons/md';
 
 const Footer = () => {
   return(
@@ -11,9 +12,9 @@ const Footer = () => {
                 <h6 className='linked-big'>Linked <FaLinkedin className='linkedIn-small' /></h6>
             </div>
           </div>
-          <div className='row footer'>
+          <div className='row footer pt-3' style={{lineHeight: '0.5'}}>
               <div className='col-2'>
-                  <ul>
+                  <ul className='list-unstyled'>
                       <li>About</li>
                       <li>Community Guidelines</li>
                       <li>Privacy & Terms <faChevronDown /></li>
@@ -42,7 +43,7 @@ const Footer = () => {
                       <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-4'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>Questions
                           <small>Visit our Help Center.</small>
                       </li>
-                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}> <faCog style={{position: 'absolute', left: '-20px', bottom: '10px'}}/>
+                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}> <MdSettings style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>
                     
                           Manage your account and Privacy
                           <small>Go to your Settings.</small>
