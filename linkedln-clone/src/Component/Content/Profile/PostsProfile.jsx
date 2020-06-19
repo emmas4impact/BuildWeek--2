@@ -8,14 +8,20 @@ import { text } from '@fortawesome/fontawesome-svg-core';
 class PostsProfile extends Component {
     state= {
         post: [],
+        postId: null,
         newPost: [],
         person: [],
         image: '',
+        oldPostText: '',
         sendStatus: {
             text:"",
+            image: null
+        },
+       
+        
         }
        
-    }
+    
     handleChange = (event) => {
         this.setState({
             newsFeed: event.currentTarget.value
@@ -31,8 +37,21 @@ class PostsProfile extends Component {
         });
     }
 
-    open =() => {
-        this.setState({ showModal: true });
+    open = async(postId) => {
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/" + postId 
+        const response= await fetch(url,{
+          method:'Get',
+          headers:new Headers({
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        const postInfo= await response.json();
+        
+        const postText = postInfo.text
+        
+        this.setState({ showModal: true, postId: postId, oldPostText: postText });
       }
   
      getInitialState =() =>{
@@ -99,6 +118,19 @@ class PostsProfile extends Component {
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
+        const data = await response.json()
+        const id = data._id;
+        
+        setTimeout(async () => {
+            const response = await fetch("https://striveschool.herokuapp.com/api/posts/" + id, {
+                method: "POST",
+                body: this.state.image,
+                headers: new Headers({
+                    'Authorization':'Basic ' + btoa(username + ':' + password),
+                }),
+            }, 2000)
+        })
+
 
         
         if(response.ok){
@@ -134,7 +166,7 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/"+this.props.match.params.username
+        const url="https://striveschool.herokuapp.com/api/posts/"+this.state.postId
         const response= await fetch(url,{
           method:'PUT',
           body: JSON.stringify(this.state.sendStatus),
@@ -150,9 +182,15 @@ class PostsProfile extends Component {
         }
    
     }
-  
-    
-    
+   
+   fileSelectedHandler = event=>{
+       let photo =new FormData()
+       photo.append('post', event.target.files[0])
+       this.setState({
+           image: photo
+       })
+       console.log(photo)
+   }
     
     
     
@@ -239,14 +277,17 @@ class PostsProfile extends Component {
                                       ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                    <div class="image-upload " style={{position:'absolute',width:'100px',cursor:'pointer'}}>
-                                        <label for="file-input">
-                                        <FaCamera style={{width:'20px'}}/>
-                                        </label>
+                                            <button className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
+                                                <label for="file-input">
+                                                <FaCamera style={{width:'20px'}}/>
+                                                </label>
 
-                                        <input id="file-input" type="file" style={{display:'none'}}/>
-                                    </div>
-                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo /></button>
+                                                <input id="file-input" type="file" onChange={this.fileSelectedHandler} style={{display:'none'}}/>
+                                            </div>  
+                                            </button>
+                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo  />
+                                              
+                                            </button>
                                             <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
                                     </Card.Body>
@@ -310,7 +351,7 @@ class PostsProfile extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item onClick={this.open}>Edit</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => this.open(user._id)}>Edit</Dropdown.Item>
 
 
                                         <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
@@ -324,7 +365,7 @@ class PostsProfile extends Component {
                                         <Modal.Header closeButton>
                                             <Modal.Title>Edit message</Modal.Title>
                                         </Modal.Header>
-                                        <Modal.Body><textarea placeholder='Enter text ...' style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
+                                        <Modal.Body><textarea value={this.state.oldPostText} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
                                       
                                         <Modal.Footer>
                                             <Button onClick={this.close}>Save</Button>
@@ -333,7 +374,7 @@ class PostsProfile extends Component {
                                     </div>
                                   
                                    
-                                    <i>{user.text}</i>
+                                    <i>{user.text} <img src={user.image} style={{with: "40px", height: "40px"}}/></i>
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                       <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
                                       <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
