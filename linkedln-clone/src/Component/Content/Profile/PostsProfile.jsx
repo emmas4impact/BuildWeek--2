@@ -19,7 +19,7 @@ class PostsProfile extends Component {
         
         }
        
-    }
+    
     handleChange = (event) => {
         this.setState({
             newsFeed: event.currentTarget.value
