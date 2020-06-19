@@ -29,7 +29,7 @@ const response= await fetch(url,{
   })
 })
 const data= await response.json();
-console.log(data);
+console.log("my data",data);
 this.setState({person:data, loading:false})
 }
 
@@ -83,9 +83,9 @@ render(){
 </div>
        
         <Card.Body>
-        <Button className="btn btn-light"  style={{position:'absolute',bottom:'2rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(160,160,160)'}} >More..</Button>&nbsp;&nbsp;
+        <Button className="btn btn-light"  variant="primary" style={{position:'absolute',bottom:'2rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(105,105,105)',border:'1px solid black '}} >More..</Button>&nbsp;&nbsp;
                     <Dropdown style={{position:'absolute',bottom:'2rem',right:'8.8rem'}}>
-                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'rgb(200,180,180)'}}> Add section profile </Dropdown.Toggle>
+                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,123,250)',color:'rgb(250,250,250)',border:'1px solid rgb()'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                     <Dropdown.Item>Intro
@@ -98,7 +98,7 @@ render(){
                     </Dropdown>
         <Card.Text>
           {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image className='img-jumbo' src={this.state.person.image}/></div><div> {this.state.person.id}</div>
-          <div className='name pt-4'>{this.state.person.name}</div><div className='bio'>{this.state.person.bio}</div><div className='email'>{this.state.person.email}</div></div>)}
+ <div className='name pt-4'>{this.state.person.name}</div><div className='bio'>{this.state.person.bio}</div><div className='email'>{this.state.person.email}</div><div className='Title'>{this.state.person.title}</div></div>)}
           </Card.Text>
         </Card.Body>
       </Card>
