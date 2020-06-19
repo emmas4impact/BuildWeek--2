@@ -59,8 +59,8 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-             <Link className='text-white' to='/postsprofile'> <a href="#Home"> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a></Link>
-            <Navbar.Brand href="#Home">
+            <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
             <Dropdown show={this.props.status} className="mt-5">
@@ -83,7 +83,7 @@ componentDidMount = () => {
                 
               <Nav className="ml-auto text-white navbar-nav">
               
-                <Link className='text-white' to='/postsprofile'>
+                <Link className='text-white' to={'/postsprofile/'+this.props.location.pathname.split('/').pop()}>
                     <FaHome />
                     Home</Link>
                 <Nav.Link className='text-white'>
@@ -108,7 +108,7 @@ componentDidMount = () => {
                 {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
                     return (
                        
-                            <Col >
+                            <Col key={i}>
                                 {user.image === undefined || user.image === ''
                                     ? <Image
                                         src='https://cdn5.vectorstock.com/i/thumb-large/95/64/default-placeholder-businesswoman-half-length-por-vector-20889564.jpg'

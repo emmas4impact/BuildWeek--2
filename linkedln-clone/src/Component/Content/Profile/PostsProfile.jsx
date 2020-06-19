@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
 import  { Card, ListGroup, ListGroupItem, Form , Row, Col} from 'react-bootstrap';
-
-
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
+import { text } from '@fortawesome/fontawesome-svg-core';
 class PostsProfile extends Component {
     state= {
         post: [],
-        newPost: []
+        newPost: [],
+        person: [],
+        sendStatus: {
+            text:""
+        }
     }
     
     componentDidMount=async()=>{
@@ -28,27 +31,55 @@ class PostsProfile extends Component {
             post:data, 
             
         })
+        
+       
+        const responses= await fetch("https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username,{
+        method:'Get',
+        headers:new Headers({
+        'Content-type':'applicationCache/json', 
+        'Authorization':'Basic ' + btoa(username + ':' + password)
+        })
+        })
+        const datas= await responses.json();
+        console.log(datas);
+        this.setState({person:datas, loading:false})
         }
-    postStatus =()=>{
+        sendPost=(e)=>{
+            const newPost = this.state.sendStatus
+            newPost.text = e.currentTarget.value
+
+            this.setState({
+                sendStatus: {
+                    text: e.currentTarget.value
+                }
+            })
+            console.log("from post profile: ", newPost)
+        }
+    postStatus = async ()=>{
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
         const url="https://striveschool.herokuapp.com/api/posts/"
-        const response= fetch(url,{
+        const response= await fetch(url,{
           method:'POST',
+          body: JSON.stringify(this.state.sendStatus.text),
           headers:new Headers({
            'Content-type':'applicationCache/json', 
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
         
-        const data= response.json();
-        console.log(data);
+        //const data= response.json();
+        //console.log("this props from post profile", this.props);
         
-        this.setState({
-            newPost:data, 
-            
-        })
+        if(response.ok){
+            alert("Post successfully!")
+        }
+        
+        // this.setState({
+        //     newPost:data, 
+        //     post: data
+        // })
         
         
     }
@@ -56,7 +87,7 @@ class PostsProfile extends Component {
     
     
     render() {
-        console.log("from post profile",this.state.post)
+        console.log("from post profile: ",this.state.sendStatus)
         console.log("from props profile",this.props)
         return (
             <div className='container'>
@@ -69,9 +100,9 @@ class PostsProfile extends Component {
                                    
                                     <Card.Body className='head-prof'>
                                   
-                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src='https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
+                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src={this.state.person.image} />
                                         <Card.Text style={{lineHeight: '0.5'}}>
-                                        <h6 style={{fontWeight: '700'}}>Welcome, NAME!</h6>
+                                        <h6 style={{fontWeight: '700'}}>Welcome, {this.state.person.name}</h6>
                                         <a style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
                                         </Card.Text>
                                     </Card.Body>
@@ -128,12 +159,17 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body style={{display: 'flex', justifyContent: 'space-between'}}>
-                                        <textarea style={{flex: '0.8'}} placeholder=" &#xf044; Start a post"></textarea>
+                                        <textarea style={{flex: '0.8'}} 
+                                        placeholder=" &#xf044; Start a post"
+                                        
+                                        onChange={this.sendPost}
+                                        type="text"
+                                      ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
                                             <button className='btn-upload'><FaCamera /></button>
                                             <button className='btn-upload ml-5 left-border'><FaPhotoVideo /></button>
-                                            <button className='btn-upload ml-5 left-border'><FaPaperPlane/></button>
+                                            <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
                                     </Card.Body>
                                     <Card.Footer>
