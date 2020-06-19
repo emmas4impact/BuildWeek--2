@@ -23,7 +23,7 @@ class Skills_Endorsements extends Component {
               <div id="accordion" className="box">
                 <div class="card">
                     <div class="card-body">
-                       <h4>Skills&Endorsements</h4>
+                       <h4>Skills   &   Endorsements</h4>
                        <Button id="quiz">Take Skill quiz</Button>   
                        <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link>Full-Stack Development</h6>
                        <hr></hr>
