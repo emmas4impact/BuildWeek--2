@@ -70,21 +70,60 @@ class PostsProfile extends Component {
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
-        
-        //const data= response.json();
-        //console.log("this props from post profile", this.props);
+
         
         if(response.ok){
             alert("Post successfully!")
         }
-        
-        // this.setState({
-        //     newPost:data, 
-        //     post: data
-        // })
-        
-        
+   
     }
+    
+    deleteStatus = async ()=>{
+        
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/"
+        const response= await fetch(url+this.props.match.params.username,{
+          method:'DELETE',
+       
+          headers:new Headers({
+           'Content-type':'application/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+
+        
+        if(response.ok){
+            alert("Deleted successfully!")
+        }else{
+            alert("Cant delete another users post!")
+        }
+   
+    }
+    
+    editStatus = async ()=>{
+        
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/"+this.props.match.params.username
+        const response= await fetch(url,{
+          method:'PUT',
+          body: JSON.stringify(this.state.sendStatus),
+          headers:new Headers({
+           'Content-type':'application/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+
+        
+        if(response.ok){
+            alert("Post successfully!")
+        }
+   
+    }
+    
+    
+    
     
     
     
@@ -234,8 +273,8 @@ class PostsProfile extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-1"onClick={this.editStatus}>Edit</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2" onClick={this.deleteStatus}>Delete</Dropdown.Item>
                                         
                                     </Dropdown.Menu>
                                     </Dropdown>
