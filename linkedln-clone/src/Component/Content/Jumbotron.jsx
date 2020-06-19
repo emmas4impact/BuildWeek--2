@@ -67,12 +67,12 @@ onChange=(e)=>{
 
 render(){
  return(
-    <Jumbotron fluid className='box' >
+    <Jumbotron fluid className='box jumbo-box'>
     <Container style={{padding: '0'}} className='ommit '>
     
       <Card style={{position: 'relative'}} style={{border: 'none'}}>
       
-        <Card.Img variant="top" src="/jumboCover.jpeg" />
+        <Card.Img variant="top" src="/jumboCover.jpeg" style={{paddingTop: '0'}}/>
 
 <div class="image-upload" style={{position:'absolute',top:'0.5rem',right:'1.2rem',width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
     <label for="file-input">

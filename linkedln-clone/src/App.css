@@ -76,3 +76,7 @@ body {
 .sign-nav {
     font-size: 25px;
 }
+.jumbo-box {
+    margin-top: 100px;
+    padding-top: 0 !important;
+}
