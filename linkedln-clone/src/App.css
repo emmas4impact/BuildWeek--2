@@ -63,3 +63,9 @@ body {
     /* background: url('/public/Component/Content/Profile/jumboCover.jpeg'); */
     
 }
+
+.exper-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
