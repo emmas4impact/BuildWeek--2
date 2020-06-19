@@ -191,7 +191,7 @@ componentDidMount = () => {
                 </div>
                 <Nav.Link className='text-white' href="#link">
                     <FaVideo />
-                    Learningg</Nav.Link>
+                    Learning</Nav.Link>
               </Nav>
              
             </Navbar.Collapse>
