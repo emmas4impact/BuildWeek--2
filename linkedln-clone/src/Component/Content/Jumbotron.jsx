@@ -74,7 +74,7 @@ render(){
       
         <Card.Img variant="top" src="/jumboCover.jpeg"/>
 
-<div class="image-upload" style={{position:'absolute',top:'0.5rem',right:'1.2rem',width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
+<div class="image-upload" style={{position:'absolute',top:'0.5rem', right: '-60px', width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
     <label for="file-input">
     <FaCamera style={{width:'20px'}}/>
     </label>
