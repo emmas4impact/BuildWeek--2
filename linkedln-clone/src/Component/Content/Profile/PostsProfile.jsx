@@ -11,6 +11,7 @@ class PostsProfile extends Component {
         postId: null,
         newPost: [],
         person: [],
+        newsFeed:"",
         image: '',
         oldPostText: '',
         sendStatus: {
@@ -365,7 +366,7 @@ class PostsProfile extends Component {
                                         <Modal.Header closeButton>
                                             <Modal.Title>Edit message</Modal.Title>
                                         </Modal.Header>
-                                        <Modal.Body><textarea value={this.state.oldPostText} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
+                                        <Modal.Body><textarea value={this.state.oldPostText} onChange={this.sendPost} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
                                       
                                         <Modal.Footer>
                                             <Button onClick={this.close}>Save</Button>
