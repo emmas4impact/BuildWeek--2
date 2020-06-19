@@ -11,8 +11,10 @@ class PostsProfile extends Component {
         newPost: [],
         person: [],
         sendStatus: {
-            text:""
+            text:"",
+            image: null
         }
+        
     }
     
     componentDidMount=async()=>{
@@ -123,7 +125,12 @@ class PostsProfile extends Component {
     }
     
     
-    
+   fileSelectedHandler = event=>{
+       this.setState({
+           image: event.target.files[0]
+       })
+       console.log(event.target.files[0])
+   }
     
     
     
@@ -209,7 +216,9 @@ class PostsProfile extends Component {
                                       <faKey style={{color: '#000'}}/>
                                         <div>
                                             <button className='btn-upload'><FaCamera /></button>
-                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo /></button>
+                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo />
+                                                <input type="file" onChange={this.fileSelectedHandler} />
+                                            </button>
                                             <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
                                     </Card.Body>
