@@ -56,11 +56,12 @@ class App extends React.Component {
       search: ''
     });
   }
-
+  
 
 
 
   render(){
+    
     return(
      
         <> 
@@ -91,9 +92,10 @@ class App extends React.Component {
 
               } 
             {...this.props}/>
-            <Route path="/profile/:username" component={Content} />
-           
-            <Route path='/postsprofile' component={PostsProfile} {...this.props}/>
+            <Route path="/profile/:username" component={Content}/>
+            
+            <Route path='/postsprofile/:username' component={PostsProfile} {...this.props}/>
+            
             <Footer />
           
       </Router>

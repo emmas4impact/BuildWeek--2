@@ -5,7 +5,7 @@ const Interest=(props) =>{
     
     return(
         <>
-         <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof">
+         <Jumbotron fluid style={{backgroundColor: "white"}} className=" box jumbo-prof">
              <Container>
                 <h4>Interest</h4>
                     <p>

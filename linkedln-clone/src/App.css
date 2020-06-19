@@ -55,3 +55,24 @@ body {
     background-color: none;
     border: none;
 }
+.head-prof {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    /* background: url('/public/Component/Content/Profile/jumboCover.jpeg'); */
+    
+}
+
+.exper-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.font-nav {
+    font-size: 12px;
+    font-weight: 700;
+}
+.sign-nav {
+    font-size: 25px;
+}
