@@ -62,9 +62,9 @@ class PostsProfile extends Component {
         const url="https://striveschool.herokuapp.com/api/posts/"
         const response= await fetch(url,{
           method:'POST',
-          body: JSON.stringify(this.state.sendStatus.text),
+          body: JSON.stringify(this.state.sendStatus),
           headers:new Headers({
-           'Content-type':'applicationCache/json', 
+           'Content-type':'application/json', 
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
