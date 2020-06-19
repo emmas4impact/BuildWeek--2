@@ -13,7 +13,8 @@ class PostsProfile extends Component {
         sendStatus: {
             text:"",
             image: null
-        }
+        },
+       
         
     }
     
@@ -72,6 +73,19 @@ class PostsProfile extends Component {
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
+        const data = await response.json()
+        const id = data._id;
+        
+        setTimeout(async () => {
+            const response = await fetch("https://striveschool.herokuapp.com/api/posts/" + id, {
+                method: "POST",
+                body: this.state.image,
+                headers: new Headers({
+                    'Authorization':'Basic ' + btoa(username + ':' + password),
+                }),
+            }, 2000)
+        })
+
 
         
         if(response.ok){
@@ -123,13 +137,14 @@ class PostsProfile extends Component {
         }
    
     }
-    
-    
+   
    fileSelectedHandler = event=>{
+       let photo =new FormData()
+       photo.append('post', event.target.files[0])
        this.setState({
-           image: event.target.files[0]
+           image: photo
        })
-       console.log(event.target.files[0])
+       console.log(photo)
    }
     
     
@@ -215,9 +230,16 @@ class PostsProfile extends Component {
                                       ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                            <button className='btn-upload'><FaCamera /></button>
-                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo />
-                                                <input type="file" onChange={this.fileSelectedHandler} />
+                                            <button className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
+                                                <label for="file-input">
+                                                <FaCamera style={{width:'20px'}}/>
+                                                </label>
+
+                                                <input id="file-input" type="file" onChange={this.fileSelectedHandler} style={{display:'none'}}/>
+                                            </div>  
+                                            </button>
+                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo  />
+                                              
                                             </button>
                                             <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
@@ -290,7 +312,7 @@ class PostsProfile extends Component {
                                     </div>
                                   
                                    
-                                    <i>{user.text}</i>
+                                    <i>{user.text} <img src={user.image} style={{with: "40px", height: "40px"}}/></i>
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                       <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
                                       <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
