@@ -35,7 +35,7 @@ render(){
     
       <Card style={{position: 'relative'}} style={{border: 'none'}}>
       
-        <Card.Img variant="top" src="/jumboCover.jpeg" style={{paddingTop: '0'}}/>
+        <Card.Img variant="top" src="/jumboCover.jpeg"/>
 
 <div class="image-upload" style={{position:'absolute',top:'0.5rem',right:'20px', cursor:'pointer'}}>
     <label for="file-input">
