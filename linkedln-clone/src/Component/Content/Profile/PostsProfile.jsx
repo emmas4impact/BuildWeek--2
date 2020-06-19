@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
-import  { Card, ListGroup, ListGroupItem, Form , Row, Col, Dropdown, DropdownButton} from 'react-bootstrap';
+import  { Card, ListGroup, ListGroupItem, Form , Modal, Button, Row, Col, Dropdown, DropdownButton} from 'react-bootstrap';
 
 
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
@@ -14,6 +14,18 @@ class PostsProfile extends Component {
             text:""
         }
     }
+
+    open =() => {
+        this.setState({ showModal: true });
+      }
+  
+     getInitialState =() =>{
+        return { showModal: false };
+      }
+    
+      close =() => {
+        this.setState({ showModal: false });
+      }
     
     componentDidMount=async()=>{
         const username="user29";
@@ -33,6 +45,7 @@ class PostsProfile extends Component {
             post:data, 
             
         })
+
         
        
         const responses= await fetch("https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username,{
@@ -82,10 +95,11 @@ class PostsProfile extends Component {
         //     newPost:data, 
         //     post: data
         // })
+
         
         
     }
-    
+  
     
     
     render() {
@@ -234,11 +248,26 @@ class PostsProfile extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
+                                        <Dropdown.Item onClick={this.open}>Edit</Dropdown.Item>
+
+
                                         <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
                                         
+                                      
+
+
                                     </Dropdown.Menu>
                                     </Dropdown>
+                                    <Modal show={this.state.showModal} onHide={this.close}>
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>Edit message</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body>Cuttent comment</Modal.Body>
+                                      
+                                        <Modal.Footer>
+                                            <Button onClick={this.close}>Save</Button>
+                                        </Modal.Footer>
+                                        </Modal>
                                     </div>
                                   
                                    
