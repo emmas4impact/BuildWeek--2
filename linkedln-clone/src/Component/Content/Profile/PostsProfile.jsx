@@ -148,7 +148,7 @@ class PostsProfile extends Component {
           method:'DELETE',
        
           headers:new Headers({
-           'Content-type':'application/json', 
+           
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
