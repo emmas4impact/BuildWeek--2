@@ -10,9 +10,25 @@ class PostsProfile extends Component {
         post: [],
         newPost: [],
         person: [],
+        image: '',
         sendStatus: {
-            text:""
+            text:"",
         }
+       
+    }
+    handleChange = (event) => {
+        this.setState({
+            newsFeed: event.currentTarget.value
+        });
+
+    }
+
+    saveImg = (event) => {
+        let photo = new FormData()
+        photo.append('post', event.target.files[0])
+        this.setState({
+            image: photo
+        });
     }
 
     open =() => {
@@ -72,8 +88,8 @@ class PostsProfile extends Component {
         }
     postStatus = async ()=>{
         
-        const username="user29";
-        const password="w4X9FKLNUDSXwzYu";
+        const username="user19";
+        const password="Hxx8R4wZfCANamrj";
         const url="https://striveschool.herokuapp.com/api/posts/"
         const response= await fetch(url,{
           method:'POST',
@@ -144,7 +160,9 @@ class PostsProfile extends Component {
         console.log("from post profile: ",this.state.sendStatus)
         console.log("from props profile",this.props)
         return (
+            
             <div className='container'>
+                
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
                 <div className='row'>
                     <div className='col-3'>
@@ -157,7 +175,7 @@ class PostsProfile extends Component {
                                            <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src={this.state.person.image} />
                                         <Card.Text style={{lineHeight: '0.5'}}>
                                         <h6 style={{fontWeight: '700'}}>Welcome, {this.state.person.name}</h6>
-                                        <a style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
+                                        <a href='' style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
                                         </Card.Text>
                                     </Card.Body>
                                     <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700'}}>
@@ -221,7 +239,13 @@ class PostsProfile extends Component {
                                       ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                            <button className='btn-upload'><FaCamera /></button>
+                                    <div class="image-upload" style={{position:'absolute',width:'100px',cursor:'pointer'}}>
+                                        <label for="file-input">
+                                        <FaCamera style={{width:'20px'}}/>
+                                        </label>
+
+                                        <input id="file-input" type="file" style={{display:'none'}}/>
+                                    </div>
                                             <button className='btn-upload ml-5 left-border'><FaPhotoVideo /></button>
                                             <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
