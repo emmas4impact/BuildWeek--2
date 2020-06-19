@@ -8,9 +8,11 @@ import { text } from '@fortawesome/fontawesome-svg-core';
 class PostsProfile extends Component {
     state= {
         post: [],
+        postId: null,
         newPost: [],
         person: [],
         image: '',
+        oldPostText: '',
         sendStatus: {
             text:"",
             image: null
@@ -35,8 +37,21 @@ class PostsProfile extends Component {
         });
     }
 
-    open =() => {
-        this.setState({ showModal: true });
+    open = async(postId) => {
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/" + postId 
+        const response= await fetch(url,{
+          method:'Get',
+          headers:new Headers({
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        const postInfo= await response.json();
+        
+        const postText = postInfo.text
+        
+        this.setState({ showModal: true, postId: postId, oldPostText: postText });
       }
   
      getInitialState =() =>{
@@ -151,7 +166,7 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/"+this.props.match.params.username
+        const url="https://striveschool.herokuapp.com/api/posts/"+this.state.postId
         const response= await fetch(url,{
           method:'PUT',
           body: JSON.stringify(this.state.sendStatus),
@@ -336,7 +351,7 @@ class PostsProfile extends Component {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item onClick={this.open}>Edit</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => this.open(user._id)}>Edit</Dropdown.Item>
 
 
                                         <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
@@ -350,7 +365,7 @@ class PostsProfile extends Component {
                                         <Modal.Header closeButton>
                                             <Modal.Title>Edit message</Modal.Title>
                                         </Modal.Header>
-                                        <Modal.Body><textarea placeholder='Enter text ...' style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
+                                        <Modal.Body><textarea value={this.state.oldPostText} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
                                       
                                         <Modal.Footer>
                                             <Button onClick={this.close}>Save</Button>
