@@ -21,7 +21,7 @@ const response= await fetch(url,{
   method:'Get',
   headers:new Headers({
    'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
+   'Authorization':'Basic ' + " dXNlcjk6c1A0WU1LaEJwcVFIQVBKTg=="
   })
 })
 const data= await response.json();
