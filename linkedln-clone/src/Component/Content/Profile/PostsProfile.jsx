@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
-import  { Card, ListGroup, ListGroupItem, Form , Row, Col} from 'react-bootstrap';
+import  { Card, ListGroup, ListGroupItem, Form , Row, Col, Dropdown, DropdownButton} from 'react-bootstrap';
+
+
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
 import { text } from '@fortawesome/fontawesome-svg-core';
 class PostsProfile extends Component {
@@ -222,7 +224,24 @@ class PostsProfile extends Component {
                             {this.state.post.map((user, i)=>{
                                 return(
                                     <Card body key={i} className='mt-2'> 
+                                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p><img src={user.user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.user.name}</p>
+
+                                    
+                                    <Dropdown>
+                                    <Dropdown.Toggle style={{background: 'none', color: '#000', border: 'none'}}>
+                                       
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+                                        
+                                    </Dropdown.Menu>
+                                    </Dropdown>
+                                    </div>
+                                  
+                                   
                                     <i>{user.text}</i>
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                       <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
