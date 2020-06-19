@@ -24,8 +24,8 @@
 
 }
 .search-bar {
-    background-color: #E2E9EE;
-    height: 35px;
+  
+    height: 5px;
     
 }
 .footer {
@@ -36,6 +36,7 @@
 }
 .navDrop {
     display: flex;
+    
     flex-direction: column;
     align-items: center;
     line-height: 0.5;
@@ -80,3 +81,22 @@ ul li {
     background-color: red;    
 
 }
+#basic-nav-dropdown .dropdown-menu {
+  
+        position: absolute;
+      width: 300px !important;
+       
+        transform: translateX(-105%) ;
+        
+        border: var(--border);
+      
+        padding: 1rem;
+        overflow: hidden;
+        transition: height var(--speed) ease;
+      
+  }
+  .ok{
+      height: 35px;
+      border-radius: 2px;
+     
+  }
