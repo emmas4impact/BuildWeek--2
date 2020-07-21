@@ -44,11 +44,7 @@ const Footer = () => {
                       <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-4'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>Questions
                           <small>Visit our Help Center.</small>
                       </li>
-<<<<<<< HEAD
                       <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}><FaCog style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>
-=======
-                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}> <MdSettings style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>
->>>>>>> d098a17c925e279ddda28da6c48876b9c9f51a65
                     
                           Manage your account and Privacy
                           <small>Go to your Settings.</small>
