@@ -8,10 +8,18 @@ body {
 .jumbo-prof-1 {
     padding: 30px 30px !important;
 }
-
+.height-footer li{
+    line-height: 1.5;
+}
 .colorBlue {
     color: #006097;
     font-weight: 600;
+}
+.footer  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 .back-blue {
     background-color:#F3F6F8 !important;

@@ -64,7 +64,7 @@ class Profile extends React.Component{
                             <Activity />
                            
                             <DashBoard {...this.props}/>
-                            <Skills />
+                      
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
