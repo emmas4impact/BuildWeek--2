@@ -1,7 +1,7 @@
 import React from 'react'
 import {Jumbotron, Dropdown} from 'react-bootstrap';
 import {Container,Card, Image,Button} from 'react-bootstrap';
-import { FaCamera } from 'react-icons/fa';
+import { FaCamera, FaPen } from 'react-icons/fa';
 const username="user29";
 const password="w4X9FKLNUDSXwzYu";
 
@@ -83,9 +83,10 @@ render(){
 </div>
        
         <Card.Body>
-        <Button className="btn btn-light"  style={{position:'absolute',bottom:'2rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(160,160,160)'}} >More..</Button>&nbsp;&nbsp;
-                    <Dropdown style={{position:'absolute',bottom:'2rem',right:'8.8rem'}}>
-                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'rgb(200,180,180)'}}> Add section profile </Dropdown.Toggle>
+        <Button className="btn btn-light"  style={{position:'absolute',bottom:'4.6rem',right:'3rem', padding: '5px 10px', background:'#fff',color:'#3D3D3D', border: '1px solid #3D3D3D', fontWeight: '700', borderRadius: '2px'}} >More..</Button>
+        <FaPen style={{position:'absolute',bottom:'5rem',right:'1rem', fontSize: '25px'}}/>
+                    <Dropdown style={{position:'absolute',bottom:'4.5rem',right:'8rem'}}>
+                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'#fff', fontWeight: '700',  borderRadius: '2px'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                     <Dropdown.Item>Intro
