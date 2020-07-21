@@ -12,18 +12,17 @@ class NavBar extends Component {
 }
 
 componentDidMount = () => {
-    const url = "https://striveschool.herokuapp.com/api/profile/";
+    const url = "http://localhost:2250/api/profiles/";
     const user = this.props.location.pathname.split('/').pop()
 
     console.log('FROM ROUTER PROPS', user)
 
     const username = 'user19';
-    const password = 'Hxx8R4wZfCANamrj';
-
+  
     const headers = new Headers();
 
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
+   
 
     fetch(url, {
         method: "GET",
@@ -59,7 +58,7 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href={"/profiles/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>

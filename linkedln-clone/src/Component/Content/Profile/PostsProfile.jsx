@@ -40,7 +40,7 @@ class PostsProfile extends Component {
     open = async(postId) => {
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/" + postId 
+        const url="http://localhost:2250/api/posts/" + postId 
         const response= await fetch(url,{
           method:'Get',
           headers:new Headers({
@@ -65,12 +65,12 @@ class PostsProfile extends Component {
     componentDidMount=async()=>{
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/" 
+        const url="hhttp://localhost:2250/api/posts/" 
         const response= await fetch(url,{
           method:'Get',
           headers:new Headers({
-           'Content-type':'applicationCache/json', 
-           'Authorization':'Basic ' + btoa(username + ':' + password)
+           'Content-type':'applicationCache/json'
+        
           })
         })
         const data= await response.json();
@@ -83,11 +83,11 @@ class PostsProfile extends Component {
 
         
        
-        const responses= await fetch("https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username,{
+        const responses= await fetch("http://localhost:2250/api/posts/" + this.props.match.params.username,{
         method:'Get',
         headers:new Headers({
-        'Content-type':'applicationCache/json', 
-        'Authorization':'Basic ' + btoa(username + ':' + password)
+        'Content-type':'applicationCache/json'
+      
         })
         })
         const datas= await responses.json();
@@ -109,25 +109,23 @@ class PostsProfile extends Component {
         
         const username="user19";
         const password="Hxx8R4wZfCANamrj";
-        const url="https://striveschool.herokuapp.com/api/posts/"
+        const url="http://localhost:2250/api/posts/"
         const response= await fetch(url,{
           method:'POST',
           body: JSON.stringify(this.state.sendStatus),
           headers:new Headers({
            'Content-type':'application/json', 
-           'Authorization':'Basic ' + btoa(username + ':' + password)
+        
           })
         })
         const data = await response.json()
         const id = data._id;
         
         setTimeout(async () => {
-            const response = await fetch("https://striveschool.herokuapp.com/api/posts/" + id, {
+            const response = await fetch("http://localhost:2250/api/posts/" + id, {
                 method: "POST",
                 body: this.state.image,
-                headers: new Headers({
-                    'Authorization':'Basic ' + btoa(username + ':' + password),
-                }),
+               
             }, 2000)
         })
 
@@ -143,14 +141,11 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/"
+        const url="http://localhost:2250/api/posts/"
         const response= await fetch(url+this.props.match.params.username,{
           method:'DELETE',
        
-          headers:new Headers({
-           
-           'Authorization':'Basic ' + btoa(username + ':' + password)
-          })
+         
         })
 
         
@@ -166,13 +161,13 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://striveschool.herokuapp.com/api/posts/"+this.state.postId
+        const url="http://localhost:2250/api/posts/"+this.state.postId
         const response= await fetch(url,{
           method:'PUT',
           body: JSON.stringify(this.state.sendStatus),
           headers:new Headers({
            'Content-type':'application/json', 
-           'Authorization':'Basic ' + btoa(username + ':' + password)
+          
           })
         })
 

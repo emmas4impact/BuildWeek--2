@@ -21,12 +21,12 @@ this.fetchUserData()
 }
 
 fetchUserData = async () => {
-  const url="https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username;
+  const url="http://localhost:2250/api/profiles/" + this.props.match.params.username;
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({
-   'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
+   'Content-type':'applicationCache/json'
+  
   })
 })
 const data= await response.json();
@@ -38,13 +38,11 @@ uploadPicture= async ()=>{
         
   const username="user29";
   const password="w4X9FKLNUDSXwzYu";
-  const url="https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username+"/picture"
+  const url="http://localhost:2250/api/profiles/" + this.props.match.params.username+"/picture"
   const response= await fetch(url,{
     method:'POST',
     body: this.state.image,
-    headers:new Headers({
-     'Authorization':'Basic ' + btoa(username + ':' + password)
-    })
+   
   })
   
   if(response.ok){

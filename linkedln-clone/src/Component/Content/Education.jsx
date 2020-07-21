@@ -4,7 +4,7 @@ import { FaPlus, FaPen, FaAlignJustify } from "react-icons/fa";
 
 
 const username="user9";
-const password="sP4YMKhBpqQHAPJN";
+
 
 
 class Education extends Component {
@@ -31,12 +31,12 @@ class Education extends Component {
     
 
    componentDidMount=async()=>{
-        const url="https://striveschool.herokuapp.com/api/profile/"+this.props.match.params.username+"/experiences";
+        const url="http://localhost:2250/api/profiles/"+this.props.match.params.username+"/experiences";
         const response= await fetch(url,{
         method:'Get',
         headers:new Headers({
         'Content-type':'applicationCache/json', 
-        'Authorization':'Basic ' + btoa(username + ':' + password)
+       
         })
         })
         const data= await response.json();

@@ -1,13 +1,13 @@
 import React from "react";
 import { Row, Col, Button, Form, Spinner, Alert, Container } from "react-bootstrap";
-const url ="https://striveschool.herokuapp.com/api/profile/"
+const url ="http://localhost:2250/api/profiles/"
 const username ='user19'
-const password = 'Hxx8R4wZfCANamrj'
+// const password = 'Hxx8R4wZfCANamrj'
 
 
 const headers =new Headers({
-    "Content-Type" : "application/json",
-    'Authorization': 'Basic ' + 'btoa(username + ":" + password)',
+    "Content-Type" : "application/json"
+  
 });
 
 class ProfileForm extends React.Component {
