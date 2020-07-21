@@ -50,7 +50,7 @@ class Education extends Component {
         console.log("EDUCATION", this.props.match.params.username)
         return (
         <Row>
-            <Col md={8} >
+            <Col md={12} >
                 <Jumbotron style={{backgroundColor: "White"}} className='box jumbo-prof-1'>
                 <Row>
                     <Col md={12} >

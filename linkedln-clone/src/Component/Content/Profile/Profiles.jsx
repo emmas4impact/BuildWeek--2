@@ -68,11 +68,12 @@ class Profile extends React.Component{
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
-                       
+                            <Education {...this.props} />
+                            <Skills />
                            
                         </Col>
                         <Col md={4} >
-                        <a href="#">  <p style={{paddingTop: "5rem", color: "gray"}} >Edit public profile & URL <AiOutlineQuestionCircle /></p></a>
+                        <a href="#">  <p style={{paddingTop: "5rem", color: "gray"}} >Edit public profile <small>&</small> <AiOutlineQuestionCircle /></p></a>
                             <hr></hr>
                             <a href="#"><p style={{color: "gray"}}>Add profile in another language <AiOutlineQuestionCircle /></p></a>
                             <p className="mt-5">People also viewed</p>
@@ -97,7 +98,7 @@ class Profile extends React.Component{
 
                                 }
                             </Col>
-                            <Col className="col col-8 d-flex justify-content-between pt-3 border-bottom" md={9}>
+                            <Col className="col col-8 d-flex pt-3 pb-4 border-bottom" md={9} style={{alignItems: 'center', justifyContent: 'space-between'}}>
                                
                                     <Col md={10}>
                                 <div className="d-flex flex-column ">
