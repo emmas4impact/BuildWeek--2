@@ -1,14 +1,66 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
-import  { Card, ListGroup, ListGroupItem, Form , Row, Col} from 'react-bootstrap';
+import  { Card, ListGroup, ListGroupItem, Form , Modal, Button, Row, Col, Dropdown, DropdownButton} from 'react-bootstrap';
 
 
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
+import { text } from '@fortawesome/fontawesome-svg-core';
 class PostsProfile extends Component {
     state= {
         post: [],
-        newPost: []
+        postId: null,
+        newPost: [],
+        person: [],
+        image: '',
+        oldPostText: '',
+        sendStatus: {
+            text:"",
+            image: null
+        },
+       
+        
+        }
+       
+    
+    handleChange = (event) => {
+        this.setState({
+            newsFeed: event.currentTarget.value
+        });
+
     }
+
+    saveImg = (event) => {
+        let photo = new FormData()
+        photo.append('post', event.target.files[0])
+        this.setState({
+            image: photo
+        });
+    }
+
+    open = async(postId) => {
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/" + postId 
+        const response= await fetch(url,{
+          method:'Get',
+          headers:new Headers({
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+        const postInfo= await response.json();
+        
+        const postText = postInfo.text
+        
+        this.setState({ showModal: true, postId: postId, oldPostText: postText });
+      }
+  
+     getInitialState =() =>{
+        return { showModal: false };
+      }
+    
+      close =() => {
+        this.setState({ showModal: false });
+      }
     
     componentDidMount=async()=>{
         const username="user29";
@@ -28,35 +80,127 @@ class PostsProfile extends Component {
             post:data, 
             
         })
+
+        
+       
+        const responses= await fetch("https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username,{
+        method:'Get',
+        headers:new Headers({
+        'Content-type':'applicationCache/json', 
+        'Authorization':'Basic ' + btoa(username + ':' + password)
+        })
+        })
+        const datas= await responses.json();
+        console.log(datas);
+        this.setState({person:datas, loading:false})
         }
-    postStatus =()=>{
-        const username="user29";
-        const password="w4X9FKLNUDSXwzYu";
+        sendPost=(e)=>{
+            const newPost = this.state.sendStatus
+            newPost.text = e.currentTarget.value
+
+            this.setState({
+                sendStatus: {
+                    text: e.currentTarget.value
+                }
+            })
+            console.log("from post profile: ", newPost)
+        }
+    postStatus = async ()=>{
+        
+        const username="user19";
+        const password="Hxx8R4wZfCANamrj";
         const url="https://striveschool.herokuapp.com/api/posts/"
-        const response= fetch(url,{
+        const response= await fetch(url,{
           method:'POST',
+          body: JSON.stringify(this.state.sendStatus),
           headers:new Headers({
-           'Content-type':'applicationCache/json', 
+           'Content-type':'application/json', 
            'Authorization':'Basic ' + btoa(username + ':' + password)
           })
         })
+        const data = await response.json()
+        const id = data._id;
         
-        const data= response.json();
-        console.log(data);
-        
-        this.setState({
-            newPost:data, 
-            
+        setTimeout(async () => {
+            const response = await fetch("https://striveschool.herokuapp.com/api/posts/" + id, {
+                method: "POST",
+                body: this.state.image,
+                headers: new Headers({
+                    'Authorization':'Basic ' + btoa(username + ':' + password),
+                }),
+            }, 2000)
         })
+
+
+        
+        if(response.ok){
+            alert("Post successfully!")
         }
+   
+    }
+    
+    deleteStatus = async ()=>{
+        
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/"
+        const response= await fetch(url+this.props.match.params.username,{
+          method:'DELETE',
+       
+          headers:new Headers({
+           
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+
+        
+        if(response.ok){
+            alert("Deleted successfully!")
+        }else{
+            alert("Cant delete another users post!")
+        }
+   
+    }
+    
+    editStatus = async ()=>{
+        
+        const username="user29";
+        const password="w4X9FKLNUDSXwzYu";
+        const url="https://striveschool.herokuapp.com/api/posts/"+this.state.postId
+        const response= await fetch(url,{
+          method:'PUT',
+          body: JSON.stringify(this.state.sendStatus),
+          headers:new Headers({
+           'Content-type':'application/json', 
+           'Authorization':'Basic ' + btoa(username + ':' + password)
+          })
+        })
+
+        
+        if(response.ok){
+            alert("Post successfully!")
+        }
+   
+    }
+   
+   fileSelectedHandler = event=>{
+       let photo =new FormData()
+       photo.append('post', event.target.files[0])
+       this.setState({
+           image: photo
+       })
+       console.log(photo)
+   }
     
     
     
     render() {
-        console.log("from post profile",this.state.post)
+        console.log("from post profile: ",this.state.sendStatus)
         console.log("from props profile",this.props)
         return (
+            
             <div className='container'>
+                
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
                 <div className='row'>
                     <div className='col-3'>
@@ -66,10 +210,10 @@ class PostsProfile extends Component {
                                    
                                     <Card.Body className='head-prof'>
                                   
-                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src='https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
+                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src={this.state.person.image} />
                                         <Card.Text style={{lineHeight: '0.5'}}>
-                                        <h6 style={{fontWeight: '700'}}>Welcome, NAME!</h6>
-                                        <a style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
+                                        <h6 style={{fontWeight: '700'}}>Welcome, {this.state.person.name}</h6>
+                                        <a href='' style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
                                         </Card.Text>
                                     </Card.Body>
                                     <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700'}}>
@@ -125,12 +269,26 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body style={{display: 'flex', justifyContent: 'space-between'}}>
-                                        <textarea style={{flex: '0.8'}} placeholder=" &#xf044; Start a post"></textarea>
+                                        <textarea style={{flex: '0.8', border: 'none'}} 
+                                        placeholder="Start a post"
+                                        
+                                        onChange={this.sendPost}
+                                        type="text"
+                                      ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                            <button className='btn-upload'><FaCamera /></button>
-                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo /></button>
-                                            <button className='btn-upload ml-5 left-border'><FaPaperPlane/></button>
+                                            <button className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
+                                                <label for="file-input">
+                                                <FaCamera style={{width:'20px'}}/>
+                                                </label>
+
+                                                <input id="file-input" type="file" onChange={this.fileSelectedHandler} style={{display:'none'}}/>
+                                            </div>  
+                                            </button>
+                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo  />
+                                              
+                                            </button>
+                                            <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
                                     </Card.Body>
                                     <Card.Footer>
@@ -182,12 +340,46 @@ class PostsProfile extends Component {
                             <Col>
                             {this.state.post.map((user, i)=>{
                                 return(
-                                    <Card body key={i}>
-                                    <p><img src={user.user.image} style={{width: "40px", borderRadius: "50px", marginRight: "10px"}}/> {user.user.name}</p>
-                                    <p>{user.text}</p>
-                                    <button className='btn-upload'>Like</button>
-                                      <button className='btn-upload'><FaComment/>Comment</button>
-                                      <button className='btn-upload'><FaShare/>Share</button>
+                                    <Card body key={i} className='mt-2'> 
+                                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '700', fontSize: '14px'}}><img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p>
+
+                                    
+                                    <Dropdown>
+                                    <Dropdown.Toggle style={{background: 'none', color: '#000', border: 'none'}}>
+                                       
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item onClick={() => this.open(user._id)}>Edit</Dropdown.Item>
+
+
+                                        <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+                                        
+                                      
+
+
+                                    </Dropdown.Menu>
+                                    </Dropdown>
+                                    <Modal show={this.state.showModal} onHide={this.close}>
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>Edit message</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body><textarea value={this.state.oldPostText} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
+                                      
+                                        <Modal.Footer>
+                                            <Button onClick={this.close}>Save</Button>
+                                        </Modal.Footer>
+                                        </Modal>
+                                    </div>
+                                  
+                                   
+                                    <i>{user.text} <img src={user.image} style={{with: "40px", height: "40px"}}/></i>
+                                    <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
+                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
+                                   </div>
                                     </Card>
                                 )
                                 

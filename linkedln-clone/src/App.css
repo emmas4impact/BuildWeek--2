@@ -71,3 +71,20 @@ body {
     /* background: url('/public/Component/Content/Profile/jumboCover.jpeg'); */
     
 }
+
+.exper-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.font-nav {
+    font-size: 12px;
+    font-weight: 700;
+}
+.sign-nav {
+    font-size: 25px;
+}
+.jumbo-box {
+    margin-top: 100px;
+    padding-top: 0 !important;
+}
