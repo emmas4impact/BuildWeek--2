@@ -2,6 +2,7 @@ import React from 'react'
 import {Jumbotron, Dropdown} from 'react-bootstrap';
 import {Container,Card, Image,Button} from 'react-bootstrap';
 import { FaCamera, FaPen } from 'react-icons/fa';
+import { GiPencil } from "react-icons/gi";
 const username="user29";
 const password="w4X9FKLNUDSXwzYu";
 
@@ -84,7 +85,7 @@ render(){
        
         <Card.Body>
         <Button className="btn btn-light"  style={{position:'absolute',bottom:'4.6rem',right:'3rem', padding: '5px 10px', background:'#fff',color:'#3D3D3D', border: '1px solid #3D3D3D', fontWeight: '700', borderRadius: '2px'}} >More..</Button>
-        <FaPen style={{position:'absolute',bottom:'5rem',right:'1rem', fontSize: '25px'}}/>
+        <GiPencil style={{position:'absolute',bottom:'5rem',right:'1rem', fontSize: '25px'}}/>
                     <Dropdown style={{position:'absolute',bottom:'4.5rem',right:'8rem'}}>
                     <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'#fff', fontWeight: '700',  borderRadius: '2px'}}> Add section profile </Dropdown.Toggle>
 
