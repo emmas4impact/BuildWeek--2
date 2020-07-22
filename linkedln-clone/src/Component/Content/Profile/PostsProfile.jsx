@@ -40,7 +40,7 @@ class PostsProfile extends Component {
     open = async(postId) => {
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://linkedln-backend.herokuapp.com/posts/" + postId 
+        const url="https://linkedln-backend.herokuapp.com/user/posts/" + postId 
         const response= await fetch(url,{
           method:'GET'
           
@@ -63,7 +63,7 @@ class PostsProfile extends Component {
     componentDidMount=async()=>{
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://linkedln-backend.herokuapp.com/api/posts" 
+        const url="https://linkedln-backend.herokuapp.com/api/user/posts" 
         const response= await fetch(url,{
           method:'Get',
           headers:new Headers({
@@ -75,13 +75,13 @@ class PostsProfile extends Component {
         console.log(data);
         
         this.setState({
-            post:data, 
+            post:data
             
         })
 
         
        
-        const responses= await fetch("https://linkedln-backend.herokuapp.com/api/posts" + this.props.match.params.username,{
+        const responses= await fetch("https://linkedln-backend.herokuapp.com/api/user/posts" + this.props.match.params.username,{
         method:'Get',
         headers:new Headers({
         'Content-type':'applicationCache/json'
@@ -107,7 +107,7 @@ class PostsProfile extends Component {
         
         const username="user19";
         const password="Hxx8R4wZfCANamrj";
-        const url="https://linkedln-backend.herokuapp.com/api/posts"
+        const url="https://linkedln-backend.herokuapp.com/api/user/posts"
         const response= await fetch(url,{
           method:'POST',
           body: JSON.stringify(this.state.sendStatus),
@@ -120,7 +120,7 @@ class PostsProfile extends Component {
         const id = data._id;
         
         setTimeout(async () => {
-            const response = await fetch("https://linkedln-backend.herokuapp.com/api/posts" + id, {
+            const response = await fetch("https://linkedln-backend.herokuapp.com/api/user/posts" + id, {
                 method: "POST",
                 body: this.state.image,
                
@@ -139,7 +139,7 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://linkedln-backend.herokuapp.com/api/posts"
+        const url="https://linkedln-backend.herokuapp.com/api/user/posts"
         const response= await fetch(url+this.props.match.params.username,{
           method:'DELETE',
        
@@ -159,7 +159,7 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="http://localhost:2250/api/posts/"+this.state.postId
+        const url="http://localhost:2250/api/user/posts/"+this.state.postId
         const response= await fetch(url,{
           method:'PUT',
           body: JSON.stringify(this.state.sendStatus),
@@ -189,12 +189,12 @@ class PostsProfile extends Component {
     
     render() {
         console.log("from post profile: ",this.state.sendStatus)
-        console.log("from props profile",this.props)
+        console.log("post obj",this.state.post[0])
         return (
             
             <div className='container'>
                 
-                <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
+                <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px', fontSize: '15px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
                 <div className='row'>
                     <div className='col-3'>
                         <div className='row'>
@@ -202,11 +202,11 @@ class PostsProfile extends Component {
                                 <Card style={{border: '1px solid #DFDFDF'}}>
                                    
                                     <Card.Body className='head-prof'>
-                          
-                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src={this.state.person.image} />
+                                        
+                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src='https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png' />
                                         <Card.Text style={{lineHeight: '0.5'}}>
-                                        <h6 style={{fontWeight: '700'}}>Welcome, {this.state.person.name}</h6>
-                                        <a href='' style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
+                                        <h6 style={{fontWeight: '700'}}>{this.state.person.name}</h6>
+                                        {/* <a href='' style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a> */}
                                         </Card.Text>
                                     </Card.Body>
                                     <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700'}}>
@@ -270,7 +270,7 @@ class PostsProfile extends Component {
                                       ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                            <button style={{background: 'transparent'}} className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
+                                            <button className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
                                                 <label for="file-input">
                                                 <FaCamera style={{width:'20px'}}/>
                                                 </label>
@@ -278,10 +278,10 @@ class PostsProfile extends Component {
                                                 <input id="file-input" type="file" onChange={this.fileSelectedHandler} style={{display:'none'}}/>
                                             </div>  
                                             </button>
-                                            <button style={{background: 'transparent'}} className='btn-upload ml-5 left-border'><FaPhotoVideo  />
+                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo  />
                                               
                                             </button>
-                                            <button style={{background: 'transparent'}} className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
+                                            <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
                                     </Card.Body>
                                     <Card.Footer>
@@ -320,9 +320,9 @@ class PostsProfile extends Component {
                                   </Card.Body>
                                   
                                   <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                      <button className='btn-upload' style={{ background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
-                                      <button style={{background: 'transparent'}} className='btn-upload '><FaComment className='mr-2'/>Comment</button>
-                                      <button style={{background: 'transparent'}} className='btn-upload '><FaShare className='mr-2'/>Share</button>
+                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
+                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
                                   </Card.Body>
                                
                                </Card>
