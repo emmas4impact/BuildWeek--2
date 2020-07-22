@@ -21,7 +21,7 @@ class Skills_Endorsements extends Component {
             <Row style={{marginBottom: "30px"}}>
             <Col sm={8}>
               <div id="accordion" className="box">
-                <div class="card">
+                <div class="card" style={{border: 'none'}}>
                     <div class="card-body">
                        <h4 style={{fontSize: '20px'}} className='pb-2'>Skills  <small>&</small>   Endorsements</h4>
                        <Button className="btn btn-primary btn-quiz">Take Skill quiz</Button>                       
@@ -39,7 +39,7 @@ class Skills_Endorsements extends Component {
                     </div>
                     
                     <Accordion defaultActiveKey="0" >
-                        <Card>
+                        <Card style={{border: 'none'}}>
                             <Accordion.Toggle as={Card.Header} eventKey="0" className="text-center" style={{backgroundColor: "#e6f7ff", textDecoration: 'none'}}><Link to="/profile/:user" style={{ textDecoration: 'none', fontWeight: "bold"}}>
                             Show More<FaChevronDown /></Link>
                             </Accordion.Toggle>

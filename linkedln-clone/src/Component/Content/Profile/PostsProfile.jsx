@@ -199,7 +199,7 @@ class PostsProfile extends Component {
                     <div className='col-3'>
                         <div className='row'>
                             <div className='col-12'>
-                                <Card>
+                                <Card style={{border: '1px solid #DFDFDF'}}>
                                    
                                     <Card.Body className='head-prof'>
                           
@@ -386,7 +386,7 @@ class PostsProfile extends Component {
                     <div className='col-3'>
                     <div className='row'>
                             <div className='col-12'>
-                                <Card>
+                                <Card style={{borderBottom : 'none'}}>
                                     <Card.Body>
                                         <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <AiOutlineQuestionCircle/></p>
                                         <div className='row'>
