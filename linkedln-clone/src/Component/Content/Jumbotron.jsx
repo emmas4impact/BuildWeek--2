@@ -32,7 +32,7 @@ const response= await fetch(url,{
 })
 const data= await response.json();
 console.log(data);
-this.setState({person: data, loading:false})
+this.setState({person: data.profiles, loading:false})
 
 }
 
@@ -101,8 +101,19 @@ render(){
         <Card.Text>
           {this.state.loading || !this.state.person ? (<div>loading...</div>):(
             
-            <div> <div><Image className='img-jumbo' src={this.state.person.image}/></div><div> {this.state.person.id}</div>
-          <div className='name pt-4'>{this.state.person.name}</div><div className='bio'>{this.state.person.bio}</div><div className='email'>{this.state.person.email}</div></div>)}
+            <div> 
+              <div><Image className='img-jumbo' src={this.state.person.image}/></div>
+              <div> {this.state.person.id}</div>
+              <div className='name pt-4'>{this.state.person.name}</div>
+              <div className='bio'>{this.state.person.bio}</div>
+              <div className='email'>{this.state.person.email}</div>
+            </div>
+      )}
+            <div>
+                <img src="https://ignite.strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "50px"}}></img>
+                <h6>Strive School</h6>
+
+            </div>
           </Card.Text>
         </Card.Body>
       </Card>

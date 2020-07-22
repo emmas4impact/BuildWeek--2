@@ -47,12 +47,13 @@ componentDidMount = () => {
               }
           })
           .then((user) => {
-            console.log('user found!', user.profiles)
-              this.setState({ user:  user.profiles})
+            console.log('user found!', user)
+              this.setState({ user:  user})
           })
 }
     render() {
       console.log("Nav props", +this.props.users)
+      console.log(this.state.user)
         return (
           <>
 
@@ -104,7 +105,7 @@ componentDidMount = () => {
                 <div className='navDrop'>  
                   
 
-                {this.state.user && this.state.users.slice(0, 2).map((user, i) => {
+                {this.state.user && this.state.users.slice(0, 15).map((user, i) => {
                     return (
                        
                             <Col key={i}>
