@@ -40,7 +40,7 @@ class PostsProfile extends Component {
     open = async(postId) => {
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://linkedln-backend.herokuapp.com/api/posts/" + postId 
+        const url="https://linkedln-backend.herokuapp.com/posts/" + postId 
         const response= await fetch(url,{
           method:'GET'
           
