@@ -270,7 +270,7 @@ class PostsProfile extends Component {
                                       ></textarea>
                                       <faKey style={{color: '#000'}}/>
                                         <div>
-                                            <button className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
+                                            <button style={{background: 'transparent'}} className='btn-upload'><div class="image-upload" style={{cursor:'pointer'}}>
                                                 <label for="file-input">
                                                 <FaCamera style={{width:'20px'}}/>
                                                 </label>
@@ -278,10 +278,10 @@ class PostsProfile extends Component {
                                                 <input id="file-input" type="file" onChange={this.fileSelectedHandler} style={{display:'none'}}/>
                                             </div>  
                                             </button>
-                                            <button className='btn-upload ml-5 left-border'><FaPhotoVideo  />
+                                            <button style={{background: 'transparent'}} className='btn-upload ml-5 left-border'><FaPhotoVideo  />
                                               
                                             </button>
-                                            <button className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
+                                            <button style={{background: 'transparent'}} className='btn-upload ml-5 left-border' onClick={this.postStatus}><FaPaperPlane/></button>
                                         </div>
                                     </Card.Body>
                                     <Card.Footer>
@@ -320,9 +320,9 @@ class PostsProfile extends Component {
                                   </Card.Body>
                                   
                                   <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
-                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
-                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
+                                      <button className='btn-upload' style={{ background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button style={{background: 'transparent'}} className='btn-upload '><FaComment className='mr-2'/>Comment</button>
+                                      <button style={{background: 'transparent'}} className='btn-upload '><FaShare className='mr-2'/>Share</button>
                                   </Card.Body>
                                
                                </Card>
