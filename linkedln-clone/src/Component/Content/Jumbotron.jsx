@@ -1,7 +1,7 @@
 import React from 'react'
 import {Jumbotron, Dropdown} from 'react-bootstrap';
 import {Container,Card, Image,Button} from 'react-bootstrap';
-import { FaCamera, FaPen } from 'react-icons/fa';
+import { FaCamera, FaPen, FaClosedCaptioning, FaTimes } from 'react-icons/fa';
 import { GiPencil } from "react-icons/gi";
 // const username="user29";
 // const password="w4X9FKLNUDSXwzYu";
@@ -32,7 +32,7 @@ const response= await fetch(url,{
 })
 const data= await response.json();
 console.log(data);
-this.setState({person: data.profiles, loading:false})
+this.setState({person: data, loading:false})
 
 }
 
@@ -75,7 +75,7 @@ render(){
       
         <Card.Img variant="top" src="/jumboCover.jpeg"/>
 
-<div class="image-upload" style={{position:'absolute',top:'0.5rem', right: '-60px', width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
+<div class="image-upload" style={{position:'absolute', top:'0.5rem', right: '-60px', width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
     <label for="file-input">
     <FaCamera style={{width:'20px'}}/>
     </label>
@@ -84,9 +84,8 @@ render(){
 </div>
        
         <Card.Body>
-        <Button className="btn btn-light"  style={{position:'absolute',bottom:'4.5rem',right:'3rem', padding: '5px 15px', background:'#fff',color:'#666666', border: '1px solid #666666', fontWeight: '700', borderRadius: '2px'}} >More...</Button>
-        <GiPencil style={{position:'absolute',bottom:'5rem',right:'1rem', fontSize: '25px'}}/>
-                    <Dropdown style={{position:'absolute',bottom:'4.5rem',right:'9rem'}}>
+           <div style={{display:'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+                    <Dropdown className="mr-2">
                     <Dropdown.Toggle className="dropdown-basic" style={{backgroundColor:'#006097', outline: 'none', fontWeight: '700'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -98,7 +97,11 @@ render(){
                     </Dropdown.Item>
                     </Dropdown.Menu>
                     </Dropdown>
-        <Card.Text>
+                    <Button className="btn btn-light mr-3"  style={{ padding: '5px 15px', background:'#fff',color:'#666666', border: '1px solid #666666', fontWeight: '700', borderRadius: '2px'}} >More...</Button>
+                    <GiPencil style={{fontSize: '27px'}}/>
+              </div>      
+                    <Card.Text>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           {this.state.loading || !this.state.person ? (<div>loading...</div>):(
             
             <div> 
@@ -109,12 +112,18 @@ render(){
               <div className='email'>{this.state.person.email}</div>
             </div>
       )}
-            <div>
-                <img src="https://ignite.strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "50px"}}></img>
-                <h6>Strive School</h6>
+       
+            <div style={{display :'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <img src="https://ignite.strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "30px", paddingRight: '10px'}}></img>
+                <h6 style={{paddingTop: '10px'}}>Strive School</h6>
 
             </div>
+            </div>
           </Card.Text>
+          <div className='mt-2' style={{lineHeight: '0.5', fontWeight: '600', padding: '20px 20px 5px', border: "1px dashed #B3B6B9", margin: '0 auto'}}>
+              <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Show recruiters you're open to work - you control who sees this<FaTimes style={{fontSize: '15px'}} /> </p>
+              <p style={{color: '#006097'}}>Get started</p>
+          </div>
         </Card.Body>
       </Card>
     </Container>

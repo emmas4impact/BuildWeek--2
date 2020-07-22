@@ -8,7 +8,7 @@ import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFac
 class NavBar extends Component {
   state = {
     users: [],
-    user: null
+    user: ''
 }
 
 componentDidMount = () => {
@@ -48,11 +48,11 @@ componentDidMount = () => {
           })
           .then((user) => {
             console.log('user found!', user)
-              this.setState({ user:  user})
+              this.setState({ user:  user[0]})
           })
 }
     render() {
-      console.log("Nav props", +this.props.users)
+      //console.log("Nav props", +this.props.users)
       console.log(this.state.user)
         return (
           <>
@@ -103,9 +103,9 @@ componentDidMount = () => {
             
 
                 <div className='navDrop'>  
-                  
+               
 
-                {this.state.user && this.state.users.slice(0, 15).map((user, i) => {
+                {this.state.user && this.state.users.slice(12, 13).map((user, i) => {
                     return (
                        
                             <Col key={i}>
