@@ -12,7 +12,7 @@ class NavBar extends Component {
 }
 
 componentDidMount = () => {
-    const url = "http://localhost:3001/api/profile/";
+    const url = "https://linkedln-backend.herokuapp.com/api/profile/";
     const user = this.props.location.pathname.split('/').pop()
 
     console.log('FROM ROUTER PROPS', user)

@@ -40,7 +40,7 @@ uploadPicture = async () =>{
         
   // const username="user29";
   
-  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.props.match.params.username+ "/picture"
+  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.props.match.params.username+"/upload"
   const response= await fetch(url,{
     method:'POST',
     body: this.state.image,
