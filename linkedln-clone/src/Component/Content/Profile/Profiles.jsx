@@ -23,10 +23,10 @@ class Profile extends React.Component{
     }
 
     componentDidMount = () => {
-        const url = "https://localhost:2250/api/profiles";
+        const url = "https://linkedln-backend.herokuapp.com/api/profile/";
 
         const username = 'user19';
-        // const password = 'Hxx8R4wZfCANamrj';
+  
 
         const headers = new Headers();
 
@@ -79,7 +79,7 @@ class Profile extends React.Component{
                             <p className="mt-5">People also viewed</p>
                             {this.state.users.slice(1, 25).map((user, i) => {
                     return (
-                        <a href={'/profiles/' + user.username} style={{color: "black", textDecoration: "none"}}>
+                        <a href={'/profile/' + user.username} style={{color: "black", textDecoration: "none"}}>
                         <Row className="pb-3" key={i}>
                             <Col md={3}>
                                 {user.image === undefined || user.image === ''
