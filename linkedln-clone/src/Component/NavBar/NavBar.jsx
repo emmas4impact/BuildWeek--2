@@ -12,7 +12,7 @@ class NavBar extends Component {
 }
 
 componentDidMount = () => {
-    const url = "http://localhost:2250/api/profiles/";
+    const url = "https://linkedln-backend.herokuapp.com/api/profile";
     const user = this.props.location.pathname.split('/').pop()
 
     console.log('FROM ROUTER PROPS', user)
@@ -58,7 +58,7 @@ componentDidMount = () => {
 
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container'>
-            <a href={"/profiles/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+            <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>

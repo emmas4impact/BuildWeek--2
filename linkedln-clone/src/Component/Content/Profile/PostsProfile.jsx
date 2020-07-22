@@ -40,12 +40,10 @@ class PostsProfile extends Component {
     open = async(postId) => {
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="http://localhost:2250/api/posts/" + postId 
+        const url="https://linkedln-backend.herokuapp.com/api/posts/" + postId 
         const response= await fetch(url,{
-          method:'Get',
-          headers:new Headers({
-           'Authorization':'Basic ' + btoa(username + ':' + password)
-          })
+          method:'GET'
+          
         })
         const postInfo= await response.json();
         
@@ -65,7 +63,7 @@ class PostsProfile extends Component {
     componentDidMount=async()=>{
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="hhttp://localhost:2250/api/posts/" 
+        const url="https://linkedln-backend.herokuapp.com/api/posts" 
         const response= await fetch(url,{
           method:'Get',
           headers:new Headers({
@@ -83,7 +81,7 @@ class PostsProfile extends Component {
 
         
        
-        const responses= await fetch("http://localhost:2250/api/posts/" + this.props.match.params.username,{
+        const responses= await fetch("https://linkedln-backend.herokuapp.com/api/posts" + this.props.match.params.username,{
         method:'Get',
         headers:new Headers({
         'Content-type':'applicationCache/json'
@@ -109,7 +107,7 @@ class PostsProfile extends Component {
         
         const username="user19";
         const password="Hxx8R4wZfCANamrj";
-        const url="http://localhost:2250/api/posts/"
+        const url="https://linkedln-backend.herokuapp.com/api/posts"
         const response= await fetch(url,{
           method:'POST',
           body: JSON.stringify(this.state.sendStatus),
@@ -122,7 +120,7 @@ class PostsProfile extends Component {
         const id = data._id;
         
         setTimeout(async () => {
-            const response = await fetch("http://localhost:2250/api/posts/" + id, {
+            const response = await fetch("https://linkedln-backend.herokuapp.com/api/posts" + id, {
                 method: "POST",
                 body: this.state.image,
                
@@ -141,7 +139,7 @@ class PostsProfile extends Component {
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="http://localhost:2250/api/posts/"
+        const url="https://linkedln-backend.herokuapp.com/api/posts"
         const response= await fetch(url+this.props.match.params.username,{
           method:'DELETE',
        

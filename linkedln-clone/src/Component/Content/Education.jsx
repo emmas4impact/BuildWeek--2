@@ -31,7 +31,7 @@ class Education extends Component {
     
 
    componentDidMount=async()=>{
-        const url="http://localhost:2250/api/profiles/"+this.props.match.params.username+"/experiences";
+        const url="https://linkedln-backend.herokuapp.com/api/experience/"+this.props.match.params.username;
         const response= await fetch(url,{
         method:'Get',
         headers:new Headers({

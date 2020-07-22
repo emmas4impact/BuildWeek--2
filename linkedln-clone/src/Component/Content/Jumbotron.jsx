@@ -21,7 +21,7 @@ this.fetchUserData()
 }
 
 fetchUserData = async () => {
-  const url="http://localhost:2250/api/profiles/" + this.props.match.params.username;
+  const url="https://linkedln-backend.herokuapp.com/api/experience/profile/" + this.props.match.params.username;
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({
@@ -38,7 +38,7 @@ uploadPicture= async ()=>{
         
   const username="user29";
   const password="w4X9FKLNUDSXwzYu";
-  const url="http://localhost:2250/api/profiles/" + this.props.match.params.username+"/picture"
+  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.props.match.params.username+"/picture"
   const response= await fetch(url,{
     method:'POST',
     body: this.state.image,
