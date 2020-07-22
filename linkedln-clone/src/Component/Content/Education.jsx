@@ -234,6 +234,10 @@ class Education extends Component {
                         <label for="grade">Field of study</label>
                         <input type="text" className="form-control" id="grade"/>
                     </div>
+                    <div className="form-group">
+                        <label for="image">Image</label>
+                        <input type="image" className="form-control" id="image"/>
+                    </div>
                   
                 </form>
                       
