@@ -13,7 +13,7 @@ class Skills_Endorsements extends Component {
         const mystyle = {
            color: '#1a75ff',
             marginRight: "10px",
-            fontSize: "20px"
+            fontSize: "10px"
           };
         return (<>
          
@@ -23,8 +23,8 @@ class Skills_Endorsements extends Component {
               <div id="accordion" className="box">
                 <div class="card">
                     <div class="card-body">
-                       <h4>Skills  <small>&</small>   Endorsements</h4>
-                       <Button id="quiz">Take Skill quiz</Button>   
+                       <h4 style={{fontSize: '20px'}} className='pb-2'>Skills  <small>&</small>   Endorsements</h4>
+                       <Button className="btn btn-primary btn-quiz">Take Skill quiz</Button>                       
                        <h6 className="mt-4"><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link>Full-Stack Development</h6>
                        <hr></hr>
                        <h6><Link to="/me"><FontAwesomeIcon icon={faPlus}  style={mystyle}/></Link> Back-End Development</h6>
@@ -45,7 +45,7 @@ class Skills_Endorsements extends Component {
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
                             <Card.Body>
-                            <h4>Tools & Technologies</h4>
+                            <h4 style={{fontSize: '20px'}} >Tools & Technologies</h4>
                                         <hr></hr>
                                 <Row className="text-left">
                                 
@@ -71,7 +71,7 @@ class Skills_Endorsements extends Component {
                                 </ul>
                                 </Col>
                                 </Row>
-                                <h4>Languages</h4>
+                                <h4 style={{fontSize: '20px'}} >Languages</h4>
                                         <hr></hr>
                                 <Row>
                                      <Col md={12}>
@@ -81,7 +81,7 @@ class Skills_Endorsements extends Component {
                                         </ul>
                                       </Col>
                                  </Row>
-                                 <h4>Other Skills</h4>
+                                 <h4 style={{fontSize: '20px'}} >Other Skills</h4>
                                         <hr></hr>
                                 <Row>
                                 <Col md={6}>

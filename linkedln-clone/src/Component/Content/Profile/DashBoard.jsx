@@ -8,7 +8,7 @@ const dashBoard=(props) =>{
         <>
          <Jumbotron fluid className="box jumbo-prof back-blue">
              <Container>
-                <h4 style={{display: 'flex', justifyContent: 'space-between'}}> Your Dashboard <span><MdStarBorder /></span></h4>
+                <h4 style={{fontSize: '20px', display: 'flex', justifyContent: 'space-between'}}> Your Dashboard <span><MdStarBorder /></span></h4>
                     <i>Private to you</i>
                     <ListGroup horizontal fluid> 
                         <ListGroup.Item>

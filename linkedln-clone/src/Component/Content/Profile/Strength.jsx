@@ -9,7 +9,7 @@ const Strength =(props) =>{
         
          <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof">
              <Container>
-                <h5>Strengthen your profile</h5>
+                <h5 style={{fontSize: '20px'}}>Strengthen your profile</h5>
                     <p style={{lineHeight: '2'}}>
                  
                         <strong><MdUpdate  className="mr-1"/>  Let's update your headline to match your current education
