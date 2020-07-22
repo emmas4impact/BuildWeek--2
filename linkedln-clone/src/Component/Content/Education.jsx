@@ -244,14 +244,14 @@ class Education extends Component {
                     </Modal.Footer>
                     </Modal>
       
-                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "0px"}}/></div></div>)}
-                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "60px", marginTop: "10px"}}/></div></div>)}
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "0px"}}/></div></div>)}
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "60px", marginTop: "10px"}}/></div></div>)}
                      </Col>
                      <Col md={10}>
                      
-                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.title}</div>
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.title}</div>
                         <div>{this.state.person.area}</div></div>)}
-                        {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div> {this.state.person.role}</div>
+                        {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div> {this.state.person.role}</div>
                         <div>{this.state.person.company}</div></div>)}
                                         
                      </Col>
@@ -267,7 +267,7 @@ class Education extends Component {
                      </Col>
                      <Col md={10}>
                      
-                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
       <div>{this.state.person.company}</div><div>{this.state.person.role}</div></div>)}
       
                      
@@ -286,7 +286,7 @@ class Education extends Component {
                      </Col>
                      <Col md={10}>
                      
-                     {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
       <div>{this.state.person.bio}</div><div>{this.state.person.company}</div></div>)}
       
                      
