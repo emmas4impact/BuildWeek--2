@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   fetchUser = async () => {
-    await fetch("http://localhost:3001/api/profile/", {
+    await fetch("https://linkedln-backend.herokuapp.com/api/profile/", {
       headers: new Headers({
        
         "Content-Type": "application/json",
