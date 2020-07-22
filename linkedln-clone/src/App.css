@@ -98,7 +98,8 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    /* background: url('/public/Component/Content/Profile/jumboCover.jpeg'); */
+    background: url('/jumboCover.jpeg');
+    background-size: cover;
     
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, withRouter} from 'react-router-dom';
 import  { Card, ListGroup, ListGroupItem, Form , Modal, Button, Row, Col, Dropdown, DropdownButton} from 'react-bootstrap';
-
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 
 import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
 import { text } from '@fortawesome/fontawesome-svg-core';
@@ -202,7 +202,7 @@ class PostsProfile extends Component {
                                 <Card>
                                    
                                     <Card.Body className='head-prof'>
-                                  
+                          
                                            <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src={this.state.person.image} />
                                         <Card.Text style={{lineHeight: '0.5'}}>
                                         <h6 style={{fontWeight: '700'}}>Welcome, {this.state.person.name}</h6>
@@ -388,7 +388,7 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card>
                                     <Card.Body>
-                                        <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <FaInfo style={{borderRadius: '50%', border: '2px solid #000'}}/></p>
+                                        <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <AiOutlineQuestionCircle/></p>
                                         <div className='row'>
                                             <div className='col-8' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
                                                 <img style={{width: '40px'}} src='https://media-exp1.licdn.com/dms/image/C560BAQEp-f9Ptu2yVQ/company-logo_100_100/0?e=1600300800&v=beta&t=2HSHzaHWsG78UrBpttEI1UJQmRoxg-a1GttC1shzr1U'/>
