@@ -35,6 +35,12 @@ body {
     align-items: center;
 
 }
+.betw-col {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
 
 .btn {
     border-radius: 2px !important;
