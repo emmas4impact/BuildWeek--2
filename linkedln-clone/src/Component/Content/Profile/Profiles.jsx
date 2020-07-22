@@ -22,34 +22,25 @@ class Profile extends React.Component{
         users: []
     }
 
-    componentDidMount = () => {
-        const url = "https://linkedln-backend.herokuapp.com/api/profile/";
+    componentDidMount = async() => {
+        const url = "http://localhost:3001/api/profile";
 
-        const username = 'user19';
-  
-
-        const headers = new Headers();
-
-        headers.append('Content-Type', 'application/json');
-       
-
-        fetch(url, {
+        const response = await fetch(url, {
             method: "GET",
-            headers: headers,
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
-            })
-            .then((users) => {
-                this.setState({ users })
-            })
+        
+        const data = await response.json()
+        console.log(data)
+         this.setState({
+             users: data.profiles
+         })
     }
 
     render(){
-       
-        console.log("data from state",this.state.person);
+       console.log(this.state.users)
         
         return(
             <>

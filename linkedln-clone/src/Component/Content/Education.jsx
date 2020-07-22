@@ -31,7 +31,7 @@ class Education extends Component {
     
 
    componentDidMount=async()=>{
-        const url="https://linkedln-backend.herokuapp.com/api/experience/"+this.props.match.params.username;
+        const url="http://localhost:3001/api/experience/"+this.props.match.params.username;
         const response= await fetch(url,{
         method:'Get',
         headers:new Headers({
@@ -41,7 +41,7 @@ class Education extends Component {
         })
         const data= await response.json();
         console.log(data);
-        this.setState({person:data[0], loading:false})
+        this.setState({person:data, loading:false})
 }
     render() {
        
@@ -235,8 +235,8 @@ class Education extends Component {
                         <input type="text" className="form-control" id="grade"/>
                     </div>
                     <div className="form-group">
-                        <label for="image">Image</label>
-                        <input type="image" className="form-control" id="image"/>
+                        <label for="fyle">Image</label>
+                        <input type="file" className="form-control" id="fyle"/>
                     </div>
                   
                 </form>

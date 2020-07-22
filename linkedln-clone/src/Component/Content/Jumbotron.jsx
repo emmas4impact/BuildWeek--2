@@ -3,15 +3,16 @@ import {Jumbotron, Dropdown} from 'react-bootstrap';
 import {Container,Card, Image,Button} from 'react-bootstrap';
 import { FaCamera, FaPen } from 'react-icons/fa';
 import { GiPencil } from "react-icons/gi";
-const username="user29";
-const password="w4X9FKLNUDSXwzYu";
+// const username="user29";
+// const password="w4X9FKLNUDSXwzYu";
 
 class Jumbotrons extends React.Component{
     state = {
       loading: true,
        profile: null,
        person: [],
-       image: null
+       image: null,
+       
         
    };
 
@@ -21,24 +22,25 @@ this.fetchUserData()
 }
 
 fetchUserData = async () => {
-  const url="https://linkedln-backend.herokuapp.com/api/experience/profile/" + this.props.match.params.username;
+  const url="http://localhost:3001/api/profile/" + this.props.match.params.username;
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({
-   'Content-type':'applicationCache/json'
+   'Content-type':'application/json'
   
   })
 })
 const data= await response.json();
 console.log(data);
-this.setState({person:data, loading:false})
+this.setState({person: data.profiles, loading:false})
+
 }
 
-uploadPicture= async ()=>{
+uploadPicture = async () =>{
         
-  const username="user29";
-  const password="w4X9FKLNUDSXwzYu";
-  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.props.match.params.username+"/picture"
+  //const username="user29";
+  
+  const url="http://localhost:3001/api/profile/" + this.props.match.params.username+"/picture"
   const response= await fetch(url,{
     method:'POST',
     body: this.state.image,
@@ -97,7 +99,9 @@ render(){
                     </Dropdown.Menu>
                     </Dropdown>
         <Card.Text>
-          {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image className='img-jumbo' src={this.state.person.image}/></div><div> {this.state.person.id}</div>
+          {this.state.loading || !this.state.person ? (<div>loading...</div>):(
+            
+            <div> <div><Image className='img-jumbo' src={this.state.person.image}/></div><div> {this.state.person.id}</div>
           <div className='name pt-4'>{this.state.person.name}</div><div className='bio'>{this.state.person.bio}</div><div className='email'>{this.state.person.email}</div></div>)}
           </Card.Text>
         </Card.Body>

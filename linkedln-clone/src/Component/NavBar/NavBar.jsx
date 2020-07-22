@@ -12,7 +12,7 @@ class NavBar extends Component {
 }
 
 componentDidMount = () => {
-    const url = "https://linkedln-backend.herokuapp.com/api/profile";
+    const url = "http://localhost:3001/api/profile/";
     const user = this.props.location.pathname.split('/').pop()
 
     console.log('FROM ROUTER PROPS', user)
@@ -47,8 +47,8 @@ componentDidMount = () => {
               }
           })
           .then((user) => {
-            console.log('user found!', user)
-              this.setState({ user:  user})
+            console.log('user found!', user.profiles)
+              this.setState({ user:  user.profiles})
           })
 }
     render() {
@@ -104,7 +104,7 @@ componentDidMount = () => {
                 <div className='navDrop'>  
                   
 
-                {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
+                {this.state.user && this.state.users.slice(0, 2).map((user, i) => {
                     return (
                        
                             <Col key={i}>
@@ -130,7 +130,7 @@ componentDidMount = () => {
                 })}
             
                 <NavDropdown  className='text-white font-nav' title="Dropdown" id="basic-nav-dropdown" title='Me' >
-                {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
+                {this.state.user && this.state.users.slice(0, 2).map((user, i) => {
                     return (
                        
                           
