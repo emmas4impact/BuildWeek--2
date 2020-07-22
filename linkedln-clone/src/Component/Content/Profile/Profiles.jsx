@@ -72,10 +72,16 @@ class Profile extends React.Component{
                             <Skills />
                            
                         </Col>
-                        <Col md={4} >
-                        <a href="#">  <p style={{paddingTop: "5rem", color: "gray"}} >Edit public profile <small>&</small> <AiOutlineQuestionCircle /></p></a>
-                            <hr></hr>
-                            <a href="#"><p style={{color: "gray"}}>Add profile in another language <AiOutlineQuestionCircle /></p></a>
+                        <Col md={4} className='pt-4'>
+                        <p className='just-betw' style={{paddingTop: "5rem"}}>
+                            <a href="#">  <p style={{  color: "#626262", fontWeight: '700'}} >Edit public profile </p></a>
+                            <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
+                        </p>
+                            <hr style={{marginTop: '-20px'}}></hr>
+                        <p className='just-betw'>
+                            <a href="#"><p style={{color: "#626262", fontWeight: '700'}}>Add profile in another language</p></a>
+                            <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
+                        </p> 
                             <p className="mt-5">People also viewed</p>
                             {this.state.users.slice(1, 25).map((user, i) => {
                     return (

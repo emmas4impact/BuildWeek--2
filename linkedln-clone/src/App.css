@@ -28,6 +28,19 @@ body {
 /* .btn-primary {
     border-color: transparent !important;
 } */
+.just-betw {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+.card {
+     border: none !important;
+}
+.btn {
+    border-radius: 2px !important;
+}
 .dropdown-basic:focus {
     outline: none !important;
     border: none !important;
