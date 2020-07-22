@@ -23,7 +23,7 @@ class Profile extends React.Component{
     }
 
     componentDidMount = async() => {
-        const url = "http://localhost:3001/api/profile";
+        const url = "https://linkedln-backend.herokuapp.com/api/profile";
 
         const response = await fetch(url, {
             method: "GET",
