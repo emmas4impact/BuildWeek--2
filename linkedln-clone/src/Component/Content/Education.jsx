@@ -55,7 +55,7 @@ class Education extends Component {
                 <Row>
                     <Col md={12} >
                      <div className='exper-btn'>
-                     <h4>Experience</h4>
+                     <h4 style={{fontSize: '20px'}} >Experience</h4>
                      <button onClick={this.open} style={{background: 'none', border: 'none', fontSize: '25px', fontWeight: '400', color: '#0073B1'}}>+</button>
                      </div>
                      <Modal show={this.state.showModal} onHide={this.close}>
@@ -262,7 +262,7 @@ class Education extends Component {
                     <Row>
                         <Col md={2}>
                      <h4 style={{fontSize: '13px', fontWeight: '600'}}>Education</h4>
-                     <img src="https://strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "50px"}}></img>
+                     <img src="https://ignite.strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "50px"}}></img>
                      
                      </Col>
                      <Col md={10}>

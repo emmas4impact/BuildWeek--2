@@ -7,7 +7,7 @@ const Activity=(props) =>{
         <>
          <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof">
              <Container>
-                <h4>Activity</h4>
+                <h4 style={{fontSize: '20px'}}  >Activity</h4>
                     <p>
                         This is a modified jumbotron that occupies the entire horizontal space of
                         its parent.

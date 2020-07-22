@@ -82,10 +82,10 @@ render(){
 </div>
        
         <Card.Body>
-        <Button className="btn btn-light"  style={{position:'absolute',bottom:'4.6rem',right:'3rem', padding: '5px 10px', background:'#fff',color:'#3D3D3D', border: '1px solid #3D3D3D', fontWeight: '700', borderRadius: '2px'}} >More..</Button>
+        <Button className="btn btn-light"  style={{position:'absolute',bottom:'4.5rem',right:'3rem', padding: '5px 15px', background:'#fff',color:'#3D3D3D', border: '1px solid #3D3D3D', fontWeight: '700', borderRadius: '2px'}} >More..</Button>
         <GiPencil style={{position:'absolute',bottom:'5rem',right:'1rem', fontSize: '25px'}}/>
-                    <Dropdown style={{position:'absolute',bottom:'4.5rem',right:'8rem'}}>
-                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,115,175)',color:'#fff', fontWeight: '700',  borderRadius: '2px'}}> Add section profile </Dropdown.Toggle>
+                    <Dropdown style={{position:'absolute',bottom:'4.5rem',right:'9rem'}}>
+                    <Dropdown.Toggle className="dropdown-basic" style={{backgroundColor:'#006097', outline: 'none', fontWeight: '700'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                     <Dropdown.Item>Intro
