@@ -334,7 +334,7 @@ class PostsProfile extends Component {
                                   
                                   <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                       <button className='btn-upload' style={{ background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                                          {this.state.likes}
+                                      
                                       <FaThumbsUp className='mr-2 ml-2'/>Like</button>
                                       <button style={{background: 'transparent'}} className='btn-upload '><FaComment className='mr-2'/>Comment</button>
                                       <button style={{background: 'transparent'}} className='btn-upload '><FaShare className='mr-2'/>Share</button>
