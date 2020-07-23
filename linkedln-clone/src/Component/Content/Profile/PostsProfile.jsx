@@ -200,7 +200,7 @@ class PostsProfile extends Component {
                 
                 <h6 style={{paddingTop: '80px', textAlign: 'center', paddingBottom: '10px'}}>Download 30 day trial  Design & demo software design solutions with rich, interactive prototypes. </h6>
                 <div className='row'>
-                    <div className='col-3'>
+                    <div className='col-lg-3 col-md-12 col-sm-12'>
                         <div className='row'>
                             <div className='col-12'>
                                 <Card style={{border: '1px solid #DFDFDF'}}>
@@ -209,7 +209,7 @@ class PostsProfile extends Component {
                                     {this.state.post.filter(post => post.user).slice(0, 1).map((user, i)=>{ 
                                         return (
                                            <>
-                                           <div style={{position: 'absolute', top: '40px', zIndex: '999'}}>
+                                           <div style={{position: 'absolute', top: '40px'}}>
                                            <img className='mb-2' style={{width: '80px', borderRadius: '50%', border: '3px solid #fff'}} src={user.user.image} />
                                        
                                               <div style={{lineHeight: '0.4',  margin: '0 auto'}}>
@@ -223,7 +223,7 @@ class PostsProfile extends Component {
                                         })}
                                          
                                     </Card.Body>
-                                    <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700', paddingTop: '80px', borderTop: '1px solid #66666'}}>
+                                    <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700', paddingTop: '100px', borderTop: '1px solid #66666'}}>
                                         <ListGroupItem style={{lineHeight: '0.5'}}>
                                             <p className='pt-2' style={{lineHeight: '0.1', color: '#666666', display: 'flex', justifyContent: 'space-between'}}>Connections
                                             <small style={{fontWeight: '700', fontSize: '13px', color: '#0073B1'}}>90</small></p>
@@ -271,7 +271,7 @@ class PostsProfile extends Component {
                         </div>
                     </div>
 
-                    <div className='col-6'>
+                    <div className='col-lg-6 col-md-12 col-sm-12 marg-top'>
                     <div className='row'>
                             <div className='col-12'>
                                 <Card>
@@ -305,7 +305,7 @@ class PostsProfile extends Component {
                                 </Card>
                             </div>
                             <div className='col-12 mt-2'>
-                               <Card>
+                               {/* <Card>
                                    <Card.Body>
                                       <div className='row'>
                                           <div className='col-8' style={{display: 'flex', justifyContent: 'flex-start'}}>
@@ -341,7 +341,7 @@ class PostsProfile extends Component {
                                       <button style={{background: 'transparent'}} className='btn-upload '><FaShare className='mr-2'/>Share</button>
                                   </Card.Body>
                                
-                               </Card>
+                               </Card> */}
                               
                             </div>
                         </div>
@@ -404,7 +404,7 @@ class PostsProfile extends Component {
                                
                         </Row>
                     </div>
-                    <div className='col-3'>
+                    <div className='col-lg-3 col-md-12 col-sm-12 btn-trans'>
                     <div className='row'>
                             <div className='col-12'>
                                 <Card>

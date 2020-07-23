@@ -84,8 +84,8 @@ render(){
 </div>
        
         <Card.Body>
-           <div style={{display:'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
-                    <Dropdown className="mr-2">
+           <div className='jumb-small' style={{display:'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+                    <Dropdown className="mr-2 right-mrg" >
                     <Dropdown.Toggle className="dropdown-basic" style={{backgroundColor:'#006097', outline: 'none', fontWeight: '700'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -99,7 +99,7 @@ render(){
                     </Dropdown>
                     
                     <Dropdown className="btn mr-3"  style={{ background:'#fff',color:'#666666', fontWeight: '700', borderRadius: '2px'}} >
-                    <Dropdown.Toggle className="dropdown-basic drop-grey" style={{background:'#fff', color:'#666666', outline: 'none', fontWeight: '700'}}> More...</Dropdown.Toggle>
+                    <Dropdown.Toggle className="dropdown-basic drop-grey right-mrg" style={{background:'#fff', color:'#666666', outline: 'none', fontWeight: '700'}}> More...</Dropdown.Toggle>
 
                     <Dropdown.Menu>
                     <Dropdown.Item>Download picture

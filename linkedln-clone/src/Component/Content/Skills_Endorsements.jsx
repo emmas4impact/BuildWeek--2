@@ -19,7 +19,7 @@ class Skills_Endorsements extends Component {
          
           
             <Row style={{marginBottom: "30px"}}>
-            <Col sm={8}>
+            <Col sm={12} md={12}>
               <div id="accordion" className="box">
                 <div class="card" style={{border: 'none'}}>
                     <div class="card-body">
