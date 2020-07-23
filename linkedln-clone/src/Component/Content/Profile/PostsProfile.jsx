@@ -181,11 +181,13 @@ class PostsProfile extends Component {
        })
        console.log(photo)
    }
-   addLikes = () => {
-      this.setState({ like: this.state.like + 1})
+   addLikes = (id) => {
+       
+        this.setState({ likes:  this.state.likes + 1})
     
    }
     
+  
     
     
     render() {
@@ -207,7 +209,7 @@ class PostsProfile extends Component {
                                         return (
                                            <>
                                            <div style={{position: 'absolute', top: '40px', zIndex: '999'}}>
-                                           <img className='mb-2' style={{width: '80px', borderRadius: '50%' }} src={user.user.image} />
+                                           <img className='mb-2' style={{width: '80px', borderRadius: '50%', border: '3px solid #fff'}} src={user.user.image} />
                                        
                                               <div style={{lineHeight: '0.4',  margin: '0 auto'}}>
                                                 <h6 style={{fontWeight: '700', width: '100%'}}>Welcome, {user.user.name}</h6>
@@ -331,7 +333,9 @@ class PostsProfile extends Component {
                                   </Card.Body>
                                   
                                   <Card.Body style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                      <button className='btn-upload' style={{ background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload' style={{ background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                                          {this.state.likes}
+                                      <FaThumbsUp className='mr-2 ml-2'/>Like</button>
                                       <button style={{background: 'transparent'}} className='btn-upload '><FaComment className='mr-2'/>Comment</button>
                                       <button style={{background: 'transparent'}} className='btn-upload '><FaShare className='mr-2'/>Share</button>
                                   </Card.Body>
@@ -383,7 +387,7 @@ class PostsProfile extends Component {
                                    
                                     <small style={{letterSpacing: '3px'}}><FaPodcast className='mr-3'/>{user.text}</small>
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                      <button className='btn-upload like-btn' onClick={() => this.addLikes()} style={{background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                <button className='btn-upload like-btn' onClick={() => this.addLikes(user._id)} style={{background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>{this.state.likes}<FaThumbsUp className='mr-2 ml-2'/>Like</button>
                                       <button className='btn-upload ' style={{background: 'transparent'}}> <FaComment className='mr-2'/>Comment</button>
                                       <button className='btn-upload ' style={{background: 'transparent'}}><FaShare className='mr-2'/>Share</button>
                                    </div>
