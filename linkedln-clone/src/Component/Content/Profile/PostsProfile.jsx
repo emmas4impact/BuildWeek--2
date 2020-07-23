@@ -304,7 +304,7 @@ class PostsProfile extends Component {
 
 
                                   </Card.Body>
-                                   <img style={{height: '300px'}} src='https://media-exp1.licdn.com/dms/image/sync/C4E18AQHUHo2BCdE25g/companyUpdate-article-image-shrink_627_1200/0?e=1595462400&v=beta&t=QiFtShVXzqzzYdtvWXAGcxvyPByYbBHs9xT1C152c0A' />
+                                   <img style={{height: '300px', marginTop: '-20px'}} src='https://media-exp1.licdn.com/dms/image/sync/C4E18AQHUHo2BCdE25g/companyUpdate-article-image-shrink_627_1200/0?e=1595462400&v=beta&t=QiFtShVXzqzzYdtvWXAGcxvyPByYbBHs9xT1C152c0A' />
                                   <Card.Footer>
                                       <p style={{fontWeight: '700', display: 'flex', justifyContent: 'space-between', fontSize: '15px'}}>Climate change adaptation: What we can learn from the Dutch masters | Swiss Re
                                       <button style={{color: '#0073B1', background: 'none', border: '1px solid #0073B1', fontSize: '15px', fontWeight: '700', borderRadius: '3px'}}>Learn more</button>
@@ -331,7 +331,8 @@ class PostsProfile extends Component {
                                 console.log(user)
                                 if (user.user)
                                 return(
-                                    <Card body key={i} className='mt-2'> 
+                                    <>
+                                    <Card body key={i} className='mt-2' style={{borderBotton: 'nonde'}}> 
                                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '700', fontSize: '14px'}}>
                                     <img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p> 
@@ -371,7 +372,10 @@ class PostsProfile extends Component {
                                       <button className='btn-upload ' style={{background: 'transparent'}}> <FaComment className='mr-2'/>Comment</button>
                                       <button className='btn-upload ' style={{background: 'transparent'}}><FaShare className='mr-2'/>Share</button>
                                    </div>
+                                   
                                     </Card>
+                                    <Card.Footer style={{borderTop: 'none', border: '1px solid #F3F6F8'}}>Be the first to comment on this</Card.Footer>
+                                    </>
                                 )
                                 
                             })}

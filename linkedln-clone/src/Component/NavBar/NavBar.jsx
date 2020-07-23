@@ -35,26 +35,26 @@ componentDidMount = () => {
             }
         })
         .then((users) => {
-            this.setState({ users })
+            this.setState({  users : users.profiles  })
         })
-
     fetch(url + user, {
-          method: "GET",
-          headers: headers,
-      })
-          .then((response) => {
-              if (response.ok) {
-                  return response.json();
-              }
-          })
-          .then((user) => {
-            console.log('user found!', user)
-              this.setState({ user:  user[0]})
-          })
+           method: "GET",
+           headers: headers,
+       })
+           .then((response) => {
+               if (response.ok) {
+                   return response.json();
+               }
+           })
+           .then((user) => {
+             console.log('user found!', user)
+               this.setState({ user })
+           })
 }
     render() {
       //console.log("Nav props", +this.props.users)
-      console.log(this.state.user)
+      console.log('user state', this.state.users)
+      console.log('user state', this.state.user)
         return (
           <>
 
@@ -106,7 +106,7 @@ componentDidMount = () => {
                 <div className='navDrop'>  
                
 
-                {this.state.user && this.state.users.slice(12, 13).map((user, i) => {
+                {this.state.user && this.state.users.slice(0, 1).map((user, i) => {
                     return (
                        
                             <Col key={i}>
@@ -132,7 +132,7 @@ componentDidMount = () => {
                 })}
             
                 <NavDropdown  className='text-white font-nav' title="Dropdown" id="basic-nav-dropdown" title='Me' >
-                {this.state.user && this.state.users.slice(0, 2).map((user, i) => {
+                {this.state.user && this.state.users.map((user, i) => {
                     return (
                        
                           
