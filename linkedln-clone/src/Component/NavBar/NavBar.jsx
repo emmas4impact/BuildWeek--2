@@ -38,23 +38,23 @@ componentDidMount = () => {
             this.setState({ users })
         })
 
-    fetch(url + user, {
-          method: "GET",
-          headers: headers,
-      })
-          .then((response) => {
-              if (response.ok) {
-                  return response.json();
-              }
-          })
-          .then((user) => {
-            console.log('user found!', user)
-              this.setState({ user:  user[0]})
-          })
+    // fetch(url + user, {
+    //       method: "GET",
+    //       headers: headers,
+    //   })
+    //       .then((response) => {
+    //           if (response.ok) {
+    //               return response.json();
+    //           }
+    //       })
+    //       .then((user) => {
+    //         console.log('user found!', user)
+    //           this.setState({ user:  user[0]})
+    //       })
 }
     render() {
       //console.log("Nav props", +this.props.users)
-      console.log(this.state.user)
+      console.log('user state', this.state.users)
         return (
           <>
 
