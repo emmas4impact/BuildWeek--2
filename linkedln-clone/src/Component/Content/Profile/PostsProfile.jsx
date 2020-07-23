@@ -114,10 +114,10 @@ class PostsProfile extends Component {
         
           })
         })
-        const id = await response.text()
+        const id = await response
                 
         setTimeout(async () => {
-            const response = await fetch("https://linkedln-backend.herokuapp.com/api/posts/" + id, {
+            const response = await fetch('https://linkedln-backend.herokuapp.com/api/posts/'+ id, {
                 method: "POST",
                 body: this.state.image,
                
