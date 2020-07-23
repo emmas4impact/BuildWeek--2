@@ -68,9 +68,10 @@ body {
 .recommend-btn {
     border: 1px solid #006097;
     border-radius: 2px;
-    padding: 2px 30px;
+    padding: 2px 20px;
     color: #006097;
     font-weight: 600;
+    background-color: transparent;
 }
 .rec {
     display: flex;
@@ -128,4 +129,34 @@ body {
 .jumbo-box {
     margin-top: 100px;
     padding-top: 0 !important;
+}
+
+@media only screen and (max-width: 600px)  {
+  .btn {
+      padding: 4px 6px !important;
+  }
+  
+    .img-jumbo {
+        margin: -100px 25%;
+        
+        width: 120px;
+        height: 120px;
+        
+    }
+    .marg-top {
+        margin-top: 10px;
+    }
+    .btn-trans button {
+        background-color: transparent !important;
+    }
+    .jumb-small {
+        display: flex;
+       justify-content: center;
+       padding-top: 20px;
+        align-items: center;
+
+    
+        
+    }
+ 
 }
