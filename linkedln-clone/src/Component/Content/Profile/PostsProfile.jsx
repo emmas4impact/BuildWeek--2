@@ -197,15 +197,25 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card style={{border: '1px solid #DFDFDF'}}>
                                    
-                                    <Card.Body className='head-prof'>
-                          
-                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src={this.state.person.image} />
-                                        <Card.Text style={{lineHeight: '0.5'}}>
-                                        <h6 style={{fontWeight: '700'}}>Welcome, {this.state.person.name}</h6>
-                                        <a href='' style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a>
-                                        </Card.Text>
+                                    <Card.Body className='head-prof' style={{position: 'relative', height: '100px'}}>
+                                    {this.state.post.filter(post => post.user).slice(0, 1).map((user, i)=>{ 
+                                        return (
+                                           <>
+                                           <div style={{position: 'absolute', top: '40px', zIndex: '999'}}>
+                                           <img className='mb-2' style={{width: '80px', borderRadius: '50%' }} src={user.user.image} />
+                                       
+                                              <div style={{lineHeight: '0.4',  margin: '0 auto'}}>
+                                                <h6 style={{fontWeight: '700', width: '100%'}}>Welcome, {user.user.name}</h6>
+                                                <small style={{fontWeight: '500'}}>{user.user.bio}</small>
+                                              </div>
+                                             
+                                              </div> 
+                                            </>
+                                        )
+                                        })}
+                                         
                                     </Card.Body>
-                                    <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700'}}>
+                                    <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700', paddingTop: '80px', borderTop: '1px solid #66666'}}>
                                         <ListGroupItem style={{lineHeight: '0.5'}}>
                                             <p className='pt-2' style={{lineHeight: '0.1', color: '#666666', display: 'flex', justifyContent: 'space-between'}}>Connections
                                             <small style={{fontWeight: '700', fontSize: '13px', color: '#0073B1'}}>90</small></p>
