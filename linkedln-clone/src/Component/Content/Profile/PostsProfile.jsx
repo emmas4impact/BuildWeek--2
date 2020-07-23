@@ -201,9 +201,9 @@ class PostsProfile extends Component {
                             <div className='col-12'>
                                 <Card style={{border: '1px solid #DFDFDF'}}>
                                    
-                                    <Card.Body className='head-prof'>
+                                    <Card.Body className='head-prof' style={{position: 'relative'}}>
                                         
-                                           <img className='mb-2' style={{width: '50px', borderRadius: '50%' }} src='https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png' />
+                                           <img className='mb-2' style={{width: '50px', position: 'absolute', top: '40px' }} src='https://freesvg.org/img/man-male-user-icon-15874-svg.png' />
                                         <Card.Text style={{lineHeight: '0.5'}}>
                                         <h6 style={{fontWeight: '700'}}>{this.state.person.name}</h6>
                                         {/* <a href='' style={{ color: '#0073B1', fontSize: '12px'}}>Update your profile</a> */}
