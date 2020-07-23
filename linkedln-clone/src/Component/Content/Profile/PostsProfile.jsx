@@ -405,8 +405,8 @@ class PostsProfile extends Component {
                     </div>
                     <div className='col-lg-3 col-md-12 col-sm-12 btn-trans'>
                     <div className='row'>
-                            <div className='col-12'>
-                                <Card>
+                            <div className='col-lg-12 col-md-6 col-sm-12 top-marg'>
+                        <Card>
                                     <Card.Body>
                                     <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Add to you feed <AiOutlineQuestionCircle/></p>
                                         <div className='row'>
@@ -446,7 +446,7 @@ class PostsProfile extends Component {
                                     
                                 </Card>
                             </div>
-                            <div className='col-12 mt-3'>
+                            <div className='col-lg-12 mt-3 col-md-6 col-sm-12'>
                              
                                                                 
                                         <Card>
