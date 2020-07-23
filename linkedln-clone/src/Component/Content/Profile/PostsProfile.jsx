@@ -62,7 +62,7 @@ class PostsProfile extends Component {
     
     componentDidMount=async()=>{
        
-        const url="https://linkedln-backend.herokuapp.com/api/posts" 
+        const url="https://linkedln-backend.herokuapp.com/api/posts/" 
         const response= await fetch(url,{
           method:'Get',
           headers:new Headers({
@@ -80,7 +80,7 @@ class PostsProfile extends Component {
 
         
        
-        const responses= await fetch("https://linkedln-backend.herokuapp.com/api/posts" + this.props.match.params.username,{
+        const responses= await fetch("https://linkedln-backend.herokuapp.com/api/posts/" + this.props.match.params.username,{
         method:'Get',
         headers:new Headers({
         'Content-type':'applicationCache/json'
@@ -114,11 +114,10 @@ class PostsProfile extends Component {
         
           })
         })
-        const data = await response.json()
-        const id = data._id;
-        
+        const id = await response.text()
+                
         setTimeout(async () => {
-            const response = await fetch("https://linkedln-backend.herokuapp.com/api/posts" + id, {
+            const response = await fetch("https://linkedln-backend.herokuapp.com/api/posts/" + id, {
                 method: "POST",
                 body: this.state.image,
                
@@ -328,12 +327,14 @@ class PostsProfile extends Component {
                         </div>
                         <Row>
                             <Col>
-                            {this.state.post.map((user, i)=>{
+                            {this.state.post.filter(post => post.user).map((user, i)=>{
+                                console.log(user)
+                                if (user.user)
                                 return(
                                     <Card body key={i} className='mt-2'> 
                                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                    <p style={{fontWeight: '700', fontSize: '14px'}}><img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p>
-
+                                    <p style={{fontWeight: '700', fontSize: '14px'}}>
+                                    <img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p> 
                                     
                                     <Dropdown>
                                     <Dropdown.Toggle style={{background: 'none', color: '#000', border: 'none'}}>
@@ -366,13 +367,12 @@ class PostsProfile extends Component {
                                    
                                     <i>{user.text} <img src={user.image} style={{with: "40px", height: "40px"}}/></i>
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                      <button className='btn-upload' style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
-                                      <button className='btn-upload '><FaComment className='mr-2'/>Comment</button>
-                                      <button className='btn-upload '><FaShare className='mr-2'/>Share</button>
+                                      <button className='btn-upload' style={{background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload ' style={{background: 'transparent'}}> <FaComment className='mr-2'/>Comment</button>
+                                      <button className='btn-upload ' style={{background: 'transparent'}}><FaShare className='mr-2'/>Share</button>
                                    </div>
                                     </Card>
                                 )
-                                
                                 
                             })}
                            
