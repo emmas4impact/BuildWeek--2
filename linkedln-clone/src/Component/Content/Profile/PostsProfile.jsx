@@ -3,7 +3,7 @@ import { Router, withRouter} from 'react-router-dom';
 import  { Card, ListGroup, ListGroupItem, Form , Modal, Button, Row, Col, Dropdown, DropdownButton} from 'react-bootstrap';
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 
-import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaDotCircle, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
+import { FaHashtag, FaCamera, FaPhotoVideo, FaPaperPlane, FaShare, FaComment, FaThumbsUp, FaInfo, FaPodcast, FaSquare, FaBookmark, FaNetworkWired } from 'react-icons/fa';
 import { text } from '@fortawesome/fontawesome-svg-core';
 class PostsProfile extends Component {
     state= {
@@ -12,6 +12,7 @@ class PostsProfile extends Component {
         newPost: [],
         person: [],
         image: '',
+        likes: 0,
         oldPostText: '',
         sendStatus: {
             text:"",
@@ -180,6 +181,10 @@ class PostsProfile extends Component {
        })
        console.log(photo)
    }
+   addLikes = () => {
+      this.setState({ like: this.state.like + 1})
+    
+   }
     
     
     
@@ -342,7 +347,7 @@ class PostsProfile extends Component {
                                 if (user.user)
                                 return(
                                     <>
-                                    <Card body key={i} className='mt-2' style={{borderBotton: 'nonde'}}> 
+                                    <Card body key={i} className='mt-2' style={{borderBottom: 'none'}}> 
                                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '700', fontSize: '14px'}}>
                                     <img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p> 
@@ -376,15 +381,15 @@ class PostsProfile extends Component {
                                     </div>
                                   
                                    
-                                    <i>{user.text} <img src={user.image} style={{with: "40px", height: "40px"}}/></i>
+                                    <small style={{letterSpacing: '3px'}}><FaPodcast className='mr-3'/>{user.text}</small>
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
-                                      <button className='btn-upload' style={{background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
+                                      <button className='btn-upload like-btn' onClick={() => this.addLikes()} style={{background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}><FaThumbsUp className='mr-2'/>Like</button>
                                       <button className='btn-upload ' style={{background: 'transparent'}}> <FaComment className='mr-2'/>Comment</button>
                                       <button className='btn-upload ' style={{background: 'transparent'}}><FaShare className='mr-2'/>Share</button>
                                    </div>
                                    
                                     </Card>
-                                    <Card.Footer style={{borderTop: 'none', border: '1px solid #F3F6F8'}}>Be the first to comment on this</Card.Footer>
+                                    <Card.Footer style={{borderTop: 'none', border: '1px solid #DFDFDF', fontSize: '12px'}}>Be the first to comment on this</Card.Footer>
                                     </>
                                 )
                                 

@@ -119,6 +119,9 @@ body {
     font-size: 12px;
     font-weight: 500;
 }
+.like-btn:focus {
+   color: red !important;
+}
 .sign-nav {
     font-size: 25px;
 }
