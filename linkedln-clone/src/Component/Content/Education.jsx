@@ -247,10 +247,12 @@ class Education extends Component {
                         <Button onClick={this.close}>Save</Button>
                     </Modal.Footer>
                     </Modal>
-      
+                    </Col>
+                    <Col md={1} className='mr-3'>
                      {this.state.loading || !this.state.person ? (<div></div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "0px"}}/></div></div>)}
-                     {this.state.loading || !this.state.person ? (<div></div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "60px", marginTop: "10px"}}/></div></div>)}
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div> <div><Image src={this.state.person.image} rounded style={{width: "50px", marginTop: "10px"}}/></div></div>)}
                      </Col>
+
                      <Col md={10}>
                      
                      {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.title}</div>
@@ -263,15 +265,20 @@ class Education extends Component {
                      </Row>
                      
                      <hr></hr>
-                    <Row>
-                        <Col md={2}>
-                     <h4 style={{fontSize: '13px', fontWeight: '600'}}>Education</h4>
+                     <Row>
+                         <Col md={12}>
+                         <h4 style={{fontSize: '20px', fontWeight: '500'}}>Education</h4>
+
+                         </Col>
+                     </Row>
+                    <Row style={{lineHeight: '1', paddingBottom: '20px', paddingTop: '20px'}}>
+                        <Col md={1}  className='mr-2'>
                      <img src="https://ignite.strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "50px"}}></img>
                      
                      </Col>
                      <Col md={10}>
                      
-                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div>{this.state.person.bio}</div>
       <div>{this.state.person.company}</div><div>{this.state.person.role}</div></div>)}
       
                      
@@ -282,15 +289,18 @@ class Education extends Component {
                    
 
                      <hr></hr>
-
                     <Row>
-                        <Col md={2}>
-                     <h4 style={{fontSize: '13px',  fontWeight: '600'}}>Licenses&Certifications</h4>
+                    <Col md={12}>
+                    <h4 style={{fontSize: '20px',  fontWeight: '500', paddingTop: '10px'}}>Licenses & Certifications</h4>
+                    </Col>
+                    </Row>
+                     <Row style={{lineHeight: '1', paddingTop: '20px'}}>
+                        <Col md={1} className='mr-2'>
                      <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQGyOWvr4W0Pow/company-logo_200_200/0?e=2159024400&v=beta&t=itrwplyUUwPAVxqxN8THySQds9p401UaOtZIurSBVnA" style={{width: "50px"}}></img>
                      </Col>
                      <Col md={10}>
                      
-                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br><div  style={{marginTop: "15px"}}> {this.state.person.bio}</div>
+                     {this.state.loading || !this.state.person ? (<div></div>):(<div><br></br>
       <div>{this.state.person.bio}</div><div>{this.state.person.company}</div></div>)}
       
                      
