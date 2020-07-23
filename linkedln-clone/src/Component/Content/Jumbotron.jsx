@@ -97,7 +97,19 @@ render(){
                     </Dropdown.Item>
                     </Dropdown.Menu>
                     </Dropdown>
-                    <Button className="btn btn-light mr-3"  style={{ padding: '5px 15px', background:'#fff',color:'#666666', border: '1px solid #666666', fontWeight: '700', borderRadius: '2px'}} >More...</Button>
+                    
+                    <Dropdown className="btn mr-3"  style={{ background:'#fff',color:'#666666', fontWeight: '700', borderRadius: '2px'}} >
+                    <Dropdown.Toggle className="dropdown-basic drop-grey" style={{background:'#fff', color:'#666666', outline: 'none', fontWeight: '700'}}> More...</Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                    <Dropdown.Item>Download picture
+                    </Dropdown.Item>
+                    <Dropdown.Item>Save as pdf
+                    </Dropdown.Item>
+                  
+                    </Dropdown.Menu>
+                    </Dropdown>
+                   
                     <GiPencil style={{fontSize: '27px'}}/>
               </div>      
                     <Card.Text>
