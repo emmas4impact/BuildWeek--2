@@ -12,6 +12,7 @@ class NavBar extends Component {
 }
 
 componentDidMount = () => {
+    
     const url = "https://linkedln-backend.herokuapp.com/api/profile/";
     const user = this.props.location.pathname.split('/').pop()
 

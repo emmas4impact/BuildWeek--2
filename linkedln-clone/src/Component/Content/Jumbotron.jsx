@@ -119,7 +119,7 @@ render(){
             <div> 
               <div><Image className='img-jumbo' src={this.state.person.image}/></div>
               <div> {this.state.person.id}</div>
-              <div className='name pt-4'>{this.state.person.name}</div>
+              <div className='name'>{this.state.person.name}</div>
               <div className='bio'>{this.state.person.bio}</div>
               <div className='email'>{this.state.person.email}</div>
             </div>
