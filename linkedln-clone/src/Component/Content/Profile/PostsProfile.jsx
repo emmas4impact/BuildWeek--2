@@ -13,6 +13,7 @@ class PostsProfile extends Component {
         person: [],
         image: '',
         likes: 0,
+        showModal: false,
         users: [],
         user: '',
         oldPostText: '',
@@ -260,7 +261,7 @@ class PostsProfile extends Component {
                                         alt="image"
                                     />
                                     : 
-                                    <div style={{position: 'absolute', top: '30px', left:'35px'}}>
+                                    <div className='cent-welc' style={{position: 'absolute', top: '30px', left:'35px'}}>
                                     <img className='mb-2' style={{width: '80px', borderRadius: '50%', border: '3px solid #fff'}} src={this.state.user.image} />
                                 
                                        <div style={{lineHeight: '0.9',  margin: '0 auto'}}>
@@ -448,7 +449,7 @@ class PostsProfile extends Component {
 
                                     </Dropdown.Menu>
                                     </Dropdown>
-                                    <Modal show={this.state.showModal} onHide={this.close}>
+                                    <Modal show={this.state.showModal} onHide={() => this.close()}>
                                         <Modal.Header closeButton>
                                             <Modal.Title>Edit message</Modal.Title>
                                         </Modal.Header>

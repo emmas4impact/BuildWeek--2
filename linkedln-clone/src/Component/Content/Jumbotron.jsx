@@ -132,7 +132,7 @@ render(){
             </div>
             </div>
           </Card.Text>
-          <div className='mt-2' style={{lineHeight: '0.5', fontWeight: '600', padding: '20px 20px 5px', border: "1px dashed #B3B6B9", margin: '0 auto'}}>
+          <div className='mt-2 height-mg' style={{lineHeight: '0.5', fontWeight: '600', padding: '20px 20px 5px', border: "1px dashed #B3B6B9", margin: '0 auto'}}>
               <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Show recruiters you're open to work - you control who sees this<FaTimes style={{fontSize: '15px'}} /> </p>
               <p style={{color: '#006097'}}>Get started</p>
           </div>

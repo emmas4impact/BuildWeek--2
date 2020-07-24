@@ -1,7 +1,12 @@
 body {
     background-color: #F5F5F5 !important;
 }
-
+.navbar-toggler{
+    background-color: #017EB4 !important;
+    color : #fff !important;
+    font-size: 20px !important;
+    padding: 2px 5px !important;
+}
 .jumbo-prof { 
     padding: 30px 10px !important;
 }
@@ -190,7 +195,13 @@ body {
     .vl {
         display: none;
     }
- 
+    /* .cent-welc {
+        left:'50%' !important;
+        position: absolute;
+     } */
+     .height-mg {
+        line-height: normal !important;
+     }
 }
 
 
@@ -200,5 +211,12 @@ body {
      }
      .reccom {
          display: none;
+     }
+     /* .cent-welc {
+        left:'50%' !important;
+        position: absolute;
+     } */
+     .height-mg {
+        line-height: normal !important;
      }
     }
