@@ -42,9 +42,8 @@ class PostsProfile extends Component {
     }
 
     open = async(postId) => {
-        const username="user29";
-        const password="w4X9FKLNUDSXwzYu";
-        const url="https://linkedln-backend.herokuapp.com/posts/" + postId 
+    
+        const url="https://linkedln-backend.herokuapp.com/api/posts/" + postId 
         const response= await fetch(url,{
           method:'GET'
           
@@ -129,7 +128,11 @@ class PostsProfile extends Component {
         const datas= await responses.json();
         console.log(datas);
         this.setState({person:datas, loading:false})
+        
+        //this.postStatus()
+        //this.deleteStatus()
         }
+   
         sendPost=(e)=>{
             const newPost = this.state.sendStatus
             newPost.text = e.currentTarget.value
@@ -192,10 +195,10 @@ class PostsProfile extends Component {
    
     }
     
-    editStatus = async ()=>{
+    editStatus = async (postId)=>{
         
        
-        const url="https://linkedln-backend.herokuapp.com/api/posts/"+this.state.postId
+        const url="https://linkedln-backend.herokuapp.com/api/posts/"+postId
         const response= await fetch(url,{
           method:'PUT',
           body: JSON.stringify(this.state.sendStatus),
