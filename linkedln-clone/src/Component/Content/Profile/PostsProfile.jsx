@@ -261,7 +261,7 @@ class PostsProfile extends Component {
                                         alt="image"
                                     />
                                     : 
-                                    <div className='cent-welc' style={{position: 'absolute', top: '30px', left:'35px'}}>
+                                    <div className='cent-welc' style={{position: 'absolute', top: '20px', left:'35px'}}>
                                     <img className='mb-2' style={{width: '80px', borderRadius: '50%', border: '3px solid #fff'}} src={this.state.user.image} />
                                 
                                        <div style={{lineHeight: '0.9',  margin: '0 auto'}}>
