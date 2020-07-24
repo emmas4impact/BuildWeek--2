@@ -119,7 +119,7 @@ class PostsProfile extends Component {
         const id= data._id  
         console.log(data)      
         setTimeout(async () => {
-            const response = await fetch('https://linkedln-backend.herokuapp.com/api/posts/'+ this.props.match.params.username+"/upload", {
+            const response = await fetch('https://linkedln-backend.herokuapp.com/api/posts/'+id+"/upload", {
                 method: "POST",
                 body: this.state.image,
                
@@ -134,12 +134,12 @@ class PostsProfile extends Component {
    
     }
     
-    deleteStatus = async ()=>{
+    deleteStatus = async (postId)=>{
         
         const username="user29";
         const password="w4X9FKLNUDSXwzYu";
-        const url="https://linkedln-backend.herokuapp.com/api/posts"
-        const response= await fetch(url+this.props.match.params.username,{
+        const url="https://linkedln-backend.herokuapp.com/api/posts/"
+        const response= await fetch(url+postId,{
           method:'DELETE',
        
          
@@ -157,7 +157,7 @@ class PostsProfile extends Component {
     editStatus = async ()=>{
         
        
-        const url="http://localhost:2250/api/posts/"+this.state.postId
+        const url="https://linkedln-backend.herokuapp.com/api/posts/"+this.state.postId
         const response= await fetch(url,{
           method:'PUT',
           body: JSON.stringify(this.state.sendStatus),
@@ -209,6 +209,7 @@ class PostsProfile extends Component {
                                     {this.state.post.filter(post => post.user).slice(0, 1).map((user, i)=>{ 
                                         return (
                                            <>
+                                            
                                            <div style={{position: 'absolute', top: '40px'}}>
                                            <img className='mb-2' style={{width: '80px', borderRadius: '50%', border: '3px solid #fff'}} src={user.user.image} />
                                        
@@ -218,6 +219,7 @@ class PostsProfile extends Component {
                                               </div>
                                              
                                               </div> 
+                                             
                                             </>
                                         )
                                         })}
@@ -348,11 +350,12 @@ class PostsProfile extends Component {
                         <Row>
                             <Col>
                             {this.state.post.filter(post => post.user).map((user, i)=>{
-                                console.log(user)
+                                console.log(user.image)
                                 if (user.user)
                                 return(
                                     <>
                                     <Card body key={i} className='mt-2' style={{borderBottom: 'none'}}> 
+                                    { user.image !== undefined && <img src={user.image} /> }
                                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '700', fontSize: '14px'}}>
                                     <img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p> 
@@ -366,7 +369,7 @@ class PostsProfile extends Component {
                                         <Dropdown.Item onClick={() => this.open(user._id)}>Edit</Dropdown.Item>
 
 
-                                        <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2" onClick={()=> this.deleteStatus(user._id)}>Delete</Dropdown.Item>
                                         
                                       
 
