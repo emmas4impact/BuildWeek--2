@@ -132,7 +132,9 @@ body {
 }
 
 @media only screen and (max-width: 600px)  {
-  ]
+  .reccom {
+      display: none;
+  }
   .btn {
       padding: 4px 6px !important;
   }
@@ -195,5 +197,8 @@ body {
 @media  (min-width: 600px)and (max-width: 1024px)  {
     .top-marg {
         margin-top: 17px !important; 
+     }
+     .reccom {
+         display: none;
      }
     }
