@@ -119,7 +119,7 @@ class PostsProfile extends Component {
         const id= data._id  
         console.log(data)      
         setTimeout(async () => {
-            const response = await fetch('https://linkedln-backend.herokuapp.com/api/posts/'+ data, {
+            const response = await fetch('https://linkedln-backend.herokuapp.com/api/posts/'+ this.props.match.params.username+"/upload", {
                 method: "POST",
                 body: this.state.image,
                
