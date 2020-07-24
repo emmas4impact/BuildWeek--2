@@ -190,7 +190,13 @@ body {
     .vl {
         display: none;
     }
- 
+    /* .cent-welc {
+        left:'50%' !important;
+        position: absolute;
+     } */
+     .height-mg {
+        line-height: normal !important;
+     }
 }
 
 
@@ -200,5 +206,12 @@ body {
      }
      .reccom {
          display: none;
+     }
+     /* .cent-welc {
+        left:'50%' !important;
+        position: absolute;
+     } */
+     .height-mg {
+        line-height: normal !important;
      }
     }
