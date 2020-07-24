@@ -13,6 +13,8 @@ class PostsProfile extends Component {
         person: [],
         image: '',
         likes: 0,
+        users: [],
+        user: '',
         oldPostText: '',
         sendStatus: {
             text:"",
@@ -71,11 +73,46 @@ class PostsProfile extends Component {
         
           })
         })
+
+        const urlforweclome = "https://linkedln-backend.herokuapp.com/api/profile/";
+        const userfromwelcome = this.props.location.pathname.split('/').pop()
+
+    const headers = new Headers();
+
+    headers.append('Content-Type', 'application/json');
+        fetch(urlforweclome, {
+            method: "GET",
+            headers: headers,
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then((users) => {
+                this.setState({  users : users.profiles  })
+            })
+        fetch(urlforweclome + userfromwelcome, {
+            method: "GET",
+            headers: headers,
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then((user) => {
+              console.log('user found!', user)
+                this.setState({ user })
+            })
+
+
         const data= await response.json();
         console.log(data);
         
         this.setState({
-            post:data, 
+            post:data
+        
             
         })
 
@@ -194,6 +231,7 @@ class PostsProfile extends Component {
     render() {
         console.log("from post profile: ",this.state.sendStatus)
         console.log("from props profile",this.props)
+        console.log('stat of post', this.state.post)
         return (
             
             <div className='container'>
@@ -206,7 +244,38 @@ class PostsProfile extends Component {
                                 <Card style={{border: '1px solid #DFDFDF'}}>
                                    
                                     <Card.Body className='head-prof' style={{position: 'relative', height: '100px'}}>
-                                    {this.state.post.filter(post => post.user).slice(0, 1).map((user, i)=>{ 
+
+             {this.state.user && this.state.users.slice(0, 1).map((user, i) => {
+                    return (
+                       
+                            <Col key={i}>
+                                {user.image === undefined || user.image === ''
+                                    ? <img
+                                        src='https://cdn5.vectorstock.com/i/thumb-large/95/64/default-placeholder-businesswoman-half-length-por-vector-20889564.jpg'
+                                        style={{ width: "30px", border: "1px solid lightgray", borderRadius: "2rem" }}
+                                        className="card-img img-fluid"
+                                        alt="image"
+                                    />
+                                    : 
+                                    <div style={{position: 'absolute', top: '30px', left:'35px'}}>
+                                    <img className='mb-2' style={{width: '80px', borderRadius: '50%', border: '3px solid #fff'}} src={this.state.user.image} />
+                                
+                                       <div style={{lineHeight: '0.9',  margin: '0 auto'}}>
+                                         <h6 style={{fontWeight: '700', width: '100%'}}>Welcome, {this.state.user.name}</h6>
+                                         <small style={{fontWeight: '500'}}>{this.state.user.bio}</small>
+                                       </div>
+                                      
+                                       </div> 
+
+                                }
+                            </Col>
+                           
+                      
+                    )
+                })}
+
+
+                                    {/* {this.state.post.filter(post => post.user).slice(0,1).map((user, i)=>{ 
                                         return (
                                            <>
                                            <div style={{position: 'absolute', top: '40px'}}>
@@ -220,7 +289,7 @@ class PostsProfile extends Component {
                                               </div> 
                                             </>
                                         )
-                                        })}
+                                        })} */}
                                          
                                     </Card.Body>
                                     <ListGroup className="list-group-flush" style={{fontSize: '12px', fontWeight: '700', paddingTop: '100px', borderTop: '1px solid #66666'}}>

@@ -63,7 +63,7 @@ class Profile extends React.Component{
                             <Skills />
                            
                         </Col>
-                        <Col lg={4} className='pt-4  d-xsm-none d-sm-none d-md-none'>
+                        <Col lg={4} className='pt-4 reccom'>
                         <p className='just-betw' style={{paddingTop: "5rem"}}>
                             <a href="#">  <p style={{  color: "#626262", fontWeight: '700'}} >Edit public profile </p></a>
                             <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
