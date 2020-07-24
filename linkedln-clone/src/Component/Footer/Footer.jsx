@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
           </div>
           <div className='row footer pt-3' style={{lineHeight: '0.5'}}>
-              <div className='col-2'>
+              <div className='col-lg-2 col-md-4 col-sm-12'>
                   <ul className='height-footer'>
                       <li>About</li>
                       <li>Community</li>
@@ -23,7 +23,7 @@ const Footer = () => {
                       <li>Safety Center</li>
                   </ul>
               </div>
-              <div className='col-2'>
+              <div className='col-lg-2  col-md-4 col-sm-12'>
                   <ul className='height-footer'>
                       <li>Accessibility</li>
                       <li>Careers</li>
@@ -31,7 +31,7 @@ const Footer = () => {
                       <li>Mobile</li>
                   </ul>
               </div>
-              <div className='col-2'>
+              <div className='col-lg-2  col-md-4 col-sm-12'>
                   <ul className='height-footer'>
                       <li>Talent Solutions</li>
                       <li>Marketing</li>
@@ -39,7 +39,7 @@ const Footer = () => {
                       <li>Small Business</li>
                   </ul>
               </div>
-              <div className='col-3' style={{justifyContent: 'center', display: 'flex',  flexDirection: 'column'}}>
+              <div className='col-lg-3  col-md-4 col-sm-12' style={{justifyContent: 'center', display: 'flex',  flexDirection: 'column'}}>
                   <ul>
                       <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-4'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>Questions
                           <small>Visit our Help Center.</small>
@@ -51,7 +51,7 @@ const Footer = () => {
                       </li>
                   </ul>
               </div>
-              <div className='col-3' style={{display: 'flex', flexDirection: 'column', lineHeight: '1.5', justifyContent: 'center'}}> 
+              <div className='col-lg-3  col-md-4 col-sm-12' style={{display: 'flex', flexDirection: 'column', lineHeight: '1.5', justifyContent: 'center'}}> 
                   Select Language
                   <select>
                       <option>English language</option>
