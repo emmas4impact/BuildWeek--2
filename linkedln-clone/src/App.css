@@ -195,10 +195,9 @@ body {
     .vl {
         display: none;
     }
-    /* .cent-welc {
-        left:'50%' !important;
-        position: absolute;
-     } */
+    .cent-welc {
+        left: 25% !important;
+     }
      .height-mg {
         line-height: normal !important;
      }
@@ -212,10 +211,9 @@ body {
      .reccom {
          display: none;
      }
-     /* .cent-welc {
-        left:'50%' !important;
-        position: absolute;
-     } */
+     .cent-welc {
+        left: 40% !important;
+     }
      .height-mg {
         line-height: normal !important;
      }

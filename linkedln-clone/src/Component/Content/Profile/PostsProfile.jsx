@@ -425,7 +425,7 @@ class PostsProfile extends Component {
                                 return(
                                     <>
                                     <Card body key={i} className='mt-2' style={{borderBottom: 'none'}}> 
-                                    { user.image !== undefined && <img src={user.image} /> }
+                                   
                                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '700', fontSize: '14px'}}>
                                     <img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p> 
@@ -459,7 +459,8 @@ class PostsProfile extends Component {
                                     </div>
                                   
                                    
-                                    <small style={{letterSpacing: '3px'}}><FaPodcast className='mr-3'/>{user.text}</small>
+                                    <small style={{letterSpacing: '3px'}}><FaPodcast className='mr-3'/>{user.text}</small><br></br>
+                                    { user.image !== undefined && <img src={user.image} /> }
                                     <div className='mt-4' style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
                                 <button className='btn-upload like-btn' onClick={() => this.addLikes(user._id)} style={{background: 'transparent', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>{this.state.likes}<FaThumbsUp className='mr-2 ml-2'/>Like</button>
                                       <button className='btn-upload ' style={{background: 'transparent'}}> <FaComment className='mr-2'/>Comment</button>
