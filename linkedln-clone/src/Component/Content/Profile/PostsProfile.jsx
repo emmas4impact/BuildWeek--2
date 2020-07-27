@@ -223,9 +223,12 @@ class PostsProfile extends Component {
        })
        console.log(photo)
    }
+
    addLikes = (id) => {
        
-        this.setState({ likes:  this.state.likes + 1})
+        this.setState({
+           
+            likes: this.state.post.map(d => ({id: d._id, likes: 0}))})
     
    }
     
