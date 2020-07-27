@@ -119,7 +119,7 @@ class PostsProfile extends Component {
         
        
         const responses= await fetch("https://linkedln-backend.herokuapp.com/api/posts/" + this.props.match.params.username,{
-        method:'Get',
+        method:'GET',
         headers:new Headers({
         'Content-type':'applicationCache/json'
       

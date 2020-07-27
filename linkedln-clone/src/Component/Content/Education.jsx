@@ -3,7 +3,7 @@ import {Jumbotron, Container, Row, Col, Image, Modal, Button, } from 'react-boot
 import { FaPlus, FaPen, FaAlignJustify } from "react-icons/fa";
 
 
-const username="user9";
+
 
 
 
@@ -13,7 +13,14 @@ class Education extends Component {
         loading:true,
          profile:null,
          person:[],
-         
+         experience:{
+             role: "",
+             company: "",
+             startDate: "",
+             endDate: "",
+             description: "",
+             image: ""
+         },
          showModal: false
           
      }
@@ -31,7 +38,7 @@ class Education extends Component {
     
 
    componentDidMount=async()=>{
-        const url="https://linkedln-backend.herokuapp.com/api/profile/"+this.props.match.params.username;
+        const url="https://linkedln-backend.herokuapp.com/api/profile/"+this.props.match.params.username+"/experience";
         const response= await fetch(url,{
         method:'Get',
         headers:new Headers({
@@ -42,6 +49,19 @@ class Education extends Component {
         const data= await response.json();
         console.log(data);
         this.setState({person:data, loading:false})
+}
+saveExperience=async()=>{
+    const url="https://linkedln-backend.herokuapp.com/api/profile/"+this.props.match.params.username+"/experience";
+    const response= await fetch(url,{
+    method:'POST',
+    headers:new Headers({
+    'Content-type':'applicationCache/json', 
+   
+    })
+    })
+    const data= await response.json();
+    console.log(data);
+    this.setState({person:data, loading:false})
 }
     render() {
        

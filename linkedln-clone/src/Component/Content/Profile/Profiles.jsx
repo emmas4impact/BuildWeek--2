@@ -47,7 +47,7 @@ class Profile extends React.Component{
                 <div>
                    
                     <Row>
-                        <Col lg={8} md={12} sm={12} style={{backgroundColor: "transparent"}} >
+                        <Col md={8} style={{backgroundColor: "transparent"}} >
                             <Jumbotron {...this.props}/>
                             <Strength />
                             
@@ -63,7 +63,7 @@ class Profile extends React.Component{
                             <Skills />
                            
                         </Col>
-                        <Col lg={4} className='pt-4 reccom'>
+                        <Col md={4} className='pt-4'>
                         <p className='just-betw' style={{paddingTop: "5rem"}}>
                             <a href="#">  <p style={{  color: "#626262", fontWeight: '700'}} >Edit public profile </p></a>
                             <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
@@ -73,18 +73,15 @@ class Profile extends React.Component{
                             <a href="#"><p style={{color: "#626262", fontWeight: '700'}}>Add profile in another language</p></a>
                             <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
                         </p> 
-                          
-                            <Col md={12} className='box' style={{background:'#fff'}}>
-                            <p className="mt-3" style={{fontSize: '20px', fontWeight: '500'}}>People also viewed</p>
+                            <p className="mt-5">People also viewed</p>
                             {this.state.users.slice(1, 25).map((user, i) => {
                     return (
                         <a href={'/profile/' + user.username} style={{color: "black", textDecoration: "none"}}>
-                            
-                        <Row className="pb-3 betw-col" key={i}>
-                            <Col md={4}>
+                        <Row className="pb-3" key={i}>
+                            <Col md={3}>
                                 {user.image === undefined || user.image === ''
                                     ? <Image
-                                        src='https://img.favpng.com/7/5/8/computer-icons-font-awesome-user-font-png-favpng-YMnbqNubA7zBmfa13MK8WdWs8.jpg'
+                                        src='https://cdn5.vectorstock.com/i/thumb-large/95/64/default-placeholder-businesswoman-half-length-por-vector-20889564.jpg'
                                         style={{ height: "4rem", width: "4rem", border: "1px solid lightgray", borderRadius: "2rem" }}
                                         className="card-img img-fluid"
                                         alt="image"
@@ -98,18 +95,19 @@ class Profile extends React.Component{
 
                                 }
                             </Col>
-                            <Col style={{ display: 'flex', justifyContent: 'space-between'}} md={8} className="d-flex pt-3 pb-4 border-bottom">
+                            <Col className="col col-8 d-flex pt-3 pb-4 border-bottom" md={9} style={{alignItems: 'center', justifyContent: 'space-between'}}>
                                
-                          
+                                    <Col md={10}>
                                 <div className="d-flex flex-column ">
                                     <strong>{user.name} {user.surname} &#9900;</strong>
                                     <span>{user.title}</span>
                                 </div>
-                               
-                                
+                                </Col>
+                                <Col md={2}>
+                                <div className="d-flex flex-column text-right ">
                                 <TiMessages size={22}/>
-                               
-                              
+                                </div>
+                                </Col>
                              
                                 
                             </Col>
@@ -117,7 +115,6 @@ class Profile extends React.Component{
                         </a>
                     )
                 })}
-                </Col>
             
                         </Col>
                     </Row>

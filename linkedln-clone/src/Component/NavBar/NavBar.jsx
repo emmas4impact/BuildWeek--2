@@ -61,7 +61,10 @@ componentDidMount = () => {
           
             <Navbar bg="light" expand="lg" className='navBar'> 
              <div className='container' style={{paddingLeft: '10px', paddingRight: '10px'}}>
-            <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSh6No5QAI1B4lAf3hatbry5_YdzLRdT9thyw&usqp=CAU" style={{width: "40px", borderRadius: "5px"}}></img></a>
+             <Link className='text-white font-nav' to={'/profile/'+this.props.location.pathname.split('/').pop()}>
+             <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSh6No5QAI1B4lAf3hatbry5_YdzLRdT9thyw&usqp=CAU" style={{width: "40px", borderRadius: "5px"}}></img>
+                  </Link>
+            {/* <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> </a> */}
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
