@@ -97,9 +97,9 @@ componentDidMount = () => {
                 <Nav.Link className='text-white font-nav'>
                     <FaSuitcase className='sign-nav' />
                     Jobs</Nav.Link>
-                <Nav.Link className='text-white font-nav'>
-                   <FaFacebookMessenger className='sign-nav' />
-                    Messaging</Nav.Link>
+                <Link  to="/chat" className='text-white font-nav'>
+                   <FaFacebookMessenger className='sign-nav'  />
+                    Messaging</Link>
                 <Nav.Link className='text-white font-nav'>
                      <FaBell  className='sign-nav'/>
                     
