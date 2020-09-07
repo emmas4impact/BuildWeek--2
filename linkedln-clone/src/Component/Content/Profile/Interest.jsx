@@ -5,9 +5,9 @@ const Interest=(props) =>{
     
     return(
         <>
-         <Jumbotron fluid style={{backgroundColor: "white"}} className=" box jumbo-prof">
+         <Jumbotron fluid style={{backgroundColor: "white"}} className="box jumbo-prof" style={{height: '150px'}}>
              <Container>
-                <h4>Interest</h4>
+                <h4 style={{fontSize: '20px'}} s>Interest</h4>
                     <p>
                         This is a modified jumbotron that occupies the entire horizontal space of
                         its parent.

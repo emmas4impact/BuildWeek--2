@@ -8,22 +8,22 @@ import { FaLinkedin, FaSearch, FaHome, FaSuitcase, FaVideo, FaUserFriends, FaFac
 class NavBar extends Component {
   state = {
     users: [],
-    user: null
+    user: ''
 }
 
 componentDidMount = () => {
-    const url = "https://striveschool.herokuapp.com/api/profile/";
+    
+    const url = "https://linkedln-backend.herokuapp.com/api/profile/";
     const user = this.props.location.pathname.split('/').pop()
 
     console.log('FROM ROUTER PROPS', user)
 
     const username = 'user19';
-    const password = 'Hxx8R4wZfCANamrj';
-
+  
     const headers = new Headers();
 
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
+   
 
     fetch(url, {
         method: "GET",
@@ -35,31 +35,36 @@ componentDidMount = () => {
             }
         })
         .then((users) => {
-            this.setState({ users })
+            this.setState({  users : users.profiles  })
         })
-
     fetch(url + user, {
-          method: "GET",
-          headers: headers,
-      })
-          .then((response) => {
-              if (response.ok) {
-                  return response.json();
-              }
-          })
-          .then((user) => {
-            console.log('user found!', user)
-              this.setState({ user:  user})
-          })
+           method: "GET",
+           headers: headers,
+       })
+           .then((response) => {
+               if (response.ok) {
+                   return response.json();
+               }
+           })
+           .then((user) => {
+             console.log('user found!', user)
+               this.setState({ user })
+           })
 }
     render() {
-      console.log("Nav props", +this.props.users)
+      //console.log("Nav props", +this.props.users)
+      console.log('user state', this.state.users)
+      console.log('user state', this.state.user)
         return (
           <>
-
+       
+          
             <Navbar bg="light" expand="lg" className='navBar'> 
-             <div className='container'>
-            <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> <img  src="https://tompfister.files.wordpress.com/2014/06/linkedin-icon-black.png?w=570" style={{width: "40px", borderRadius: "5px"}}></img></a>
+             <div className='container' style={{paddingLeft: '10px', paddingRight: '10px'}}>
+             <Link className='text-white font-nav' to={'/profile/'+this.props.location.pathname.split('/').pop()}>
+             <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSh6No5QAI1B4lAf3hatbry5_YdzLRdT9thyw&usqp=CAU" style={{width: "40px", borderRadius: "5px"}}></img>
+                  </Link>
+            {/* <a href={"/profile/"+ this.props.location.pathname.split('/').pop()}> </a> */}
             <Navbar.Brand href="#home">
                 
             </Navbar.Brand>
@@ -92,9 +97,9 @@ componentDidMount = () => {
                 <Nav.Link className='text-white font-nav'>
                     <FaSuitcase className='sign-nav' />
                     Jobs</Nav.Link>
-                <Nav.Link className='text-white font-nav'>
-                   <FaFacebookMessenger className='sign-nav' />
-                    Messaging</Nav.Link>
+                <Link  to="/chat" className='text-white font-nav'>
+                   <FaFacebookMessenger className='sign-nav'  />
+                    Messaging</Link>
                 <Nav.Link className='text-white font-nav'>
                      <FaBell  className='sign-nav'/>
                     
@@ -103,9 +108,9 @@ componentDidMount = () => {
             
 
                 <div className='navDrop'>  
-                  
+               
 
-                {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
+                {this.state.user && this.state.users.slice(0, 1).map((user, i) => {
                     return (
                        
                             <Col key={i}>
@@ -131,7 +136,7 @@ componentDidMount = () => {
                 })}
             
                 <NavDropdown  className='text-white font-nav' title="Dropdown" id="basic-nav-dropdown" title='Me' >
-                {this.state.user && this.state.users.slice(22, 23).map((user, i) => {
+                {this.state.user && this.state.users.map((user, i) => {
                     return (
                        
                           
@@ -197,6 +202,7 @@ componentDidMount = () => {
             </Navbar.Collapse>
             </div>
           </Navbar>
+         
         </>
         )
     }

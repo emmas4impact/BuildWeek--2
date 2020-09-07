@@ -22,34 +22,25 @@ class Profile extends React.Component{
         users: []
     }
 
-    componentDidMount = () => {
-        const url = "https://striveschool.herokuapp.com/api/profile/";
+    componentDidMount = async() => {
+        const url = "https://linkedln-backend.herokuapp.com/api/profile";
 
-        const username = 'user19';
-        const password = 'Hxx8R4wZfCANamrj';
-
-        const headers = new Headers();
-
-        headers.append('Content-Type', 'application/json');
-        headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
-
-        fetch(url, {
+        const response = await fetch(url, {
             method: "GET",
-            headers: headers,
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
         })
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
-            })
-            .then((users) => {
-                this.setState({ users })
-            })
+        
+        const data = await response.json()
+        console.log(data)
+         this.setState({
+             users: data.profiles
+         })
     }
 
     render(){
-       
-        console.log("data from state",this.state.person);
+       console.log(this.state.users)
         
         return(
             <>
@@ -64,17 +55,24 @@ class Profile extends React.Component{
                             <Activity />
                            
                             <DashBoard {...this.props}/>
-                            <Skills />
+                      
                             <Recommendation />
                             <Accomplishment />
                             <Interests  />
-                       
+                            <Education {...this.props} />
+                            <Skills />
                            
                         </Col>
-                        <Col md={4} >
-                        <a href="#">  <p style={{paddingTop: "5rem", color: "gray"}} >Edit public profile & URL <AiOutlineQuestionCircle /></p></a>
-                            <hr></hr>
-                            <a href="#"><p style={{color: "gray"}}>Add profile in another language <AiOutlineQuestionCircle /></p></a>
+                        <Col md={4} className='pt-4'>
+                        <p className='just-betw' style={{paddingTop: "5rem"}}>
+                            <a href="#">  <p style={{  color: "#626262", fontWeight: '700'}} >Edit public profile </p></a>
+                            <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
+                        </p>
+                            <hr style={{marginTop: '-20px'}}></hr>
+                        <p className='just-betw'>
+                            <a href="#"><p style={{color: "#626262", fontWeight: '700'}}>Add profile in another language</p></a>
+                            <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
+                        </p> 
                             <p className="mt-5">People also viewed</p>
                             {this.state.users.slice(1, 25).map((user, i) => {
                     return (
@@ -97,7 +95,7 @@ class Profile extends React.Component{
 
                                 }
                             </Col>
-                            <Col className="col col-8 d-flex justify-content-between pt-3 border-bottom" md={9}>
+                            <Col className="col col-8 d-flex pt-3 pb-4 border-bottom" md={9} style={{alignItems: 'center', justifyContent: 'space-between'}}>
                                
                                     <Col md={10}>
                                 <div className="d-flex flex-column ">

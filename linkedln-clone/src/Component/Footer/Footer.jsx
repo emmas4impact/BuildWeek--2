@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { FaLinkedin, FaArrowAltCircleDown, FaArrowDown, FaQuestion } from 'react-icons/fa';
-import { faCog, faChevronDown } from '@fortawesome/free-solid-svg-icons'
-import { MdSettings } from 'react-icons/md';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaLinkedin, FaArrowAltCircleDown, FaArrowDown, FaQuestion, FaCog } from 'react-icons/fa';
+import { faCogs, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+
 
 const Footer = () => {
   return(
@@ -13,44 +14,44 @@ const Footer = () => {
             </div>
           </div>
           <div className='row footer pt-3' style={{lineHeight: '0.5'}}>
-              <div className='col-2'>
-                  <ul className='list-unstyled'>
+              <div className='col-lg-2 col-md-4 col-sm-12'>
+                  <ul className='height-footer'>
                       <li>About</li>
-                      <li>Community Guidelines</li>
+                      <li>Community</li>
                       <li>Privacy & Terms <faChevronDown /></li>
                       <li>Sales Solutions</li>
                       <li>Safety Center</li>
                   </ul>
               </div>
-              <div className='col-2'>
-                  <ul>
+              <div className='col-lg-2  col-md-4 col-sm-12'>
+                  <ul className='height-footer'>
                       <li>Accessibility</li>
                       <li>Careers</li>
                       <li>Ad Choices</li>
                       <li>Mobile</li>
                   </ul>
               </div>
-              <div className='col-2'>
-                  <ul>
+              <div className='col-lg-2  col-md-4 col-sm-12'>
+                  <ul className='height-footer'>
                       <li>Talent Solutions</li>
-                      <li>Marketinf Solutions</li>
+                      <li>Marketing</li>
                       <li>Advertising</li>
                       <li>Small Business</li>
                   </ul>
               </div>
-              <div className='col-3' style={{justifyContent: 'center', display: 'flex',  flexDirection: 'column'}}>
+              <div className='col-lg-3  col-md-4 col-sm-12' style={{justifyContent: 'center', display: 'flex',  flexDirection: 'column'}}>
                   <ul>
                       <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}} className='mt-3 mb-4'> <FaQuestion style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>Questions
                           <small>Visit our Help Center.</small>
                       </li>
-                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}> <MdSettings style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>
+                      <li style={{position: 'relative', display: 'flex', flexDirection: 'column', lineHeight: '1.5'}}><FaCog style={{position: 'absolute', left: '-20px', bottom: '15px'}}/>
                     
                           Manage your account and Privacy
                           <small>Go to your Settings.</small>
                       </li>
                   </ul>
               </div>
-              <div className='col-3' style={{display: 'flex', flexDirection: 'column', lineHeight: '1.5', justifyContent: 'center'}}> 
+              <div className='col-lg-3  col-md-4 col-sm-12' style={{display: 'flex', flexDirection: 'column', lineHeight: '1.5', justifyContent: 'center'}}> 
                   Select Language
                   <select>
                       <option>English language</option>
@@ -67,7 +68,7 @@ const Footer = () => {
               </div>
           </div>
           <div className='row' style={{fontSize: '12px'}}>
-              <div className='col-12'>
+              <div className='col-12 pb-4'>
                   LinkedIn Corporation  &copy; 2020
               </div>
           </div>

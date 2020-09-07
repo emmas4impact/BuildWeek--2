@@ -1,16 +1,18 @@
 import React from 'react'
 import {Jumbotron, Dropdown} from 'react-bootstrap';
 import {Container,Card, Image,Button} from 'react-bootstrap';
-import { FaCamera } from 'react-icons/fa';
-const username="user29";
-const password="w4X9FKLNUDSXwzYu";
+import { FaCamera, FaPen, FaClosedCaptioning, FaTimes } from 'react-icons/fa';
+import { GiPencil } from "react-icons/gi";
+// const username="user29";
+// const password="w4X9FKLNUDSXwzYu";
 
 class Jumbotrons extends React.Component{
     state = {
       loading: true,
        profile: null,
        person: [],
-       image: null
+       image: null,
+       
         
    };
 
@@ -20,30 +22,29 @@ this.fetchUserData()
 }
 
 fetchUserData = async () => {
-  const url="https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username;
+  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.props.match.params.username;
 const response= await fetch(url,{
   method:'Get',
   headers:new Headers({
-   'Content-type':'applicationCache/json', 
-   'Authorization':'Basic ' + btoa(username + ':' + password)
+   'Content-type':'application/json'
+  
   })
 })
 const data= await response.json();
-console.log("my data",data);
-this.setState({person:data, loading:false})
+console.log(data);
+this.setState({person: data, loading:false})
+
 }
 
-uploadPicture= async ()=>{
+uploadPicture = async () =>{
         
-  const username="user29";
-  const password="w4X9FKLNUDSXwzYu";
-  const url="https://striveschool.herokuapp.com/api/profile/" + this.props.match.params.username+"/picture"
+  // const username="user29";
+  
+  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.state.person._id+"/upload"
   const response= await fetch(url,{
     method:'POST',
     body: this.state.image,
-    headers:new Headers({
-     'Authorization':'Basic ' + btoa(username + ':' + password)
-    })
+   
   })
   
   if(response.ok){
@@ -74,7 +75,7 @@ render(){
       
         <Card.Img variant="top" src="/jumboCover.jpeg"/>
 
-<div class="image-upload" style={{position:'absolute',top:'0.5rem',right:'1.2rem',width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
+<div class="image-upload" style={{position:'absolute', top:'0.5rem', right: '-60px', width:'100px',cursor:'pointer'}} onSubmit={this.uploadPicture}>
     <label for="file-input">
     <FaCamera style={{width:'20px'}}/>
     </label>
@@ -83,9 +84,9 @@ render(){
 </div>
        
         <Card.Body>
-        <Button className="btn btn-light"  variant="primary" style={{position:'absolute',bottom:'2rem',right:'1rem',width:'100px',background:'rgb(250,250,250)',color:'rgb(105,105,105)',border:'1px solid black '}} >More..</Button>&nbsp;&nbsp;
-                    <Dropdown style={{position:'absolute',bottom:'2rem',right:'8.8rem'}}>
-                    <Dropdown.Toggle id="dropdown-basic" style={{background:'rgb(0,123,250)',color:'rgb(250,250,250)',border:'1px solid rgb()'}}> Add section profile </Dropdown.Toggle>
+           <div className='jumb-small' style={{display:'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
+                    <Dropdown className="mr-2 right-mrg" >
+                    <Dropdown.Toggle className="dropdown-basic" style={{backgroundColor:'#006097', outline: 'none', fontWeight: '700'}}> Add section profile </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                     <Dropdown.Item>Intro
@@ -96,10 +97,45 @@ render(){
                     </Dropdown.Item>
                     </Dropdown.Menu>
                     </Dropdown>
-        <Card.Text>
-          {this.state.loading || !this.state.person ? (<div>loading...</div>):(<div> <div><Image className='img-jumbo' src={this.state.person.image}/></div><div> {this.state.person.id}</div>
- <div className='name pt-4'>{this.state.person.name}</div><div className='bio'>{this.state.person.bio}</div><div className='email'>{this.state.person.email}</div><div className='Title'>{this.state.person.title}</div></div>)}
+                    
+                    <Dropdown className="btn mr-3"  style={{ background:'#fff',color:'#666666', fontWeight: '700', borderRadius: '2px'}} >
+                    <Dropdown.Toggle className="dropdown-basic drop-grey right-mrg" style={{background:'#fff', color:'#666666', outline: 'none', fontWeight: '700'}}> More...</Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                    <Dropdown.Item>Download picture
+                    </Dropdown.Item>
+                    <Dropdown.Item>Save as pdf
+                    </Dropdown.Item>
+                  
+                    </Dropdown.Menu>
+                    </Dropdown>
+                   
+                    <GiPencil style={{fontSize: '27px'}}/>
+              </div>      
+                    <Card.Text>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          {this.state.loading || !this.state.person ? (<div>loading...</div>):(
+            
+            <div> 
+              <div><Image className='img-jumbo' src={this.state.person.image}/></div>
+              <div> {this.state.person.id}</div>
+              <div className='name'>{this.state.person.name}</div>
+              <div className='bio'>{this.state.person.bio}</div>
+              <div className='email'>{this.state.person.email}</div>
+            </div>
+      )}
+       
+            <div style={{display :'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <img src="https://ignite.strive.school/hosted/images/21/472d398ad64694996ab8189cfc78a7/LOGO.jpg" style={{width: "30px", paddingRight: '10px'}}></img>
+                <h6 style={{paddingTop: '10px'}}>Strive School</h6>
+
+            </div>
+            </div>
           </Card.Text>
+          <div className='mt-2 height-mg' style={{lineHeight: '0.5', fontWeight: '600', padding: '20px 20px 5px', border: "1px dashed #B3B6B9", margin: '0 auto'}}>
+              <p style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>Show recruiters you're open to work - you control who sees this<FaTimes style={{fontSize: '15px'}} /> </p>
+              <p style={{color: '#006097'}}>Get started</p>
+          </div>
         </Card.Body>
       </Card>
     </Container>

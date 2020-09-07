@@ -1,15 +1,68 @@
 body {
     background-color: #F5F5F5 !important;
 }
+.navbar-toggler{
+    background: url('https://lh3.googleusercontent.com/proxy/Ei3U8w3oK1rFuimXXjNV4-1XLldiA2Gucavjx6IBc-QDfN58KGdRANSz4d-yh1NBfpHcq08AN0esx7WR3JuhNcz3ZCExTg');
+    background-color: #017EB4 !important;
+    color : #fff !important;
+    font-size: 20px !important;
+    padding: 2px 5px !important;
+}
 .jumbo-prof { 
     padding: 30px 10px !important;
 }
 .jumbo-prof-1 {
     padding: 30px 30px !important;
 }
+.height-footer li{
+    line-height: 1.5;
+}
 .colorBlue {
     color: #006097;
     font-weight: 600;
+}
+.btn-quiz {
+    background-color: transparent !important;
+    color: #006097 !important;
+    border: 1px solid #006097 !important;
+}
+.dropdown-basic {
+  
+    border: none !important;
+    border-color: transparent !important;
+}
+/* .btn-primary {
+    border-color: transparent !important;
+} */
+.just-betw {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+.betw-col {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.btn {
+    border-radius: 2px !important;
+}
+.drop-grey {
+    border: 1px solid #666666 !important;
+}
+.dropdown-basic:focus {
+    outline: none !important;
+    border: none !important;
+}
+.footer  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 .back-blue {
     background-color:#F3F6F8 !important;
@@ -21,9 +74,10 @@ body {
 .recommend-btn {
     border: 1px solid #006097;
     border-radius: 2px;
-    padding: 2px 30px;
+    padding: 2px 20px;
     color: #006097;
     font-weight: 600;
+    background-color: transparent;
 }
 .rec {
     display: flex;
@@ -56,6 +110,9 @@ body {
     text-align: center;
     align-items: center;
     /* background: url('/public/Component/Content/Profile/jumboCover.jpeg'); */
+    background: url('/jumboCover.jpeg');
+    background-size: cover;
+    
 }
 .exper-btn {
     display: flex;
@@ -64,7 +121,10 @@ body {
 }
 .font-nav {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
+}
+.like-btn:focus {
+   color: red !important;
 }
 .sign-nav {
     font-size: 25px;
@@ -73,3 +133,115 @@ body {
     margin-top: 100px;
     padding-top: 0 !important;
 }
+
+@media only screen and (max-width: 600px)  {
+  .reccom {
+      display: none;
+  }
+  .btn {
+      padding: 4px 6px !important;
+  }
+  
+    .img-jumbo {
+        margin: -100px 25%;
+        
+        width: 120px;
+        height: 120px;
+        
+    }
+    .marg-top {
+        margin-top: 10px;
+    }
+    .btn-trans button {
+        background-color: transparent !important;
+    }
+    .jumb-small {
+        display: flex;
+       justify-content: center;
+       padding-top: 40px;
+        align-items: center;
+        
+    }
+    .navbar-nav {
+      padding-top: 20px !important;
+    }
+    .font-nav{
+
+
+    justify-content: center !important;
+    flex-direction: row !important;
+    display: flex !important;
+    width: 40% !important;
+    align-items: flex-end !important;
+    
+    }
+
+    .font-nav svg {
+        font-size: 20px !important;
+        margin-right: 10px !important;
+    }
+    .navDrop{
+        display: flex;
+   line-height: 1.5 !important;
+    align-items: center;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+    
+    .vl {
+        display: none;
+    }
+    .cent-welc {
+        left: 25% !important;
+     }
+     .height-mg {
+        line-height: normal !important;
+     }
+}
+
+
+@media  (min-width: 600px)and (max-width: 1024px)  {
+    .navbar-nav {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+      }
+    .font-nav{
+        justify-content: center !important;
+        flex-direction: row !important;
+        display: flex !important;
+        width: 40% !important;
+        align-items: flex-end !important;
+        
+        }
+    
+        .font-nav svg {
+            font-size: 20px !important;
+            margin-right: 10px !important;
+        }
+    .navDrop{
+        display: flex;
+   line-height: 1.5 !important;
+    align-items: center;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+    .top-marg {
+        margin-top: 17px !important; 
+     }
+     .reccom {
+         display: none;
+     }
+     .cent-welc {
+        left: 40% !important;
+     }
+     .height-mg {
+        line-height: normal !important;
+     }
+     .vl {
+        display: none;
+    }
+    }

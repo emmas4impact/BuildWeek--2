@@ -20,15 +20,15 @@ class App extends React.Component {
   }
 
   fetchUser = async () => {
-    await fetch("https://striveschool.herokuapp.com/api/profile/", {
+    await fetch("https://linkedln-backend.herokuapp.com/api/profile/", {
       headers: new Headers({
-        'Authorization': 'Basic ' + "dXNlcjE5Okh4eDhSNHdaZkNBTmFtcmo=",
+       
         "Content-Type": "application/json",
       }),
     })
       .then(resp => resp.json())
       .then(respObj => this.setState({
-        users: respObj
+        users: respObj.profiles
       }))
   }
 
