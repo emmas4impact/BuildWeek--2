@@ -19,28 +19,42 @@ import Education from '../Education';
 
 class Profile extends React.Component{
     state = {
-        users: []
+        users: [],
+        peopleView: []
     }
 
     componentDidMount = async() => {
-        const url = "https://linkedln-backend.herokuapp.com/api/profile";
+        const meUrl = "http://localhost:3003/profile/me";
+        const profileUrl ="http://localhost:3003/profile/"
 
-        const response = await fetch(url, {
+        const response = await fetch(meUrl, {
             method: "GET",
+            credentials: "include",
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
         })
         
+        const resp = await fetch(profileUrl, {
+            method: "GET",
+            credentials: "include",
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+        const result = await resp.json()
         const data = await response.json()
-        console.log(data)
+        console.log("I AM DATA",data)
          this.setState({
-             users: data.profiles
+             users: data,
+             peopleView: result
+             
          })
+         console.log("all profiles", this.state.peopleView)
     }
 
     render(){
-       console.log(this.state.users)
+       console.log("all profiles in render state", this.state.peopleView)
         
         return(
             <>
@@ -74,9 +88,9 @@ class Profile extends React.Component{
                             <AiOutlineQuestionCircle style={{marginBottom: "15px"}}/>
                         </p> 
                             <p className="mt-5">People also viewed</p>
-                            {this.state.users.slice(1, 25).map((user, i) => {
+                            {this.state.peopleView.map((user, i) => {
                     return (
-                        <a href={'/profile/' + user.username} style={{color: "black", textDecoration: "none"}}>
+                        <a href={'/profile/'+ user.username } style={{color: "black", textDecoration: "none"}}>
                         <Row className="pb-3" key={i}>
                             <Col md={3}>
                                 {user.image === undefined || user.image === ''
