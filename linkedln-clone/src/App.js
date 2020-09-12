@@ -9,6 +9,8 @@ import NavBar from './Component/NavBar/NavBar';
 import Footer from './Component/Footer/Footer'
 import PostsProfile from './Component/Content/Profile/PostsProfile';
 import Profile from '../src/Component/Content/Profile/Profiles'
+import SignIn from './Component/SignIn'
+import register from './Component/Register'
 
 
 class App extends React.Component {
@@ -67,6 +69,8 @@ class App extends React.Component {
         <> 
        
           <Router>
+          <Route path='/' exact component={SignIn}/>
+          <Route path='/register' exact component={register}/>
           <NavBar
               search={this.searchedValue}
               searchedValue={this.state.searchedValue}
