@@ -29,8 +29,8 @@ Clone or Download [this repository](https://github.com/emmas4impact/BuildWeek-2)
 - Linkedin:[@linkedInnvsibiya](http://linkedin.com/in/nomfundo-verah-sibiya-7180714b)
 
 :bust_in_silhouette: **Yannick**
-- GitHub:[@github/nvsibiya](https://github.com/nvsibiya)
-- Linkedin:[@linkedInnvsibiya](http://linkedin.com/in/nomfundo-verah-sibiya-7180714b)
+- GitHub:[@github/YGIHANA1](https://github.com/YGIHANA1)
+- Linkedin:[@linkedInYGIHANA1](http://linkedin.com/in/YGIHANA1)
 ## :handshake: Contributing
 Contributions, issues and feature requests are welcome!
 
