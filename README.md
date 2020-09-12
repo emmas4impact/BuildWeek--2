@@ -9,6 +9,7 @@
 - CSS
 - React Hook
 - REST API
+-NODE
 -MONGODB
 -HOSTING ON HEROKU
 ## Getting Started
@@ -25,12 +26,12 @@ Clone or Download [this repository](https://github.com/emmas4impact/BuildWeek-2)
 
 
 :bust_in_silhouette: **Marigona Nuhija**
-- GitHub:[@github/nvsibiya](https://github.com/nvsibiya)
-- Linkedin:[@linkedInnvsibiya](http://linkedin.com/in/nomfundo-verah-sibiya-7180714b)
+- GitHub:[@github/MarigonaN](https://github.com/MarigonaN)
+- Linkedin:[@linkedIn/MarigonaN](http://linkedin.com/in/marigona-n-02275a173/)
 
 :bust_in_silhouette: **Yannick**
 - GitHub:[@github/YGIHANA1](https://github.com/YGIHANA1)
-- Linkedin:[@linkedInYGIHANA1](http://linkedin.com/in/YGIHANA1)
+- Linkedin:[@linkedIn/YGIHANA1](http://linkedin.com/in/gihana-yannick-6b8802171/)
 ## :handshake: Contributing
 Contributions, issues and feature requests are welcome!
 
