@@ -22,9 +22,10 @@ this.fetchUserData()
 }
 
 fetchUserData = async () => {
-  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.props.match.params.username;
+  const url="http://localhost:3003/profile/me" 
 const response= await fetch(url,{
   method:'Get',
+  credentials: "include",
   headers:new Headers({
    'Content-type':'application/json'
   
@@ -40,7 +41,7 @@ uploadPicture = async () =>{
         
   // const username="user29";
   
-  const url="https://linkedln-backend.herokuapp.com/api/profile/" + this.state.person._id+"/upload"
+  const url="http://localhost:3003/profile/me" + this.state.person._id+"/upload"
   const response= await fetch(url,{
     method:'POST',
     body: this.state.image,
