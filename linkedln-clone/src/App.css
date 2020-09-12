@@ -82,13 +82,10 @@ body {
 .rec {
     display: flex;
     align-items: center;
-
 }
 .small-reccomend {
     font-size: 13px;
     font-weight: 700;
- 
- 
 }
 .grey {
     color: #414141;
@@ -115,8 +112,8 @@ body {
     background: url('/jumboCover.jpeg');
     background-size: cover;
     
+    /* background: url('/public/Component/Content/Profile/jumboCover.jpeg'); */
 }
-
 .exper-btn {
     display: flex;
     justify-content: space-between;

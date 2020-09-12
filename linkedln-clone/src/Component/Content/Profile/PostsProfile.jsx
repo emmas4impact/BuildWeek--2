@@ -11,6 +11,7 @@ class PostsProfile extends Component {
         postId: null,
         newPost: [],
         person: [],
+        newsFeed:"",
         image: '',
         likes: 0,
         showModal: false,
@@ -430,11 +431,9 @@ class PostsProfile extends Component {
                                 if (user.user)
                                 return(
                                     <>
-                                    <Card body key={i} className='mt-2' style={{borderBottom: 'none'}}> 
-                                   
-                                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                    <p style={{fontWeight: '700', fontSize: '14px'}}>
-                                    <img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p> 
+                                    <Card body key={i} className='mt-2'> 
+                                   <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '700', fontSize: '14px'}}><img src={user.user.image} style={{width: "40px", height: '40px', borderRadius: "50%", marginRight: "10px" }}/> {user.user.name}</p>
                                     
                                     <Dropdown>
                                     <Dropdown.Toggle style={{background: 'none', color: '#000', border: 'none'}}>
@@ -456,7 +455,7 @@ class PostsProfile extends Component {
                                         <Modal.Header closeButton>
                                             <Modal.Title>Edit message</Modal.Title>
                                         </Modal.Header>
-                                        <Modal.Body><textarea value={this.state.oldPostText} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
+                                        <Modal.Body><textarea value={this.state.oldPostText} onChange={this.sendPost} style={{width: '100%', border: 'none'}}></textarea></Modal.Body>
                                       
                                         <Modal.Footer>
                                             <Button onClick={this.close}>Save</Button>
